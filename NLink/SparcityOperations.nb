@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    127544,       2633]
-NotebookOptionsPosition[    126668,       2599]
-NotebookOutlinePosition[    127043,       2615]
-CellTagsIndexPosition[    127000,       2612]
+NotebookDataLength[    127834,       2645]
+NotebookOptionsPosition[    126958,       2611]
+NotebookOutlinePosition[    127333,       2627]
+CellTagsIndexPosition[    127290,       2624]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -59,8 +59,19 @@ system.\
  CellChangeTimes->{{3.5914870039053636`*^9, 3.591487004222381*^9}, {
   3.5924252124323196`*^9, 3.5924252510725346`*^9}}],
 
-Cell[BoxData[
+Cell[BoxData[{
  RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Mx", "[", 
+     RowBox[{"M_", ",", " ", "x_"}], "]"}], " ", ":=", " ", 
+    RowBox[{"LTx", "[", 
+     RowBox[{"M", ",", " ", 
+      RowBox[{
+       RowBox[{"Lx", "[", 
+        RowBox[{"M", ",", " ", "x"}], "]"}], "/", 
+       RowBox[{"Diagonal", "[", "M", "]"}]}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", 
   RowBox[{"(*", " ", 
    RowBox[{
     RowBox[{
@@ -71,99 +82,98 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"LTinvx", "[", 
          RowBox[{"M", ",", " ", "x"}], "]"}], "/", 
-        RowBox[{"Diagonal", "[", "M", "]"}]}]}], "]"}]}], ";"}], " ", "*)"}], 
-  "\[IndentingNewLine]", 
+        RowBox[{"Diagonal", "[", "M", "]"}]}]}], "]"}]}], ";"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{
    RowBox[{
-    RowBox[{
-     RowBox[{"Minvx", "[", 
-      RowBox[{"M_", ",", " ", "x_"}], "]"}], " ", ":=", " ", 
-     RowBox[{"Module", "[", 
+    RowBox[{"Minvx", "[", 
+     RowBox[{"M_", ",", " ", "x_"}], "]"}], " ", ":=", " ", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "z", "}"}], ",", " ", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{"compilable", " ", "version"}], " ", "*)"}], 
+      "\[IndentingNewLine]", 
       RowBox[{
-       RowBox[{"{", "z", "}"}], ",", " ", "\[IndentingNewLine]", 
-       RowBox[{"(*", " ", 
-        RowBox[{"compilable", " ", "version"}], " ", "*)"}], 
-       "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"z", " ", "=", " ", 
-         RowBox[{"LTinvx", "[", 
-          RowBox[{"M", ",", " ", "x"}], "]"}]}], ";", "\[IndentingNewLine]", 
-        RowBox[{"Do", "[", 
-         RowBox[{
-          RowBox[{
-           RowBox[{
-           "z", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], " ", 
-           "=", " ", 
-           RowBox[{
-            RowBox[{
-            "z", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], "/", 
-            RowBox[{"M", "\[LeftDoubleBracket]", 
-             RowBox[{"i", ",", "i"}], "\[RightDoubleBracket]"}]}]}], ",", " ", 
-          RowBox[{"{", 
-           RowBox[{"i", ",", " ", "nq"}], "}"}]}], "]"}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"Linvx", "[", 
-         RowBox[{"M", ",", " ", "z"}], "]"}]}]}], "\[IndentingNewLine]", 
-      "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{
-     RowBox[{"dMinvx", "[", 
-      RowBox[{"M_", ",", " ", "dM_", ",", " ", "x_"}], "]"}], " ", ":=", " ", 
-     RowBox[{"Module", "[", 
-      RowBox[{
-       RowBox[{"{", 
+       RowBox[{"z", " ", "=", " ", 
+        RowBox[{"LTinvx", "[", 
+         RowBox[{"M", ",", " ", "x"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Do", "[", 
         RowBox[{
-        "z", ",", " ", "dy1", ",", " ", "dy2", ",", " ", "dy3", ",", " ", "D",
-          ",", " ", "dD"}], "}"}], ",", " ", "\[IndentingNewLine]", 
-       RowBox[{"(*", " ", 
-        RowBox[{"compilable", " ", "version"}], " ", "*)"}], 
-       "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"D", " ", "=", 
-         RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{"z", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}],
+           " ", "=", " ", 
           RowBox[{
+           RowBox[{
+           "z", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], "/", 
            RowBox[{"M", "\[LeftDoubleBracket]", 
-            RowBox[{"i", ",", " ", "i"}], "\[RightDoubleBracket]"}], ",", " ", 
-           RowBox[{"{", 
-            RowBox[{"i", ",", " ", "nq"}], "}"}]}], "]"}]}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"dD", " ", "=", 
-         RowBox[{"Table", "[", 
-          RowBox[{
-           RowBox[{"dM", "\[LeftDoubleBracket]", 
-            RowBox[{"i", ",", " ", "i"}], "\[RightDoubleBracket]"}], ",", " ", 
-           RowBox[{"{", 
-            RowBox[{"i", ",", " ", "nq"}], "}"}]}], "]"}]}], ";", 
-        "\[IndentingNewLine]", "\[IndentingNewLine]", 
-        RowBox[{"z", " ", "=", " ", 
-         RowBox[{"Minvx", "[", 
-          RowBox[{"M", ",", " ", "x"}], "]"}]}], ";", "\[IndentingNewLine]", 
-        RowBox[{"dy1", " ", "=", " ", 
-         RowBox[{"dLTx", "[", 
-          RowBox[{"dM", ",", " ", 
-           RowBox[{"D", "*", 
-            RowBox[{"Lx", "[", 
-             RowBox[{"M", ",", " ", "z"}], "]"}]}]}], "]"}]}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"dy2", " ", "=", " ", 
-         RowBox[{"LTx", "[", 
-          RowBox[{"M", ",", " ", 
-           RowBox[{"dD", "*", 
-            RowBox[{"Lx", "[", 
-             RowBox[{"M", ",", " ", "z"}], "]"}]}]}], "]"}]}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"dy3", " ", "=", " ", 
-         RowBox[{"LTx", "[", 
-          RowBox[{"M", ",", " ", 
-           RowBox[{"D", "*", 
-            RowBox[{"dLx", "[", 
-             RowBox[{"dM", ",", " ", "z"}], "]"}]}]}], "]"}]}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"-", 
-         RowBox[{"Minvx", "[", 
-          RowBox[{"M", ",", " ", 
-           RowBox[{"dy1", "+", "dy2", "+", "dy3"}]}], "]"}]}]}]}], 
-      "\[IndentingNewLine]", "]"}]}], ";"}]}]}]], "Input",
+            RowBox[{"i", ",", "i"}], "\[RightDoubleBracket]"}]}]}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", " ", "nq"}], "}"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Linvx", "[", 
+        RowBox[{"M", ",", " ", "z"}], "]"}]}]}], "\[IndentingNewLine]", 
+     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"dMinvx", "[", 
+    RowBox[{"M_", ",", " ", "dM_", ",", " ", "x_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "z", ",", " ", "dy1", ",", " ", "dy2", ",", " ", "dy3", ",", " ", "D", 
+       ",", " ", "dD"}], "}"}], ",", " ", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"compilable", " ", "version"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"D", " ", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"M", "\[LeftDoubleBracket]", 
+          RowBox[{"i", ",", " ", "i"}], "\[RightDoubleBracket]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", " ", "nq"}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"dD", " ", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"dM", "\[LeftDoubleBracket]", 
+          RowBox[{"i", ",", " ", "i"}], "\[RightDoubleBracket]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", " ", "nq"}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"z", " ", "=", " ", 
+       RowBox[{"Minvx", "[", 
+        RowBox[{"M", ",", " ", "x"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"dy1", " ", "=", " ", 
+       RowBox[{"dLTx", "[", 
+        RowBox[{"dM", ",", " ", 
+         RowBox[{"D", "*", 
+          RowBox[{"Lx", "[", 
+           RowBox[{"M", ",", " ", "z"}], "]"}]}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"dy2", " ", "=", " ", 
+       RowBox[{"LTx", "[", 
+        RowBox[{"M", ",", " ", 
+         RowBox[{"dD", "*", 
+          RowBox[{"Lx", "[", 
+           RowBox[{"M", ",", " ", "z"}], "]"}]}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"dy3", " ", "=", " ", 
+       RowBox[{"LTx", "[", 
+        RowBox[{"M", ",", " ", 
+         RowBox[{"D", "*", 
+          RowBox[{"dLx", "[", 
+           RowBox[{"dM", ",", " ", "z"}], "]"}]}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"-", 
+       RowBox[{"Minvx", "[", 
+        RowBox[{"M", ",", " ", 
+         RowBox[{"dy1", "+", "dy2", "+", "dy3"}]}], "]"}]}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.5885995383332195`*^9, 3.5885996092213144`*^9}, 
    3.5885999524873724`*^9, {3.588601675361512*^9, 3.588601758512061*^9}, {
@@ -543,7 +553,9 @@ Cell[BoxData[
    3.593319115855686*^9, 3.5933191215588236`*^9}, {3.5933192062308636`*^9, 
    3.5933192086527452`*^9}, {3.5933194599344845`*^9, 3.593319467246998*^9}, {
    3.5933195032314434`*^9, 3.593319576403461*^9}, {3.593320155529594*^9, 
-   3.5933201680765104`*^9}, {3.593321965517504*^9, 3.5933219753144035`*^9}}],
+   3.5933201680765104`*^9}, {3.593321965517504*^9, 3.5933219753144035`*^9}, {
+   3.6027838453821087`*^9, 3.602783881316167*^9}, {3.602784058630322*^9, 
+   3.602784060543431*^9}}],
 
 Cell[BoxData[
  RowBox[{"\[IndentingNewLine]", 
@@ -2620,19 +2632,19 @@ Cell[682, 25, 1775, 25, 52, "Input",
  InitializationCell->True],
 Cell[CellGroupData[{
 Cell[2482, 54, 233, 5, 79, "Subsection"],
-Cell[2718, 61, 32157, 484, 432, "Input",
+Cell[2718, 61, 32447, 496, 452, "Input",
  InitializationCell->True],
-Cell[34878, 547, 32110, 705, 3132, "Input",
+Cell[35168, 559, 32110, 705, 3132, "Input",
  InitializationCell->True],
-Cell[66991, 1254, 20634, 443, 1872, "Input",
+Cell[67281, 1266, 20634, 443, 1872, "Input",
  InitializationCell->True],
-Cell[87628, 1699, 38735, 885, 4212, "Input",
+Cell[87918, 1711, 38735, 885, 4212, "Input",
  InitializationCell->True]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[126412, 2590, 30, 0, 86, "Section"],
-Cell[126445, 2592, 207, 4, 52, "Input",
+Cell[126702, 2602, 30, 0, 86, "Section"],
+Cell[126735, 2604, 207, 4, 52, "Input",
  InitializationCell->True]
 }, Open  ]]
 }
