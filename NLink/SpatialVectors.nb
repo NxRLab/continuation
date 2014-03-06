@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     49282,       1120]
-NotebookOptionsPosition[     48350,       1084]
-NotebookOutlinePosition[     48726,       1100]
-CellTagsIndexPosition[     48683,       1097]
+NotebookDataLength[     49460,       1124]
+NotebookOptionsPosition[     48528,       1088]
+NotebookOutlinePosition[     48904,       1104]
+CellTagsIndexPosition[     48861,       1101]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -786,13 +786,16 @@ Cell[BoxData[{
     RowBox[{
      RowBox[{"{", 
       RowBox[{
-      "XL", ",", " ", "p", ",", " ", "vJ", ",", " ", "v", ",", " ", "Ic", ",",
-        " ", "hc", ",", " ", "KE", ",", " ", "PE", ",", " ", "htot", ",", " ",
-        "Itot", ",", " ", "m", ",", " ", "mC", ",", " ", "I", ",", " ", "com",
-        ",", " ", "vcom"}], "}"}], ",", "\[IndentingNewLine]", 
+      "XL", ",", " ", "p", ",", " ", "sJ", ",", " ", "vJ", ",", " ", "v", ",",
+        " ", "Ic", ",", " ", "hc", ",", " ", "KE", ",", " ", "PE", ",", " ", 
+       "htot", ",", " ", "Itot", ",", " ", "m", ",", " ", "mC", ",", " ", "I",
+        ",", " ", "com", ",", " ", "vcom"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
      RowBox[{
       RowBox[{"XL", " ", "=", " ", 
        RowBox[{"Xip", "[", "x", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"sJ", " ", "=", " ", 
+       RowBox[{"s", "[", "x", "]"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"v", " ", "=", " ", "Zspat"}], ";", "\[IndentingNewLine]", 
       RowBox[{"Ic", " ", "=", " ", "\[DoubleStruckCapitalI]"}], ";", 
       "\[IndentingNewLine]", 
@@ -808,7 +811,7 @@ Cell[BoxData[{
          RowBox[{"vJ", " ", "=", " ", 
           RowBox[{
            RowBox[{
-           "s", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], " ", 
+           "sJ", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], " ", 
            RowBox[{"x", "\[LeftDoubleBracket]", 
             RowBox[{"nq", "+", "i"}], "\[RightDoubleBracket]"}]}]}], ";", 
          "\[IndentingNewLine]", 
@@ -1068,7 +1071,8 @@ Cell[BoxData[{
    3.6027688797395487`*^9, 3.6027688835337667`*^9}, 3.6027689279923124`*^9, {
    3.602769073527646*^9, 3.602769080572064*^9}, {3.602769112582883*^9, 
    3.602769115874072*^9}, {3.602769188562235*^9, 3.602769212169586*^9}, {
-   3.6027692804965005`*^9, 3.6027692818885784`*^9}, 3.6027693639532776`*^9}]
+   3.6027692804965005`*^9, 3.6027692818885784`*^9}, 3.6027693639532776`*^9, {
+   3.60294606061063*^9, 3.6029460849231777`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1114,12 +1118,12 @@ Cell[7709, 176, 12300, 265, 711, "Input",
  InitializationCell->True],
 Cell[20012, 443, 8309, 183, 492, "Input",
  InitializationCell->True],
-Cell[28324, 628, 19733, 442, 1652, "Input",
+Cell[28324, 628, 19911, 446, 1672, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[48094, 1075, 30, 0, 86, "Section"],
-Cell[48127, 1077, 207, 4, 52, "Input",
+Cell[48272, 1079, 30, 0, 86, "Section"],
+Cell[48305, 1081, 207, 4, 52, "Input",
  InitializationCell->True]
 }, Open  ]]
 }
