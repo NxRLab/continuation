@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    124560,       2532]
-NotebookOptionsPosition[    123169,       2481]
-NotebookOutlinePosition[    123544,       2497]
-CellTagsIndexPosition[    123501,       2494]
+NotebookDataLength[    128250,       2640]
+NotebookOptionsPosition[    126712,       2584]
+NotebookOutlinePosition[    127087,       2600]
+CellTagsIndexPosition[    127044,       2597]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -656,7 +656,7 @@ Cell[BoxData[
     RowBox[{
     "a", " ", "transformation", " ", "X", " ", "can", " ", "be", " ", 
      "applied", " ", 
-     RowBox[{"afterwards", "."}]}]}], "  ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"afterwards", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
     RowBox[{"Jcoord", "[", 
@@ -799,7 +799,8 @@ Cell[BoxData[
    3.5933113058689504`*^9}, {3.5933113612128115`*^9, 3.5933114017128906`*^9}, 
    3.593316537444393*^9, {3.6027030542765026`*^9, 3.6027031907393165`*^9}, {
    3.602703404912594*^9, 3.602703476944707*^9}, 3.6027035272805915`*^9, {
-   3.602961077828238*^9, 3.6029611012405787`*^9}, 3.6029737150269265`*^9}]
+   3.602961077828238*^9, 3.6029611012405787`*^9}, 3.6029737150269265`*^9, 
+   3.603199119215062*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1924,6 +1925,108 @@ Cell[BoxData[{
 
 Cell[CellGroupData[{
 
+Cell["Tensor derivatives", "Section",
+ CellChangeTimes->{{3.5933110701810026`*^9, 3.593311074368497*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"tensprod", "[", 
+     RowBox[{"a_", ",", " ", "b_"}], "]"}], " ", ":=", " ", 
+    RowBox[{"Outer", "[", 
+     RowBox[{"Times", ",", " ", "a", ",", " ", "b"}], "]"}]}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"compilable", ",", " ", 
+    RowBox[{
+     RowBox[{"unlike", " ", "the", " ", "built"}], "-", 
+     RowBox[{"in", " ", "fcn", " ", "TensorProduct"}]}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "commonly", " ", "used", " ", "matrix", " ", "derivatives", " ", "of", " ",
+     "D", 
+    RowBox[{"(", 
+     RowBox[{"A", ".", "X", ".", "B"}], ")"}], " ", "and", " ", "D", 
+    RowBox[{"(", 
+     RowBox[{"Y", "[", "X", "]"}], ")"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "note", " ", "that", " ", "by", " ", "default", " ", "transpose", " ", 
+    "on", " ", "a", " ", "tensor", " ", "swaps", " ", "only", " ", "the", " ",
+     "first", " ", "two", " ", "indices"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"dXB", "[", 
+    RowBox[{"dX_", ",", " ", "B_"}], "]"}], " ", ":=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"B", "\[Transpose]"}], ".", 
+      RowBox[{"dX", "\[Transpose]"}]}], ")"}], "\[Transpose]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"AdX", "[", 
+    RowBox[{"A_", ",", " ", "dX_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"A", ".", "dX"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"AdXB", "[", 
+     RowBox[{"A_", ",", " ", "dX_", ",", " ", "B_"}], "]"}], " ", ":=", " ", 
+    RowBox[{"AdX", "[", 
+     RowBox[{"A", ",", " ", 
+      RowBox[{"dXB", "[", 
+       RowBox[{"dX", ",", " ", "B"}], "]"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "lists", " ", "need", " ", "to", " ", "be", " ", "handled", " ", 
+    "differently"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"dXb", "[", 
+    RowBox[{"dX_", ",", " ", "b_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"(", 
+    RowBox[{"b", ".", 
+     RowBox[{"dX", "\[Transpose]"}]}], ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"AdXb", "[", 
+     RowBox[{"A_", ",", " ", "dX_", ",", " ", "b_"}], "]"}], " ", ":=", " ", 
+    RowBox[{"AdX", "[", 
+     RowBox[{"A", ",", " ", 
+      RowBox[{"dXb", "[", 
+       RowBox[{"dX", ",", " ", "b"}], "]"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"assumes", " ", "dY", " ", "is", " ", "T", 
+    RowBox[{"(", 
+     RowBox[{"2", ",", "2"}], ")"}], " ", "and", " ", "dX", " ", "T", 
+    RowBox[{"(", 
+     RowBox[{"2", ",", "1"}], ")"}]}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"dYdX", "[", 
+    RowBox[{"dY_", ",", " ", "dX_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"TensorContract", "[", 
+    RowBox[{
+     RowBox[{"dY", ".", 
+      RowBox[{"dX", "\[Transpose]"}]}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", " ", "4"}], "}"}]}], "]"}]}], ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.593310679887574*^9, 3.5933107070126123`*^9}, {
+  3.59331075457522*^9, 3.5933107772158737`*^9}, {3.593311079306023*^9, 
+  3.5933110801341343`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
 Cell["Animation", "Section",
  CellChangeTimes->{{3.5914870039053636`*^9, 3.591487004222381*^9}, {
   3.5916678891560974`*^9, 3.5916678898031635`*^9}, {3.5922559886651573`*^9, 
@@ -2513,26 +2616,31 @@ Cell[CellGroupData[{
 Cell[21635, 470, 324, 4, 86, "Section"],
 Cell[21962, 476, 8631, 166, 352, "Input",
  InitializationCell->True],
-Cell[30596, 644, 8697, 157, 452, "Input",
+Cell[30596, 644, 8722, 158, 452, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[39330, 806, 196, 3, 86, "Section"],
-Cell[39529, 811, 19999, 336, 752, "Input",
+Cell[39355, 807, 196, 3, 86, "Section"],
+Cell[39554, 812, 19999, 336, 752, "Input",
  InitializationCell->True],
-Cell[59531, 1149, 40156, 772, 2692, "Input",
+Cell[59556, 1150, 40156, 772, 2692, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[99724, 1926, 248, 3, 86, "Section"],
-Cell[99975, 1931, 13945, 327, 1392, "Input",
+Cell[99749, 1927, 105, 1, 86, "Section"],
+Cell[99857, 1930, 3373, 94, 392, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[113957, 2263, 30, 0, 86, "Section"],
-Cell[113990, 2265, 207, 4, 52, "Input",
+Cell[103267, 2029, 248, 3, 86, "Section"],
+Cell[103518, 2034, 13945, 327, 1392, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[117500, 2366, 30, 0, 86, "Section"],
+Cell[117533, 2368, 207, 4, 52, "Input",
  InitializationCell->True],
-Cell[114200, 2271, 8953, 207, 972, "Input"]
+Cell[117743, 2374, 8953, 207, 972, "Input"]
 }, Open  ]]
 }
 ]
