@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    123407,       2499]
-NotebookOptionsPosition[    122058,       2449]
-NotebookOutlinePosition[    122433,       2465]
-CellTagsIndexPosition[    122390,       2462]
+NotebookDataLength[    124560,       2532]
+NotebookOptionsPosition[    123169,       2481]
+NotebookOutlinePosition[    123544,       2497]
+CellTagsIndexPosition[    123501,       2494]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -431,7 +431,39 @@ Cell[BoxData[{
    3.6029732903396063`*^9}, {3.6029734096774397`*^9, 3.602973480168474*^9}, {
    3.6029735749329033`*^9, 3.6029736151752214`*^9}, {3.6029736468760233`*^9, 
    3.6029736730335226`*^9}, 3.602973762328635*^9, {3.6029743025445714`*^9, 
-   3.602974303181615*^9}, {3.602974365516178*^9, 3.602974428553787*^9}}]
+   3.602974303181615*^9}, {3.602974365516178*^9, 3.602974428553787*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"s", ";"}], 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Jacobian", " ", "mapping", " ", "from", " ", "joint", " ", "velocity", 
+    " ", "to", " ", "spatial", " ", "velocity"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ds", ";"}], 
+  RowBox[{"(*", " ", 
+   RowBox[{"derivative", " ", "of", " ", "Jacobian", " ", 
+    RowBox[{"w", ".", "r", ".", "t"}], " ", "to", " ", "parameters"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"d2s", ";"}], 
+  RowBox[{"(*", " ", 
+   RowBox[{"second", " ", "derivative", " ", "of", " ", "Jacobian", " ", 
+    RowBox[{"w", ".", "r", ".", "t"}], " ", "to", " ", "parameters"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sdot", ";"}], 
+  RowBox[{"(*", " ", 
+   RowBox[{"time", " ", "derivative", " ", "of", " ", "Jacobian"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dsdot", ";"}], 
+  RowBox[{"(*", " ", 
+   RowBox[{"derivative", " ", "of", " ", "sdot", " ", 
+    RowBox[{"w", ".", "r", ".", "t"}], " ", "to", " ", "parameters"}], " ", 
+   "*)"}]}]}], "Input"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2474,32 +2506,33 @@ Cell[2418, 54, 206, 3, 86, "Section"],
 Cell[2627, 59, 9888, 205, 752, "Input",
  InitializationCell->True],
 Cell[12518, 266, 7969, 167, 392, "Input",
- InitializationCell->True]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[20524, 438, 324, 4, 86, "Section"],
-Cell[20851, 444, 8631, 166, 352, "Input",
  InitializationCell->True],
-Cell[29485, 612, 8697, 157, 452, "Input",
- InitializationCell->True]
+Cell[20490, 435, 1108, 30, 192, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[38219, 774, 196, 3, 86, "Section"],
-Cell[38418, 779, 19999, 336, 752, "Input",
+Cell[21635, 470, 324, 4, 86, "Section"],
+Cell[21962, 476, 8631, 166, 352, "Input",
  InitializationCell->True],
-Cell[58420, 1117, 40156, 772, 2692, "Input",
+Cell[30596, 644, 8697, 157, 452, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[98613, 1894, 248, 3, 86, "Section"],
-Cell[98864, 1899, 13945, 327, 1392, "Input",
- InitializationCell->True]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[112846, 2231, 30, 0, 86, "Section"],
-Cell[112879, 2233, 207, 4, 52, "Input",
+Cell[39330, 806, 196, 3, 86, "Section"],
+Cell[39529, 811, 19999, 336, 752, "Input",
  InitializationCell->True],
-Cell[113089, 2239, 8953, 207, 972, "Input"]
+Cell[59531, 1149, 40156, 772, 2692, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[99724, 1926, 248, 3, 86, "Section"],
+Cell[99975, 1931, 13945, 327, 1392, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[113957, 2263, 30, 0, 86, "Section"],
+Cell[113990, 2265, 207, 4, 52, "Input",
+ InitializationCell->True],
+Cell[114200, 2271, 8953, 207, 972, "Input"]
 }, Open  ]]
 }
 ]
