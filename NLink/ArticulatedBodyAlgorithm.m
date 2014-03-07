@@ -96,17 +96,18 @@ qdd
 ];
 
 
-ABAInit[] := (
+ABACode = {
+cargs:>{{x, _Real, 1}, {u, _Real, 1}},
+ccode:>
+(
 znq = znqarr;
 Zspat = Zspatarr;
 parent = pararr;
 \[DoubleStruckCapitalI] = \[DoubleStruckCapitalI]arr;
-);
 
-ABALocals[] := {znq, Zspat, ZM, parent, \[DoubleStruckCapitalI], sJ, sJdot, XL, qdd,v, a, f, IC, uJ, c, U, d};
-
-ABAFcns[] :=Join[DownValues[Faba], DownValues[ABA], DownValues[tensprod]];
-
+Faba[x, u];
+Join[x[[nq+1;;nx]], qdd]
+)};
 
 
 End[]

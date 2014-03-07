@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     93896,       1652]
-NotebookOptionsPosition[     92958,       1617]
-NotebookOutlinePosition[     93333,       1633]
-CellTagsIndexPosition[     93290,       1630]
+NotebookDataLength[     99196,       1728]
+NotebookOptionsPosition[     98256,       1693]
+NotebookOutlinePosition[     98631,       1709]
+CellTagsIndexPosition[     98588,       1706]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -52,21 +52,23 @@ Cell[BoxData[{
     RowBox[{"Dispatch", "[", 
      RowBox[{"Join", "[", 
       RowBox[{
-       RowBox[{"DownValues", "[", "F", "]"}], ",", " ", 
-       RowBox[{"DownValues", "[", "CandG", "]"}], ",", " ", 
-       RowBox[{"DownValues", "[", "JSIM", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "Fcrb", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "Faba", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "RNEA", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "CRB", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "ABA", "]"}], ",", " ", 
        RowBox[{"DownValues", "[", "LTDL", "]"}], ",", " ", 
        RowBox[{"DownValues", "[", "Minvx", "]"}], ",", " ", 
        RowBox[{"DownValues", "[", "LTinvx", "]"}], ",", " ", 
        RowBox[{"DownValues", "[", "Linvx", "]"}], ",", " ", 
        RowBox[{"DownValues", "[", "dF", "]"}], ",", " ", 
-       RowBox[{"DownValues", "[", "dCandG", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "dRNEA", "]"}], ",", " ", 
        RowBox[{"DownValues", "[", "tensprod", "]"}], ",", " ", 
        RowBox[{"DownValues", "[", "dXb", "]"}], ",", " ", 
        RowBox[{"DownValues", "[", "dadv", "]"}], ",", " ", 
        RowBox[{"DownValues", "[", "dvdq", "]"}], ",", " ", 
        RowBox[{"DownValues", "[", "dfdv", "]"}], ",", " ", 
-       RowBox[{"DownValues", "[", "dJSIM", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "dCRB", "]"}], ",", " ", 
        RowBox[{"DownValues", "[", "dICdq", "]"}], ",", " ", 
        RowBox[{"DownValues", "[", "dXB", "]"}], ",", " ", 
        RowBox[{"DownValues", "[", "AdX", "]"}], ",", " ", 
@@ -271,7 +273,10 @@ Cell[BoxData[{
  CellChangeTimes->{{3.59333159514917*^9, 3.593331595568194*^9}, {
   3.5933317398224573`*^9, 3.593331778065648*^9}, {3.593366793475771*^9, 
   3.5933667937882695`*^9}, {3.6031490083234243`*^9, 3.603149019851101*^9}, {
-  3.603157568302624*^9, 3.6031576764108152`*^9}}],
+  3.603157568302624*^9, 3.6031576764108152`*^9}, {3.6031643223250556`*^9, 
+  3.6031643770272074`*^9}, {3.603164410333095*^9, 3.6031644239368873`*^9}, {
+  3.6031661887929416`*^9, 3.6031661907800555`*^9}, {3.603167623426098*^9, 
+  3.60316762927643*^9}, {3.6031676760751104`*^9, 3.603167689169863*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -1522,61 +1527,102 @@ Cell[BoxData[{
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"FCompile", "[", 
-    RowBox[{
-    "fcn_", ",", " ", "locals_", ",", " ", "init_", ",", " ", "depfcns_"}], 
-    "]"}], " ", ":=", " ", 
-   RowBox[{"Module", "[", 
-    RowBox[{
-     RowBox[{"{", "rules", "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"BlockTemplate", "[", "]"}], " ", ":=", " ", 
+    RowBox[{"{", 
      RowBox[{
-      RowBox[{"rules", " ", "=", " ", 
-       RowBox[{"Dispatch", "[", 
-        RowBox[{"Join", "[", 
+     "parent", ",", " ", "bodies", ",", " ", "nca", ",", " ", "znq", ",", " ",
+       "Znq", ",", " ", "zmb", ",", " ", "Zmb", ",", " ", "Zspat", ",", " ", 
+      "Zdspat", ",", " ", "ZM", ",", " ", "ZdM", ",", " ", "ZJ", ",", " ", 
+      "ZdJ", ",", " ", "Zosim", ",", " ", "Zdosim", ",", " ", "sJ", ",", " ", 
+      "sJdot", ",", " ", "r", ",", " ", "\[DoubleStruckCapitalI]", ",", " ", 
+      "d\[DoubleStruckCapitalI]", ",", " ", "XL", ",", " ", "dXL", ",", " ", 
+      "qdd", ",", " ", "dqdd", ",", " ", "c", ",", " ", "dc", ",", " ", "M", 
+      ",", " ", "dM", ",", " ", "v", ",", " ", "dv", ",", " ", "a", ",", " ", 
+      "da", ",", " ", "f", ",", " ", "df", ",", " ", "IC", ",", " ", "dIC", 
+      ",", " ", "uJ", ",", " ", "duJ", ",", " ", "U", ",", " ", "dU", ",", 
+      " ", "d", ",", " ", "dd", ",", " ", "ac", ",", " ", "dac", ",", " ", 
+      "J", ",", " ", "dJ", ",", " ", "\[CapitalLambda]", ",", " ", 
+      "d\[CapitalLambda]", ",", " ", "\[CapitalLambda]inv", ",", " ", 
+      "d\[CapitalLambda]inv", ",", " ", "Yd", ",", " ", "dYd", ",", " ", "YD",
+       ",", " ", "dYD", ",", " ", "Pqdd", ",", " ", "dPqdd"}], "}"}]}], ";"}],
+   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"FunctionTemplate", "[", "code_", "]"}], " ", ":=", " ", 
+    RowBox[{"Dispatch", "[", 
+     RowBox[{"Join", "[", 
+      RowBox[{
+       RowBox[{"DownValues", "[", "WithTemplate", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "BlockTemplate", "]"}], ",", " ", "code", 
+       ",", " ", 
+       RowBox[{"DownValues", "[", "Fcrb", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "Faba", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "RNEA", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "CRB", "]"}], ",", "  ", 
+       RowBox[{"DownValues", "[", "ABA", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "LTDL", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "Minvx", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "LTinvx", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "Linvx", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "dF", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "dRNEA", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "tensprod", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "dXb", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "dadv", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "dvdq", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "dfdv", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "dCRB", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "dICdq", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "dXB", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "AdX", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "AdXB", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "dLTDL", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "dMinvx", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "dLTx", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "Lx", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "LTx", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "dLx", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "P", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "Josim", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "YdYD", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "OSIM", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "Jx", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "JTx", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "dP", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "dJosim", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "AdXb", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "dYdYD", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "dOSIM", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "dJx", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "dJTx", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "JX", "]"}], ",", " ", 
+       RowBox[{"DownValues", "[", "JTX", "]"}]}], "]"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"NLinkCompile", "[", "code_", "]"}], " ", ":=", " ", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", "u", ",", " ", "cargs", ",", " ", "ccode"}], 
+      "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ReleaseHold", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Hold", "[", "\[IndentingNewLine]", 
+        RowBox[{"With", "[", 
          RowBox[{
-          RowBox[{"DownValues", "[", "WithTemplate", "]"}], ",", " ", 
-          RowBox[{"DownValues", "[", "locals", "]"}], ",", " ", 
-          RowBox[{"DownValues", "[", "init", "]"}], ",", " ", 
-          RowBox[{"depfcns", "[", "]"}]}], "]"}], "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"Block", "[", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"x", ",", " ", "u"}], "}"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"ReleaseHold", "[", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"Hold", "[", "\[IndentingNewLine]", 
-           RowBox[{"With", "[", 
-            RowBox[{
-             RowBox[{"WithTemplate", "[", "]"}], ",", "\[IndentingNewLine]", 
-             RowBox[{"Compile", "[", 
-              RowBox[{
-               RowBox[{"{", 
-                RowBox[{
-                 RowBox[{"{", 
-                  RowBox[{"x", ",", " ", "_Real", ",", " ", "1"}], "}"}], ",",
-                  " ", 
-                 RowBox[{"{", 
-                  RowBox[{"u", ",", " ", "_Real", ",", " ", "1"}], "}"}]}], 
-                "}"}], ",", " ", "\[IndentingNewLine]", 
-               RowBox[{"Block", "[", 
-                RowBox[{
-                 RowBox[{"locals", "[", "]"}], ",", "\[IndentingNewLine]", 
-                 RowBox[{
-                  RowBox[{"init", "[", "]"}], ";", "\[IndentingNewLine]", 
-                  RowBox[{"fcn", "[", 
-                   RowBox[{"x", ",", " ", "u"}], "]"}], ";", 
-                  "\[IndentingNewLine]", 
-                  RowBox[{"Join", "[", 
-                   RowBox[{
-                    RowBox[{"x", "\[LeftDoubleBracket]", 
-                    RowBox[{
-                    RowBox[{"nq", "+", "1"}], ";;", "nx"}], 
-                    "\[RightDoubleBracket]"}], ",", " ", "qdd"}], "]"}]}]}], 
-                "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
-              "]"}]}], "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
-           "]"}], " ", "//.", " ", "rules"}], "\[IndentingNewLine]", "]"}]}], 
-       "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+          RowBox[{"WithTemplate", "[", "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Compile", "[", 
+           RowBox[{"cargs", ",", " ", "\[IndentingNewLine]", 
+            RowBox[{"Block", "[", 
+             RowBox[{
+              RowBox[{"BlockTemplate", "[", "]"}], ",", "ccode"}], "]"}]}], 
+           "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}], 
+        "\[IndentingNewLine]", "]"}], " ", "//.", " ", 
+       RowBox[{"FunctionTemplate", "[", "code", "]"}]}], 
+      "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
   ";"}]}], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.603149330490893*^9, 3.603149332954015*^9}, {
@@ -1601,7 +1647,37 @@ Cell[BoxData[{
    3.6031572271710896`*^9, 3.603157234603535*^9}, {3.603157350109129*^9, 
    3.6031574062273436`*^9}, {3.6031574575412855`*^9, 3.603157458967377*^9}, {
    3.6031577297808723`*^9, 3.6031577864241123`*^9}, {3.6031587003674545`*^9, 
-   3.603158706709818*^9}}]
+   3.603158706709818*^9}, {3.603161573911677*^9, 3.603161806290971*^9}, {
+   3.603161845834235*^9, 3.603161879849183*^9}, {3.603162086269005*^9, 
+   3.6031620967286034`*^9}, {3.6031621620863457`*^9, 
+   3.6031622581388474`*^9}, {3.603162288876609*^9, 3.6031623520982313`*^9}, 
+   3.603162449104783*^9, {3.6031625320475326`*^9, 3.603162538372896*^9}, {
+   3.6031625801712894`*^9, 3.60316264118678*^9}, {3.6031626810710683`*^9, 
+   3.6031626894305487`*^9}, {3.6031627240805297`*^9, 
+   3.6031627365412426`*^9}, {3.6031627739063826`*^9, 
+   3.6031628083613567`*^9}, {3.603162880528488*^9, 3.6031629231199474`*^9}, {
+   3.6031631201102066`*^9, 3.603163155667246*^9}, {3.603163241910184*^9, 
+   3.603163247392498*^9}, {3.603163405096529*^9, 3.6031634837860355`*^9}, {
+   3.60316366861462*^9, 3.603163693889067*^9}, {3.6031644987241573`*^9, 
+   3.603164501253302*^9}, {3.6031646311167393`*^9, 3.6031647286123223`*^9}, {
+   3.6031648272569714`*^9, 3.6031650597972884`*^9}, {3.6031651894307117`*^9, 
+   3.603165195489058*^9}, {3.6031653052303433`*^9, 3.603165310957674*^9}, {
+   3.6031653727232265`*^9, 3.6031654039839983`*^9}, {3.6031656331621227`*^9, 
+   3.6031656363343077`*^9}, {3.603165693608588*^9, 3.603165718868044*^9}, {
+   3.6031659735386143`*^9, 3.6031660057884617`*^9}, {3.603166042012555*^9, 
+   3.6031660890062275`*^9}, {3.603166130494603*^9, 3.603166156429088*^9}, 
+   3.603166236556677*^9, {3.6031664383842354`*^9, 3.603166453556117*^9}, {
+   3.6031664984206724`*^9, 3.603166499120713*^9}, {3.6031667511931486`*^9, 
+   3.6031667887883015`*^9}, {3.603166825599409*^9, 3.6031668721670947`*^9}, {
+   3.603167216406802*^9, 3.6031672447664104`*^9}, {3.60316753284191*^9, 
+   3.6031675662688437`*^9}, {3.603167702275614*^9, 3.603167761726015*^9}, {
+   3.6031694106784477`*^9, 3.603169424055215*^9}, {3.603169566930395*^9, 
+   3.6031695672994146`*^9}, {3.6031696230666103`*^9, 
+   3.6031696232016172`*^9}, {3.603169724795436*^9, 3.6031697249614644`*^9}, {
+   3.6031698128494782`*^9, 3.603169812985487*^9}, {3.6031698831085033`*^9, 
+   3.603169883316532*^9}, {3.6031700337561293`*^9, 3.6031700355122547`*^9}, {
+   3.603170128837593*^9, 3.603170132011756*^9}, {3.603170245561259*^9, 
+   3.6031702457112675`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1636,22 +1712,22 @@ Cell[CellGroupData[{
 Cell[579, 22, 100, 1, 86, "Section"],
 Cell[682, 25, 1388, 20, 52, "Input",
  InitializationCell->True],
-Cell[2073, 47, 9335, 226, 1172, "Input",
+Cell[2073, 47, 9703, 231, 1212, "Input",
  InitializationCell->True],
-Cell[11411, 275, 1158, 23, 172, "Input",
+Cell[11779, 280, 1158, 23, 172, "Input",
  InitializationCell->True],
-Cell[12572, 300, 22681, 353, 1012, "Input",
+Cell[12940, 305, 22681, 353, 1012, "Input",
  InitializationCell->True],
-Cell[35256, 655, 26138, 416, 1592, "Input",
+Cell[35624, 660, 26138, 416, 1592, "Input",
  InitializationCell->True],
-Cell[61397, 1073, 24126, 379, 1312, "Input",
+Cell[61765, 1078, 24126, 379, 1312, "Input",
  InitializationCell->True],
-Cell[85526, 1454, 7139, 149, 732, "Input",
+Cell[85894, 1459, 12069, 220, 1192, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[92702, 1608, 30, 0, 86, "Section"],
-Cell[92735, 1610, 207, 4, 52, "Input",
+Cell[98000, 1684, 30, 0, 86, "Section"],
+Cell[98033, 1686, 207, 4, 52, "Input",
  InitializationCell->True]
 }, Open  ]]
 }
