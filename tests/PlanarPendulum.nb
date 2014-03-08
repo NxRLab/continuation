@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     24287,        495]
-NotebookOptionsPosition[     23999,        481]
-NotebookOutlinePosition[     24344,        496]
-CellTagsIndexPosition[     24301,        493]
+NotebookDataLength[     24416,        499]
+NotebookOptionsPosition[     24128,        485]
+NotebookOutlinePosition[     24473,        500]
+CellTagsIndexPosition[     24430,        497]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -43,9 +43,9 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"SetDirectory", "[", 
     RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], 
-  "\n"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\n", 
  RowBox[{
-  RowBox[{"n", " ", "=", " ", "20"}], ";", " ", 
+  RowBox[{"n", " ", "=", " ", "10"}], ";", " ", 
   RowBox[{"(*", " ", 
    RowBox[{"#", " ", "of", " ", "links"}], " ", "*)"}], "\[IndentingNewLine]", 
   RowBox[{"r", " ", "=", " ", "1"}], ";", " ", 
@@ -198,7 +198,10 @@ Cell[BoxData[{
    3.6032028112754936`*^9}, {3.603202844432393*^9, 3.60320286457055*^9}, {
    3.6032029362666473`*^9, 3.603202942255995*^9}, 3.603202985030448*^9, {
    3.6032030648900175`*^9, 3.6032030667481236`*^9}, {3.603203128064636*^9, 
-   3.6032031302747617`*^9}, {3.6032031925443277`*^9, 3.6032032024438925`*^9}}],
+   3.6032031302747617`*^9}, {3.6032031925443277`*^9, 
+   3.6032032024438925`*^9}, {3.6032316703464937`*^9, 
+   3.6032316704089923`*^9}, {3.603237567501438*^9, 3.6032375677914534`*^9}, {
+   3.603239483189328*^9, 3.6032395018843994`*^9}}],
 
 Cell[BoxData[{
  RowBox[{
@@ -258,58 +261,59 @@ Cell[BoxData[{
            RowBox[{"{", 
             RowBox[{"s", ",", " ", "0", ",", " ", "t"}], "}"}]}], "]"}]}]}]}],
        ";"}], "]"}]}], "\[IndentingNewLine]", "]"}], 
-  "\[IndentingNewLine]"}], "\n", 
+  "\n"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"nan", " ", "=", " ", "n"}], ";", " ", 
+  RowBox[{
+   RowBox[{"nan", " ", "=", " ", "n"}], ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "stop", " ", "dynamic", " ", "from", " ", "updating", " ", "when", " ", 
-    "#", " ", "of", " ", "links", " ", "change"}], " ", "*)"}], 
-  "\[IndentingNewLine]", 
-  RowBox[{"Animate", "[", "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"Show", "[", 
+    "#", " ", "of", " ", "links", " ", "change"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Animate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
      RowBox[{
-      RowBox[{
-       RowBox[{"NLink`Private`DrawFigure2D", "[", 
-        RowBox[{
-         RowBox[{"flow", "[", "s", "]"}], ",", " ", 
+      RowBox[{"NLink`Private`DrawFigure2D", "[", 
+       RowBox[{
+        RowBox[{"flow", "[", "s", "]"}], ",", " ", 
+        RowBox[{"{", 
          RowBox[{"{", 
-          RowBox[{"{", 
-           RowBox[{"nan", ",", " ", 
-            RowBox[{"{", 
-             RowBox[{"0", ",", " ", 
-              RowBox[{"-", "r"}], ",", " ", "0"}], "}"}]}], "}"}], "}"}]}], 
-        "]"}], "[", 
-       RowBox[{"[", "2", "]"}], "]"}], ",", " ", 
-      RowBox[{"PlotRange", "\[Rule]", 
-       RowBox[{"{", 
-        RowBox[{
+          RowBox[{"nan", ",", " ", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", " ", 
+             RowBox[{"-", "r"}], ",", " ", "0"}], "}"}]}], "}"}], "}"}]}], 
+       "]"}], "[", 
+      RowBox[{"[", "2", "]"}], "]"}], ",", " ", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "nan"}], ",", " ", "nan"}], "}"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "nan"}], "-", 
+           RowBox[{"1", "/", "10"}]}], ",", " ", "1"}], "}"}]}], "}"}]}], ",",
+      " ", 
+     RowBox[{"Epilog", "\[Rule]", " ", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", " ", 
+        RowBox[{"Line", "[", 
          RowBox[{"{", 
           RowBox[{
-           RowBox[{"-", "nan"}], ",", " ", "nan"}], "}"}], ",", " ", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{
-            RowBox[{"-", "nan"}], "-", 
-            RowBox[{"1", "/", "10"}]}], ",", " ", "1"}], "}"}]}], "}"}]}], 
-      ",", " ", 
-      RowBox[{"Epilog", "\[Rule]", " ", 
-       RowBox[{"{", 
-        RowBox[{"Red", ",", " ", 
-         RowBox[{"Line", "[", 
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{"0", ",", 
-              RowBox[{"-", "5"}]}], "}"}], ",", 
-            RowBox[{"{", 
-             RowBox[{"0", ",", "5"}], "}"}]}], "}"}], "]"}]}], "}"}]}]}], 
-     "]"}], ",", "\[IndentingNewLine]", 
-    RowBox[{"{", 
-     RowBox[{"s", ",", " ", "0", ",", " ", "t"}], "}"}], ",", " ", 
-    RowBox[{"AnimationRunning", "\[Rule]", "False"}], ",", " ", 
-    RowBox[{"AnimationRepetitions", "\[Rule]", "1"}]}], "]"}]}]}], "Input",
+           RowBox[{"{", 
+            RowBox[{"0", ",", 
+             RowBox[{"-", "5"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "5"}], "}"}]}], "}"}], "]"}]}], "}"}]}]}], 
+    "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"s", ",", " ", "0", ",", " ", "t"}], "}"}], ",", " ", 
+   RowBox[{"AnimationRunning", "\[Rule]", "False"}], ",", " ", 
+   RowBox[{"AnimationRepetitions", "\[Rule]", "1"}]}], "]"}]}], "Input",
  CellChangeTimes->{{3.5934327045113277`*^9, 3.5934327084331985`*^9}, {
    3.5934327519176607`*^9, 3.593432753464552*^9}, {3.5935408083970065`*^9, 
    3.5935408140845175`*^9}, {3.5935408457877045`*^9, 
@@ -495,8 +499,8 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 7305, 180, 692, "Input"],
-Cell[7865, 202, 16130, 277, 412, "Input"]
+Cell[557, 20, 7463, 183, 692, "Input"],
+Cell[8023, 205, 16101, 278, 412, "Input"]
 }
 ]
 *)
