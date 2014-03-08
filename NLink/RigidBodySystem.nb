@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    148466,       3020]
-NotebookOptionsPosition[    146925,       2964]
-NotebookOutlinePosition[    147300,       2980]
-CellTagsIndexPosition[    147257,       2977]
+NotebookDataLength[    148154,       3000]
+NotebookOptionsPosition[    146614,       2944]
+NotebookOutlinePosition[    146989,       2960]
+CellTagsIndexPosition[    146946,       2957]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -133,75 +133,39 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{
     RowBox[{"XJ", "[", "\"\<pz\>\"", "]"}], " ", "=", "  ", 
-    RowBox[{"transZ", "[", "#", "]"}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"dXJ", "[", "\"\<rx\>\"", "]"}], " ", "=", "  ", 
-   RowBox[{"drotX", "[", "#", "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"dXJ", "[", "\"\<ry\>\"", "]"}], " ", "=", "  ", 
-   RowBox[{"drotY", "[", "#", "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"dXJ", "[", "\"\<rz\>\"", "]"}], " ", "=", "  ", 
-   RowBox[{"drotZ", "[", "#", "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"dXJ", "[", "\"\<px\>\"", "]"}], " ", "=", "  ", 
-   RowBox[{"dtransX", "[", "#", "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"dXJ", "[", "\"\<py\>\"", "]"}], " ", "=", "  ", 
-   RowBox[{"dtransY", "[", "#", "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
+    RowBox[{"transZ", "[", "#", "]"}]}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"dXJ", "[", "\"\<pz\>\"", "]"}], " ", "=", "  ", 
-    RowBox[{"dtransZ", "[", "#", "]"}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"dXJ", "[", "\"\<rx\>\"", "]"}], " ", "=", "  ", 
+     RowBox[{"drotX", "[", "#", "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"dXJ", "[", "\"\<ry\>\"", "]"}], " ", "=", "  ", 
+     RowBox[{"drotY", "[", "#", "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"dXJ", "[", "\"\<rz\>\"", "]"}], " ", "=", "  ", 
+     RowBox[{"drotZ", "[", "#", "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"dXJ", "[", "\"\<px\>\"", "]"}], " ", "=", "  ", 
+     RowBox[{"dtransX", "[", "#", "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"dXJ", "[", "\"\<py\>\"", "]"}], " ", "=", "  ", 
+     RowBox[{"dtransY", "[", "#", "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"dXJ", "[", "\"\<pz\>\"", "]"}], " ", "=", "  ", 
+     RowBox[{"dtransZ", "[", "#", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   "*)"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"AddJoint", "[", 
-    RowBox[{"type_", ",", " ", "s_", ",", " ", 
-     RowBox[{"xj_:", "None"}]}], "]"}], " ", ":=", " ", 
-   RowBox[{"Module", "[", 
+    RowBox[{"type_", ",", " ", "s_", ",", " ", "xj_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"(", 
     RowBox[{
-     RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
      RowBox[{
-      RowBox[{"If", "[", 
-       RowBox[{
-        RowBox[{"StringQ", "[", "s", "]"}], ",", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"joint", "[", "type", "]"}], " ", "=", " ", 
-          RowBox[{"joint", "[", "s", "]"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"XJ", "[", "type", "]"}], " ", "=", " ", 
-          RowBox[{"XJ", "[", "s", "]"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"dXJ", "[", "type", "]"}], " ", "=", " ", 
-          RowBox[{"dXJ", "[", "s", "]"}]}]}], ",", " ", 
-        RowBox[{"(*", " ", "else", " ", "*)"}], "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"joint", "[", "type", "]"}], " ", "=", " ", "s"}], ";", 
-         "\[IndentingNewLine]", 
-         RowBox[{"If", "[", 
-          RowBox[{
-           RowBox[{"xj", " ", "=!=", " ", "None"}], ",", 
-           "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"XJ", "[", "type", "]"}], " ", "=", " ", "xj"}], ";", 
-            "\[IndentingNewLine]", 
-            RowBox[{
-             RowBox[{"dXJ", "[", "type", "]"}], " ", "=", " ", 
-             RowBox[{"D", "[", 
-              RowBox[{"xj", ",", " ", "#1"}], "]"}]}], ";"}]}], 
-          "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}],
-       ";"}]}], "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
+      RowBox[{"joint", "[", "type", "]"}], " ", "=", " ", "s"}], ";", " ", 
+     RowBox[{
+      RowBox[{"XJ", "[", "type", "]"}], " ", "=", " ", "xj"}]}], ")"}]}], 
+  ";"}]}], "Input",
  InitializationCell->True,
  CellChangeTimes->{
   3.591667817527995*^9, 3.591668923825349*^9, {3.5916697599352307`*^9, 
@@ -262,7 +226,9 @@ Cell[BoxData[{
    3.6029803097355824`*^9, 3.602980319935164*^9}, {3.602980695640682*^9, 
    3.602980782329646*^9}, {3.6029808292983365`*^9, 3.602980898043277*^9}, {
    3.602980951548337*^9, 3.60298099245968*^9}, {3.602981065342868*^9, 
-   3.6029810678259916`*^9}}],
+   3.6029810678259916`*^9}, {3.603299027859565*^9, 3.6032990311067505`*^9}, {
+   3.603299072887146*^9, 3.6032990781684465`*^9}, {3.603299150755603*^9, 
+   3.603299188582769*^9}}],
 
 Cell[BoxData[{
  RowBox[{
@@ -1168,7 +1134,8 @@ freedom.\>\""}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]",
    3.6029456555473385`*^9, 3.6029456665473604`*^9}, {3.603244773462284*^9, 
    3.6032447926203785`*^9}, {3.603245694097005*^9, 3.603245699375308*^9}, {
    3.6032459477105293`*^9, 3.6032459579891357`*^9}, {3.603258402707737*^9, 
-   3.603258403861804*^9}, {3.6032587856866693`*^9, 3.6032588137552757`*^9}}],
+   3.603258403861804*^9}, {3.6032587856866693`*^9, 3.6032588137552757`*^9}, {
+   3.603301298523596*^9, 3.603301332131522*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -1659,6 +1626,10 @@ Cell[BoxData[
       "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
    RowBox[{
+    RowBox[{
+     RowBox[{"GetConfigurationVariable", "[", "]"}], " ", ":=", " ", 
+     "\[DoubleStruckQ]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
     RowBox[{"SetAttributes", "[", 
      RowBox[{"MakeFunction", ",", "HoldAll"}], "]"}], ";"}], 
    "\[IndentingNewLine]", 
@@ -1681,17 +1652,20 @@ Cell[BoxData[
          RowBox[{
           RowBox[{"Part", "::", "partw"}], ",", " ", 
           RowBox[{"Part", "::", "partd"}]}], "]"}], ";", 
-        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        "\[IndentingNewLine]", 
+        RowBox[{"s", " ", "=", " ", 
+         RowBox[{"Evaluate", "[", "fbody", "]"}]}], ";", 
+        "\[IndentingNewLine]", 
         RowBox[{"(*", " ", 
          RowBox[{"find", " ", "position", " ", "variables", " ", 
-          RowBox[{"x", "\[LeftDoubleBracket]", 
+          RowBox[{"\[DoubleStruckQ]", "\[LeftDoubleBracket]", 
            RowBox[{"i", ",", " ", "j"}], "\[RightDoubleBracket]"}]}], " ", 
          "*)"}], "\[IndentingNewLine]", 
         RowBox[{"pos", " ", "=", " ", 
          RowBox[{"Position", "[", 
-          RowBox[{"fbody", ",", " ", 
+          RowBox[{"s", ",", " ", 
            RowBox[{"HoldPattern", "[", 
-            RowBox[{"#", "\[LeftDoubleBracket]", 
+            RowBox[{"\[DoubleStruckQ]", "\[LeftDoubleBracket]", 
              RowBox[{"_Integer", ",", " ", "_Integer"}], 
              "\[RightDoubleBracket]"}], "]"}]}], "]"}]}], ";", 
         "\[IndentingNewLine]", "\[IndentingNewLine]", 
@@ -1705,9 +1679,8 @@ Cell[BoxData[
            "*)"}], "\[IndentingNewLine]", 
           RowBox[{
            RowBox[{"k", " ", "=", " ", 
-            RowBox[{"Dimensions", "[", "fbody", "]"}]}], ";", 
+            RowBox[{"Dimensions", "[", "s", "]"}]}], ";", 
            "\[IndentingNewLine]", 
-           RowBox[{"s", " ", "=", " ", "fbody"}], ";", "\[IndentingNewLine]", 
            RowBox[{"sdot", " ", "=", " ", 
             RowBox[{"ConstantArray", "[", 
              RowBox[{"0", ",", " ", "k"}], "]"}]}], ";", 
@@ -1732,7 +1705,7 @@ Cell[BoxData[
           RowBox[{
            RowBox[{"slots", " ", "=", " ", 
             RowBox[{"Extract", "[", 
-             RowBox[{"fbody", ",", " ", "pos"}], "]"}]}], ";", 
+             RowBox[{"s", ",", " ", "pos"}], "]"}]}], ";", 
            "\[IndentingNewLine]", 
            RowBox[{"ij", " ", "=", " ", 
             RowBox[{
@@ -1860,7 +1833,7 @@ Cell[BoxData[
               "&"}], " ", "/@", " ", "k"}]}], ";", "\[IndentingNewLine]", 
            RowBox[{"s", " ", "=", " ", 
             RowBox[{"ReplacePart", "[", 
-             RowBox[{"fbody", ",", " ", 
+             RowBox[{"s", ",", " ", 
               RowBox[{"Thread", "[", 
                RowBox[{"pos", "\[Rule]", " ", "q"}], "]"}]}], "]"}]}], ";", 
            "\[IndentingNewLine]", "\[IndentingNewLine]", 
@@ -2300,7 +2273,15 @@ Cell[BoxData[
    3.603297008364916*^9, 3.603297011456106*^9}, {3.603297369470595*^9, 
    3.6032973866935997`*^9}, {3.603297418610409*^9, 3.6032974341793003`*^9}, {
    3.6032974700023527`*^9, 3.603297540570393*^9}, {3.6032975881211176`*^9, 
-   3.6032975946934967`*^9}}]
+   3.6032975946934967`*^9}, {3.6032985302240667`*^9, 
+   3.6032985308131003`*^9}, {3.6032985696983275`*^9, 3.603298624861487*^9}, {
+   3.6032986558232594`*^9, 3.6032986584484096`*^9}, {3.603298692216344*^9, 
+   3.60329869362342*^9}, {3.603298749265629*^9, 3.603298750268668*^9}, {
+   3.603298853652589*^9, 3.603298902482386*^9}, {3.603301357722988*^9, 
+   3.6033013883927574`*^9}, {3.603302380462552*^9, 3.6033023810095882`*^9}, {
+   3.6033027906450467`*^9, 3.6033027963733916`*^9}, {3.6033036885004635`*^9, 
+   3.6033037291127853`*^9}, {3.603303786267062*^9, 3.603303792990466*^9}, {
+   3.603303964662278*^9, 3.603303973814803*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2512,8 +2493,7 @@ Cell[BoxData[{
        ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"{", 
         RowBox[{"pts", ",", " ", "lines"}], "}"}]}]}], "\[IndentingNewLine]", 
-     "]"}]}], ";"}], "\[IndentingNewLine]", 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
@@ -2739,7 +2719,7 @@ Cell[BoxData[{
    3.596394880845963*^9}, {3.59639497014408*^9, 3.5963950704478226`*^9}, {
    3.596395107179925*^9, 3.596395210457838*^9}, {3.5963955485272007`*^9, 
    3.5963955588727913`*^9}, {3.596395987850362*^9, 3.5963959952887983`*^9}, {
-   3.602208153525608*^9, 3.602208158650631*^9}}]
+   3.602208153525608*^9, 3.602208158650631*^9}, 3.6032978051945467`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2963,7 +2943,7 @@ freedom.\>\""}], ";", "\[IndentingNewLine]",
 }, Open  ]]
 },
 AutoGeneratedPackage->Automatic,
-WindowSize->{497, 631},
+WindowSize->{496, 631},
 WindowMargins->{{Automatic, 0}, {Automatic, 0}},
 FrontEndVersion->"9.0 for Microsoft Windows (32-bit) (January 25, 2013)",
 StyleDefinitions->"Default.nb"
@@ -2986,41 +2966,41 @@ Cell[682, 25, 1699, 24, 52, "Input",
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[2418, 54, 206, 3, 86, "Section"],
-Cell[2627, 59, 9888, 205, 752, "Input",
+Cell[2627, 59, 8732, 171, 572, "Input",
  InitializationCell->True],
-Cell[12518, 266, 8075, 169, 392, "Input",
+Cell[11362, 232, 8075, 169, 392, "Input",
  InitializationCell->True],
-Cell[20596, 437, 1108, 30, 192, "Input"]
+Cell[19440, 403, 1108, 30, 192, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[21741, 472, 324, 4, 86, "Section"],
-Cell[22068, 478, 8631, 166, 352, "Input",
+Cell[20585, 438, 324, 4, 86, "Section"],
+Cell[20912, 444, 8631, 166, 352, "Input",
  InitializationCell->True],
-Cell[30702, 646, 8722, 158, 452, "Input",
+Cell[29546, 612, 8722, 158, 452, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[39461, 809, 196, 3, 86, "Section"],
-Cell[39660, 814, 20873, 356, 912, "Input",
+Cell[38305, 775, 196, 3, 86, "Section"],
+Cell[38504, 780, 20923, 357, 932, "Input",
  InitializationCell->True],
-Cell[60536, 1172, 59389, 1130, 4112, "Input",
+Cell[59430, 1139, 60186, 1144, 4112, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[119962, 2307, 105, 1, 86, "Section"],
-Cell[120070, 2310, 3373, 94, 392, "Input",
+Cell[119653, 2288, 105, 1, 86, "Section"],
+Cell[119761, 2291, 3373, 94, 392, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[123480, 2409, 248, 3, 86, "Section"],
-Cell[123731, 2414, 13945, 327, 1392, "Input",
+Cell[123171, 2390, 248, 3, 86, "Section"],
+Cell[123422, 2395, 13943, 326, 932, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[137713, 2746, 30, 0, 86, "Section"],
-Cell[137746, 2748, 207, 4, 52, "Input",
+Cell[137402, 2726, 30, 0, 86, "Section"],
+Cell[137435, 2728, 207, 4, 52, "Input",
  InitializationCell->True],
-Cell[137956, 2754, 8953, 207, 972, "Input"]
+Cell[137645, 2734, 8953, 207, 972, "Input"]
 }, Open  ]]
 }
 ]
