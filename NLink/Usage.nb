@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      5840,        153]
-NotebookOptionsPosition[      5051,        120]
-NotebookOutlinePosition[      5426,        136]
-CellTagsIndexPosition[      5383,        133]
+NotebookDataLength[      6591,        170]
+NotebookOptionsPosition[      5802,        137]
+NotebookOutlinePosition[      6177,        153]
+CellTagsIndexPosition[      6134,        150]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -42,9 +42,9 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"!", 
      RowBox[{"ValueQ", "[", 
-      RowBox[{"GetAccelerationFunction", "::", "usage"}], "]"}]}], ",", " ", 
+      RowBox[{"NLinkCompile", "::", "usage"}], "]"}]}], ",", " ", 
     RowBox[{
-     RowBox[{"GetAccelerationFunction", "::", "usage"}], " ", "=", " ", 
+     RowBox[{"NLinkCompile", "::", "usage"}], " ", "=", " ", 
      "\"\<GetAccelerationFunction[] returns a compiled function that computes \
 dx/dt = f[x, u] based on the model supplied to SetModel[...].  The state x \
 and input u are lists of 2*nq and nq real numbers, respectively.\>\""}]}], 
@@ -60,7 +60,8 @@ and input u are lists of 2*nq and nq real numbers, respectively.\>\""}]}],
    3.5923246109031315`*^9}, {3.5923246650022326`*^9, 
    3.5923246734347143`*^9}, {3.5928658982112303`*^9, 
    3.5928659060237303`*^9}, {3.592865953258197*^9, 3.5928659877895174`*^9}, {
-   3.592866171242998*^9, 3.592866376868396*^9}}]
+   3.592866171242998*^9, 3.592866376868396*^9}, {3.603345973498501*^9, 
+   3.6033459802172613`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -69,7 +70,21 @@ Cell["RigidBodySystem", "Subsection",
  CellChangeTimes->{{3.5922799289165382`*^9, 3.592279956756115*^9}, 
    3.5923240354861813`*^9}],
 
-Cell[BoxData[
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"!", 
+      RowBox[{"ValueQ", "[", 
+       RowBox[{"\[DoubleStruckQ]", "::", "usage"}], "]"}]}], ",", " ", 
+     RowBox[{
+      RowBox[{"\[DoubleStruckQ]", "::", "usage"}], " ", "=", " ", 
+      "\"\<Variable used to compute derivatives of spatial vectors and \
+transforms.  The form \[DoubleStruckQ]\[LeftDoubleBracket]i, j\
+\[RightDoubleBracket] the jth degree of freedom of body i.  If a function \
+contains a #1 it is expanded to the current (i, j) when callled.\>\""}]}], 
+    "]"}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"If", "[", 
    RowBox[{
@@ -90,7 +105,7 @@ i coordinates through a translation x followed by a (extrinsic) rotation \
 velocity mapping (dx/dt)_b(i).  R(i) is a 1 x 6 vector.  nparam is an \
 optional argument representing the number of parameters in the system.  If \
 derivatives are not needed this value defaults to zero.  If nparam is \
-nonzero, then dx must be nonempty.\>\""}]}], "]"}], ";"}]], "Input",
+nonzero, then dx must be nonempty.\>\""}]}], "]"}], ";"}]}], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.592290865938843*^9, 3.592290866173859*^9}, {
    3.5923240481889095`*^9, 3.5923240493809786`*^9}, 3.592324675408825*^9, {
@@ -102,7 +117,9 @@ nonzero, then dx must be nonempty.\>\""}]}], "]"}], ";"}]], "Input",
    3.5927723009990153`*^9, 3.592772305383264*^9}, {3.59277235223895*^9, 
    3.592772407925152*^9}, {3.592777079951703*^9, 3.5927771168248014`*^9}, {
    3.593004058398771*^9, 3.5930043945088043`*^9}, {3.5930069755294766`*^9, 
-   3.5930069766544914`*^9}, {3.5930078720156054`*^9, 3.593008035547177*^9}}]
+   3.5930069766544914`*^9}, {3.5930078720156054`*^9, 3.593008035547177*^9}, {
+   3.603345892357727*^9, 3.6033459578265924`*^9}, {3.603346003764182*^9, 
+   3.6033461055925093`*^9}}]
 }, Open  ]]
 }, Open  ]],
 
@@ -141,18 +158,18 @@ Cell[682, 25, 270, 5, 31, "Input",
  InitializationCell->True],
 Cell[CellGroupData[{
 Cell[977, 34, 160, 2, 49, "Subsection"],
-Cell[1140, 38, 1311, 24, 192, "Input",
+Cell[1140, 38, 1341, 25, 192, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2488, 67, 133, 2, 49, "Subsection"],
-Cell[2624, 71, 2025, 33, 572, "Input",
+Cell[2518, 68, 133, 2, 49, "Subsection"],
+Cell[2654, 72, 2746, 49, 792, "Input",
  InitializationCell->True]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4698, 110, 30, 0, 86, "Section"],
-Cell[4731, 112, 304, 5, 31, "Input",
+Cell[5449, 127, 30, 0, 86, "Section"],
+Cell[5482, 129, 304, 5, 31, "Input",
  InitializationCell->True]
 }, Open  ]]
 }
