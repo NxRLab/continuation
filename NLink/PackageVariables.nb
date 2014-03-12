@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     37749,        884]
-NotebookOptionsPosition[     35702,        808]
-NotebookOutlinePosition[     36077,        824]
-CellTagsIndexPosition[     36034,        821]
+NotebookDataLength[     37705,        886]
+NotebookOptionsPosition[     35658,        810]
+NotebookOutlinePosition[     36033,        826]
+CellTagsIndexPosition[     35990,        823]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -132,33 +132,34 @@ Cell[BoxData[
    RowBox[{"parent", ";"}], " ", 
    RowBox[{"(*", " ", 
     RowBox[{"parent", " ", "array"}], " ", "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"bodies", ";", " ", 
-    RowBox[{"(*", " ", 
-     RowBox[{"os", " ", "bodies", " ", "array"}], " ", "*)"}], 
-    "\[IndentingNewLine]", "map", ";", " ", 
-    RowBox[{"(*", " ", 
-     RowBox[{
-     "map", " ", "from", " ", "original", " ", "to", " ", "extended", " ", 
-      "body"}], " ", "*)"}], "\[IndentingNewLine]", "nca", ";", " ", 
-    RowBox[{"(*", " ", 
-     RowBox[{"nearest", " ", "common", " ", "ancestor", " ", "map"}], " ", 
-     "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-    RowBox[{"(*", " ", 
-     RowBox[{"spatial", " ", "vector", " ", "quantities"}], " ", "*)"}], 
-    "\[IndentingNewLine]", "ag", ";", " ", 
-    RowBox[{"(*", " ", 
-     RowBox[{"gravity", " ", "in", " ", "spatial", " ", "coordinates"}], " ", 
-     "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-    RowBox[{"(*", " ", 
-     RowBox[{"operational", " ", "space", " ", "quantities"}], " ", "*)"}], 
-    "\[IndentingNewLine]", "r", ";", " ", 
+   RowBox[{"bodies", ";"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{"os", " ", "bodies", " ", "array"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"map", ";"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "map", " ", "from", " ", "original", " ", "to", " ", "extended", " ", 
+     "body"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"nca", ";"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{"nearest", " ", "common", " ", "ancestor", " ", "map"}], " ", 
+    "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"spatial", " ", "vector", " ", "quantities"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"ag", ";"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{"gravity", " ", "in", " ", "spatial", " ", "coordinates"}], " ", 
+    "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"operational", " ", "space", " ", "quantities"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"rJ", ";", " ", 
     RowBox[{"(*", " ", 
      RowBox[{
      "Jacobian", " ", "mapping", " ", "from", " ", "spatial", " ", "velocity",
        " ", "to", " ", "operational", " ", "space"}], " ", "*)"}], 
-    "\[IndentingNewLine]", "bframes", ";", 
-    RowBox[{"(*", " ", 
-     RowBox[{"os", " ", "frames", " ", "array"}], " ", "*)"}], 
     "\[IndentingNewLine]", "\[IndentingNewLine]", 
     RowBox[{"(*", " ", 
      RowBox[{"useful", " ", "matrices"}], " ", "*)"}], "\[IndentingNewLine]", 
@@ -355,7 +356,8 @@ Cell[BoxData[
    3.60328650797759*^9}, {3.6035019963517113`*^9, 3.6035020050079765`*^9}, {
    3.6035021806645694`*^9, 3.6035022302271695`*^9}, {3.6035023019616823`*^9, 
    3.6035023039304495`*^9}, {3.603503503214031*^9, 3.603503528604706*^9}, {
-   3.6035043448563023`*^9, 3.6035043531219435`*^9}}]
+   3.6035043448563023`*^9, 3.6035043531219435`*^9}, {3.603514633347638*^9, 
+   3.603514657972686*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -836,54 +838,54 @@ Cell[1473, 46, 596, 13, 52, "Input",
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[2106, 64, 440, 7, 49, "Subsection"],
-Cell[2549, 73, 13376, 284, 1092, "Input",
+Cell[2549, 73, 13332, 286, 1072, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[15962, 362, 426, 5, 49, "Subsection"],
+Cell[15918, 364, 426, 5, 49, "Subsection"],
 Cell[CellGroupData[{
-Cell[16413, 371, 336, 6, 39, "Subsubsection"],
-Cell[16752, 379, 1717, 33, 132, "Input"]
+Cell[16369, 373, 336, 6, 39, "Subsubsection"],
+Cell[16708, 381, 1717, 33, 132, "Input"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[18518, 418, 419, 5, 49, "Subsection"],
+Cell[18474, 420, 419, 5, 49, "Subsection"],
 Cell[CellGroupData[{
-Cell[18962, 427, 553, 7, 39, "Subsubsection"],
-Cell[19518, 436, 1045, 19, 52, "Input"]
+Cell[18918, 429, 553, 7, 39, "Subsubsection"],
+Cell[19474, 438, 1045, 19, 52, "Input"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[20612, 461, 422, 5, 49, "Subsection"],
+Cell[20568, 463, 422, 5, 49, "Subsection"],
 Cell[CellGroupData[{
-Cell[21059, 470, 195, 2, 39, "Subsubsection"],
-Cell[21257, 474, 927, 18, 72, "Input"]
+Cell[21015, 472, 195, 2, 39, "Subsubsection"],
+Cell[21213, 476, 927, 18, 72, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[22221, 497, 336, 6, 39, "Subsubsection"],
-Cell[22560, 505, 3635, 66, 572, "Input"]
+Cell[22177, 499, 336, 6, 39, "Subsubsection"],
+Cell[22516, 507, 3635, 66, 572, "Input"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[26244, 577, 592, 8, 49, "Subsection"],
-Cell[26839, 587, 1837, 37, 212, "Input"]
+Cell[26200, 579, 592, 8, 49, "Subsection"],
+Cell[26795, 589, 1837, 37, 212, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[28713, 629, 452, 6, 49, "Subsection"],
-Cell[29168, 637, 3345, 84, 412, "Input"]
+Cell[28669, 631, 452, 6, 49, "Subsection"],
+Cell[29124, 639, 3345, 84, 412, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[32550, 726, 495, 8, 49, "Subsection"],
-Cell[33048, 736, 534, 14, 72, "Input"]
+Cell[32506, 728, 495, 8, 49, "Subsection"],
+Cell[33004, 738, 534, 14, 72, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[33619, 755, 544, 9, 49, "Subsection"],
-Cell[34166, 766, 1163, 25, 132, "Input"]
+Cell[33575, 757, 544, 9, 49, "Subsection"],
+Cell[34122, 768, 1163, 25, 132, "Input"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[35378, 797, 30, 0, 86, "Section"],
-Cell[35411, 799, 275, 6, 52, "Input",
+Cell[35334, 799, 30, 0, 86, "Section"],
+Cell[35367, 801, 275, 6, 52, "Input",
  InitializationCell->True]
 }, Open  ]]
 }
