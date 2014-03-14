@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     38757,        901]
-NotebookOptionsPosition[     36710,        825]
-NotebookOutlinePosition[     37085,        841]
-CellTagsIndexPosition[     37042,        838]
+NotebookDataLength[     38975,        906]
+NotebookOptionsPosition[     36901,        829]
+NotebookOutlinePosition[     37276,        845]
+CellTagsIndexPosition[     37233,        842]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -799,14 +799,18 @@ Cell[BoxData[
       RowBox[{"(", 
        RowBox[{"post", " ", "expansion", " ", "of", " ", "joints"}], ")"}], 
       ".", "  ", "The"}], " ", "format", " ", "is", " ", 
-     RowBox[{"\[DoubleStruckQ]", "\[LeftDoubleBracket]", 
-      RowBox[{"i", ",", " ", "j"}], "\[RightDoubleBracket]"}]}], ",", " ", 
+     RowBox[{"\[DoubleStruckQ]", "[", 
+      RowBox[{"i", ",", " ", "j"}], "]"}]}], ",", " ", 
     RowBox[{
     "where", " ", "i", " ", "is", " ", "body", " ", "i", " ", "and", " ", "j",
       " ", "is", " ", "the", " ", "jth", " ", "dof", " ", "of", " ", "body", 
      " ", "i"}]}], " ", "*)"}]}]], "Input",
+ InitializationCell->True,
  CellChangeTimes->{{3.603504406012673*^9, 3.6035044154970646`*^9}, {
-  3.603504451434638*^9, 3.6035046679663086`*^9}}]
+  3.603504451434638*^9, 3.6035046679663086`*^9}, {3.6036492012907243`*^9, 
+  3.6036492170906286`*^9}, {3.6036492568419027`*^9, 3.603649266465457*^9}, {
+  3.6036493985700216`*^9, 3.603649400570133*^9}, {3.603650253065956*^9, 
+  3.6036502537529902`*^9}}]
 }, Open  ]]
 }, Open  ]],
 
@@ -895,12 +899,13 @@ Cell[34056, 753, 534, 14, 72, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[34627, 772, 544, 9, 49, "Subsection"],
-Cell[35174, 783, 1163, 25, 132, "Input"]
+Cell[35174, 783, 1354, 29, 132, "Input",
+ InitializationCell->True]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[36386, 814, 30, 0, 86, "Section"],
-Cell[36419, 816, 275, 6, 52, "Input",
+Cell[36577, 818, 30, 0, 86, "Section"],
+Cell[36610, 820, 275, 6, 52, "Input",
  InitializationCell->True]
 }, Open  ]]
 }
