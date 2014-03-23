@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     43363,        766]
-NotebookOptionsPosition[     42966,        749]
-NotebookOutlinePosition[     43333,        765]
-CellTagsIndexPosition[     43290,        762]
+NotebookDataLength[     44787,        805]
+NotebookOptionsPosition[     44389,        788]
+NotebookOutlinePosition[     44757,        804]
+CellTagsIndexPosition[     44714,        801]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -38,18 +38,27 @@ Cell[BoxData[{
     RowBox[{"DynamicUpdating", "\[Rule]", "False"}]}], "]"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"n", " ", "=", " ", "2"}], ";", " ", 
+  RowBox[{
+   RowBox[{"n", " ", "=", " ", "5"}], ";"}], " ", 
   RowBox[{"(*", " ", 
-   RowBox[{"#", " ", "of", " ", "links"}], " ", "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"r", " ", "=", " ", "1"}], ";", " ", 
+   RowBox[{"#", " ", "of", " ", "links"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"r", " ", "=", " ", "1"}], ";"}], " ", 
   RowBox[{"(*", " ", 
-   RowBox[{"link", " ", "length"}], " ", "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"m", " ", "=", " ", "1"}], ";", " ", 
+   RowBox[{"link", " ", "length"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"m", " ", "=", " ", "1"}], ";"}], " ", 
   RowBox[{"(*", " ", 
-   RowBox[{"link", " ", "mass"}], " ", "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"g", " ", "=", " ", "9.81"}], ";", 
-  RowBox[{"(*", " ", "gravity", " ", "*)"}], "\[IndentingNewLine]", 
-  "\[IndentingNewLine]", 
+   RowBox[{"link", " ", "mass"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", " ", "=", " ", "9.81"}], ";"}], 
+  RowBox[{"(*", " ", "gravity", " ", "*)"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{"frames", " ", "=", " ", 
    RowBox[{"ConstantArray", "[", 
     RowBox[{"0", ",", " ", 
@@ -94,16 +103,19 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{
     RowBox[{"inertia", " ", "//", " ", "N"}], "//", " ", "MatrixForm"}], 
-   ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   ";"}], "\[IndentingNewLine]", "\n", 
   RowBox[{"(*", " ", 
-   RowBox[{"robot", " ", "description"}], " ", "*)"}]}], "\n", 
+   RowBox[{"robot", " ", "description"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"parent", " ", "=", " ", 
     RowBox[{
-     RowBox[{"Range", "[", "n", "]"}], " ", "-", " ", "1"}]}], ";", " ", 
-   RowBox[{"(*", " ", 
-    RowBox[{"kinematic", " ", "chain"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Range", "[", "n", "]"}], " ", "-", " ", "1"}]}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"kinematic", " ", "chain"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"joints", " ", "=", " ", 
     RowBox[{"ConstantArray", "[", 
      RowBox[{"\"\<rz\>\"", ",", " ", "n"}], "]"}]}], ";"}], 
@@ -165,7 +177,7 @@ Cell[BoxData[{
    3.6037782766893764`*^9}, {3.6037788219560657`*^9, 
    3.6037788863780656`*^9}, {3.6037789226125116`*^9, 
    3.6037791580817184`*^9}, {3.603779188941159*^9, 3.603779188988035*^9}, 
-   3.6038158700968647`*^9}],
+   3.6038158700968647`*^9, {3.603856294699532*^9, 3.603856295403575*^9}}],
 
 Cell[BoxData[{
  RowBox[{
@@ -178,7 +190,7 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"Switch", "[", 
     RowBox[{
-    "\"\<CRB\>\"", ",", "\[IndentingNewLine]", "\"\<CRB\>\"", ",", " ", 
+    "\"\<dPdCRB2\>\"", ",", "\[IndentingNewLine]", "\"\<CRB\>\"", ",", " ", 
      "\[IndentingNewLine]", 
      RowBox[{
       RowBox[{"f", " ", "=", " ", 
@@ -193,7 +205,14 @@ Cell[BoxData[{
       "\[IndentingNewLine]", 
       RowBox[{"p", " ", "=", " ", 
        RowBox[{"NLinkCompile", "[", "NLink`Private`PCode", "]"}]}]}], ",", 
-     "\[IndentingNewLine]", "\"\<ABA\>\"", ",", " ", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\"\<PCRB2\>\"", ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"f", " ", "=", " ", 
+       RowBox[{"NLinkCompile", "[", "NLink`Private`PCRBCode", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"p", " ", "=", " ", 
+       RowBox[{"#2", "&"}]}]}], ",", "\[IndentingNewLine]", "\"\<ABA\>\"", 
+     ",", " ", "\[IndentingNewLine]", 
      RowBox[{
       RowBox[{"f", " ", "=", " ", 
        RowBox[{"NLinkCompile", "[", "NLink`Private`ABACode", "]"}]}], ";", 
@@ -231,6 +250,23 @@ Cell[BoxData[{
       RowBox[{"p", " ", "=", " ", 
        RowBox[{"NLinkCompile", "[", "NLink`Private`dPCode", "]"}]}], ";", 
       "\[IndentingNewLine]", 
+      RowBox[{"nq", " ", "=", " ", 
+       RowBox[{"nq", 
+        RowBox[{"(", 
+         RowBox[{"1", "+", "NLink`Private`n\[Lambda]"}], ")"}]}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"nx", " ", "=", " ", 
+       RowBox[{"nx", 
+        RowBox[{"(", 
+         RowBox[{"1", "+", "NLink`Private`n\[Lambda]"}], ")"}]}]}]}], ",", 
+     "\[IndentingNewLine]", "\"\<dPdCRB2\>\"", ",", " ", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"f", " ", "=", " ", 
+       RowBox[{"NLinkCompile", "[", "NLink`Private`dPdCRBCode", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"p", " ", "=", " ", 
+       RowBox[{"#2", "&"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"nq", " ", "=", " ", 
        RowBox[{"nq", 
         RowBox[{"(", 
@@ -300,7 +336,10 @@ Cell[BoxData[{
    3.6037787732372327`*^9, {3.6037788930030785`*^9, 3.603778916565626*^9}, {
    3.603779117737893*^9, 3.6037791179878964`*^9}, {3.603814911266864*^9, 
    3.60381491178249*^9}, {3.6038149989857864`*^9, 3.6038150002045383`*^9}, {
-   3.603815206939335*^9, 3.6038152074705715`*^9}}],
+   3.603815206939335*^9, 3.6038152074705715`*^9}, {3.6038559137377186`*^9, 
+   3.603856029922386*^9}, {3.6038561229717097`*^9, 3.6038561243857803`*^9}, {
+   3.603856349053645*^9, 3.6038563795983953`*^9}, {3.6038564290882454`*^9, 
+   3.603856430605318*^9}, {3.6038566064903884`*^9, 3.6038566085075207`*^9}}],
 
 Cell[BoxData[{
  RowBox[{
@@ -749,7 +788,7 @@ Cell[BoxData[{
 },
 WindowSize->{707, 730},
 WindowMargins->{{29, Automatic}, {-3, Automatic}},
-DynamicUpdating->True,
+DynamicUpdating->False,
 FrontEndVersion->"9.0 for Microsoft Windows (32-bit) (January 25, 2013)",
 StyleDefinitions->"Default.nb"
 ]
@@ -764,10 +803,10 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 6883, 147, 552, "Input"],
-Cell[7443, 169, 6998, 133, 592, "Input"],
-Cell[14444, 304, 14097, 215, 232, "Input"],
-Cell[28544, 521, 14418, 226, 152, "Input"]
+Cell[557, 20, 7064, 159, 552, "Input"],
+Cell[7624, 181, 8240, 160, 752, "Input"],
+Cell[15867, 343, 14097, 215, 232, "Input"],
+Cell[29967, 560, 14418, 226, 152, "Input"]
 }
 ]
 *)
