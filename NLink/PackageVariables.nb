@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     39655,        927]
-NotebookOptionsPosition[     37581,        850]
-NotebookOutlinePosition[     37956,        866]
-CellTagsIndexPosition[     37913,        863]
+NotebookDataLength[     41190,        978]
+NotebookOptionsPosition[     39115,        901]
+NotebookOutlinePosition[     39490,        917]
+CellTagsIndexPosition[     39447,        914]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -155,8 +155,7 @@ Cell[BoxData[
    RowBox[{"(*", " ", 
     RowBox[{"operational", " ", "space", " ", "quantities"}], " ", "*)"}], 
    "\[IndentingNewLine]", 
-   RowBox[{"bx", ";"}], "\[IndentingNewLine]", 
-   RowBox[{"bsvd", ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"bx", ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", " ", 
     RowBox[{"useful", " ", "matrices"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
@@ -263,15 +262,11 @@ Cell[BoxData[
      RowBox[{"ConstantArray", "[", 
       RowBox[{"0", ",", " ", "nq"}], "]"}]}], ";"}], "  ", 
    "\[IndentingNewLine]", 
-   RowBox[{"Inq", ";", 
-    RowBox[{"(*", " ", 
-     RowBox[{
-      RowBox[{"=", " ", 
-       RowBox[{"IdentityMatrix", "[", "nq", "]"}]}], ";"}], " ", "*)"}], 
-    RowBox[{"(*", " ", 
-     RowBox[{
-      RowBox[{"zero", " ", "C"}], "-", 
-      RowBox[{"space", " ", "vector"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"zero", " ", "C"}], "-", 
+     RowBox[{"space", " ", "vector"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
     RowBox[{"Znq", " ", "=", " ", 
      RowBox[{"ConstantArray", "[", 
       RowBox[{"0", ",", " ", 
@@ -281,15 +276,22 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"zmb", " ", "=", " ", 
      RowBox[{"ConstantArray", "[", 
-      RowBox[{"0", ",", " ", "mb"}], "]"}]}], ";", "  ", 
-    RowBox[{"(*", " ", 
-     RowBox[{"zero", " ", "OSIM", " ", "vector"}], " ", "*)"}], 
-    "\[IndentingNewLine]", 
+      RowBox[{"0", ",", " ", "mb"}], "]"}]}], ";"}], "  ", 
+   RowBox[{"(*", " ", 
+    RowBox[{"zero", " ", "OSIM", " ", "vector"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
     RowBox[{"Zmb", " ", "=", " ", 
      RowBox[{"ConstantArray", "[", 
       RowBox[{"0", ",", " ", 
        RowBox[{"{", 
         RowBox[{"mb", ",", " ", "n\[Lambda]"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Imb", ";"}], 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"=", " ", 
+      RowBox[{"IdentityMatrix", "[", "mb", "]"}]}], ";"}], " ", "*)"}], 
    "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", " ", "constants", " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
@@ -394,7 +396,8 @@ Cell[BoxData[
    3.604500298178999*^9}, {3.6045003454047065`*^9, 3.604500354664236*^9}, 
    3.6045003900272613`*^9, {3.6045009052277656`*^9, 3.604500909834029*^9}, {
    3.6045275890591846`*^9, 3.6045275912333097`*^9}, {3.6045282742644243`*^9, 
-   3.604528286189123*^9}}]
+   3.604528286189123*^9}, {3.6047548661950617`*^9, 3.6047548739015226`*^9}, {
+   3.60476373676005*^9, 3.6047637369660616`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -430,10 +433,12 @@ Cell[BoxData[{
     RowBox[{"w", ".", "r", ".", "t"}], " ", "to", " ", "parameters"}], " ", 
    "*)"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"sJ", ";", " ", 
-   RowBox[{"(*", " ", 
-    RowBox[{"velocity", " ", "of", " ", "frame"}], " ", "*)"}], 
-   "\[IndentingNewLine]", "dsJ", ";"}], " ", 
+  RowBox[{"sJ", ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"velocity", " ", "of", " ", "frame"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dsJ", ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{"derivative", " ", "of", " ", "sJ", " ", 
     RowBox[{"w", ".", "r", ".", "t"}], " ", "to", " ", "parameters"}], " ", 
@@ -542,62 +547,87 @@ created in Fcrb[...] or Faba[...]\
   3.6031504107697377`*^9}, {3.6031505663246455`*^9, 3.603150570191865*^9}, {
   3.6031514474351034`*^9, 3.60315146260697*^9}}],
 
-Cell[BoxData[
- RowBox[{"sJdot", ";", " ", 
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"sJdot", ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{"sJdot", "*", "qd", " ", "is", " ", 
     RowBox[{"Coriolis", "/", "centrifugal"}], " ", "force", " ", "due", " ", 
     "to", " ", "link", " ", "j", " ", "moving", " ", "in", " ", "frame", " ", 
-    "j"}], " ", "*)"}], "\[IndentingNewLine]", "dsJdot", ";", " ", 
+    "j"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dsJdot", ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{"derivative", " ", "of", " ", "sJdot", " ", 
     RowBox[{"w", ".", "r", ".", "t"}], " ", "to", " ", "parameters"}], " ", 
-   "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", "v", ";", " ", 
+   "*)"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"v", ";"}], " ", 
   RowBox[{"(*", " ", 
-   RowBox[{"spatial", " ", "velocities"}], " ", "*)"}], "\[IndentingNewLine]",
-   "dv", ";", " ", 
+   RowBox[{"spatial", " ", "velocities"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dv", ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{"derivative", " ", "of", " ", "spatial", " ", "velocities", "  ", 
     RowBox[{"w", ".", "r", ".", "t"}], " ", "to", " ", "parameters"}], " ", 
-   "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", "a", ";", " ", 
+   "*)"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a", ";"}], " ", 
   RowBox[{"(*", " ", 
-   RowBox[{"spatial", " ", "accelerations"}], " ", "*)"}], 
-  "\[IndentingNewLine]", "da", ";", " ", 
+   RowBox[{"spatial", " ", "accelerations"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"da", ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{"derivative", " ", "of", " ", "spatial", " ", "accelerations", "  ", 
     RowBox[{"w", ".", "r", ".", "t"}], " ", "to", " ", "parameters"}], " ", 
-   "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", "f", ";", " ", 
+   "*)"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f", ";"}], " ", 
   RowBox[{"(*", " ", 
-   RowBox[{"spatial", " ", "forces"}], " ", "*)"}], "\[IndentingNewLine]", 
-  "df", ";", " ", 
+   RowBox[{"spatial", " ", "forces"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"df", ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{"derivative", " ", "of", " ", "spatial", " ", "forces", "  ", 
     RowBox[{"w", ".", "r", ".", "t"}], " ", "to", " ", "parameters"}], " ", 
-   "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", "IC", ";", " ", 
+   "*)"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"IC", ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "articulated", " ", "body", " ", "inertia", " ", "in", " ", "link", " ", 
-    "coordinates"}], " ", "*)"}], "\[IndentingNewLine]", "dIC", ";", " ", 
+    "coordinates"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dIC", ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "derivative", " ", "of", " ", "articulated", " ", "body", " ", "inertia", "  ", 
     RowBox[{"w", ".", "r", ".", "t"}], " ", "to", " ", "parameters"}], " ", 
-   "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", "qdd", ";", " ", 
+   "*)"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"qdd", ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{"C", "-", 
-    RowBox[{"space", " ", "accelerations"}]}], " ", "*)"}], 
-  "\[IndentingNewLine]", "dqdd", ";", " ", 
+    RowBox[{"space", " ", "accelerations"}]}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dqdd", ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{"derivative", " ", "of", " ", "acceleration", " ", 
     RowBox[{"w", ".", "r", ".", "t"}], " ", "to", " ", "parameters"}], " ", 
-   "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", "uJ", ";", " ", 
+   "*)"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"uJ", ";"}], " ", 
   RowBox[{"(*", " ", 
-   RowBox[{"joint", " ", "forces"}], " ", "*)"}], "\[IndentingNewLine]", 
-  "duJ", ";", 
+   RowBox[{"joint", " ", "forces"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"duJ", ";"}], 
   RowBox[{"(*", " ", 
    RowBox[{"derivative", " ", "of", " ", "joint", " ", "forces", " ", 
     RowBox[{"w", ".", "r", ".", "t"}], " ", "to", " ", "parameters"}], " ", 
-   "*)"}]}]], "Input",
+   "*)"}]}]}], "Input",
  CellChangeTimes->{{3.59331263893406*^9, 3.5933127044654484`*^9}, {
   3.593312844106333*^9, 3.5933129532159214`*^9}, {3.602944749873706*^9, 
   3.602944785139388*^9}, {3.6029449336396794`*^9, 3.602944988389786*^9}, {
@@ -682,37 +712,54 @@ Cell[BoxData[{
    "infeasible", " ", "accelerations", " ", "due", " ", "to", " ", 
     "constraints"}], " ", "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"dac", ";"}], " ", 
+  RowBox[{"ac1", ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "variable", " ", "shared", " ", "across", " ", "P", " ", "and", " ", 
+    "dP"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ac2", ";"}], 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "variable", " ", "shared", " ", "across", " ", "P", " ", "and", " ", 
+    "dP"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"ac3", ";", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "variable", " ", "shared", " ", "across", " ", "P", " ", "and", " ", 
+    "dP"}], " ", "*)"}], "\[IndentingNewLine]", "dac", ";", " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "derivative", " ", "of", " ", "infeasible", " ", "accelerations", " ", 
     RowBox[{"w", ".", "r", ".", "t"}], " ", "to", " ", "parameters"}], " ", 
-   "*)"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"X", ";"}], "\[IndentingNewLine]", 
+   "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", "X", 
+  ";"}], "\[IndentingNewLine]", 
  RowBox[{"dX", ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"J", ";"}], " ", 
+ RowBox[{"dXLdot", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Xdot", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"dXdot", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"J", ";", " ", 
   RowBox[{"(*", " ", 
    RowBox[{
     RowBox[{"Jacobian", " ", "mapping", " ", "from", " ", "C"}], "-", 
     RowBox[{"space", " ", "velocities", " ", 
      RowBox[{"(", "qd", ")"}], " ", "to", " ", "O"}], "-", 
     RowBox[{"space", " ", "velocities", " ", 
-     RowBox[{"J", ".", "qd"}]}]}], " ", "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"dJ", ";"}], " ", 
+     RowBox[{"J", ".", "qd"}]}]}], " ", "*)"}], "\[IndentingNewLine]", "dJ", 
+  ";", " ", 
   RowBox[{"(*", " ", 
    RowBox[{"derivative", " ", "of", " ", "Jacobian", " ", 
     RowBox[{"w", ".", "r", ".", "t"}], " ", "to", " ", "parameters"}], " ", 
-   "*)"}]}], "\[IndentingNewLine]", 
+   "*)"}], "\[IndentingNewLine]", "Jdot", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"dJdot", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"rJ", ";", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Jacobian", " ", "mapping", " ", "from", " ", "spatial", " ", "velocity", 
+    " ", "to", " ", "operational", " ", "space"}], " ", "*)"}], 
+  "\[IndentingNewLine]", "drJ", ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"rJ", ";", " ", 
-   RowBox[{"(*", " ", 
-    RowBox[{
-    "Jacobian", " ", "mapping", " ", "from", " ", "spatial", " ", "velocity", 
-     " ", "to", " ", "operational", " ", "space"}], " ", "*)"}], 
-   "\[IndentingNewLine]", "drJ", ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+  RowBox[{"rJdot", ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{"\[CapitalLambda]", ";", " ", 
   RowBox[{"(*", " ", 
    RowBox[{"operational", "-", 
@@ -757,7 +804,11 @@ Cell[BoxData[{
  CellChangeTimes->{{3.59330949694775*^9, 3.593309814198371*^9}, {
    3.593309855198449*^9, 3.593309869917227*^9}, {3.6025980253468947`*^9, 
    3.602598049065688*^9}, 3.6026013472908244`*^9, {3.6036062821288843`*^9, 
-   3.60360628449302*^9}, {3.6036072675113325`*^9, 3.6036072684553685`*^9}}]
+   3.60360628449302*^9}, {3.6036072675113325`*^9, 3.6036072684553685`*^9}, {
+   3.6047550449553003`*^9, 3.6047550548028607`*^9}, {3.604809308453493*^9, 
+   3.6048093342569895`*^9}, {3.604809979131914*^9, 3.6048099836051564`*^9}, {
+   3.604840162171156*^9, 3.604840164780555*^9}, {3.604840221999401*^9, 
+   3.604840233265051*^9}, {3.6048407357504034`*^9, 3.6048407379379234`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -878,55 +929,55 @@ Cell[1473, 46, 596, 13, 52, "Input",
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[2106, 64, 440, 7, 49, "Subsection"],
-Cell[2549, 73, 14764, 323, 1192, "Input",
+Cell[2549, 73, 14859, 326, 1172, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[17350, 401, 426, 5, 49, "Subsection"],
+Cell[17445, 404, 426, 5, 49, "Subsection"],
 Cell[CellGroupData[{
-Cell[17801, 410, 336, 6, 39, "Subsubsection"],
-Cell[18140, 418, 1717, 33, 132, "Input"]
+Cell[17896, 413, 336, 6, 39, "Subsubsection"],
+Cell[18235, 421, 1740, 35, 132, "Input"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[19906, 457, 419, 5, 49, "Subsection"],
+Cell[20024, 462, 419, 5, 49, "Subsection"],
 Cell[CellGroupData[{
-Cell[20350, 466, 553, 7, 39, "Subsubsection"],
-Cell[20906, 475, 1045, 19, 52, "Input"]
+Cell[20468, 471, 553, 7, 39, "Subsubsection"],
+Cell[21024, 480, 1045, 19, 52, "Input"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[22000, 500, 422, 5, 49, "Subsection"],
+Cell[22118, 505, 422, 5, 49, "Subsection"],
 Cell[CellGroupData[{
-Cell[22447, 509, 195, 2, 39, "Subsubsection"],
-Cell[22645, 513, 927, 18, 72, "Input"]
+Cell[22565, 514, 195, 2, 39, "Subsubsection"],
+Cell[22763, 518, 927, 18, 72, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[23609, 536, 336, 6, 39, "Subsubsection"],
-Cell[23948, 544, 3635, 66, 572, "Input"]
+Cell[23727, 541, 336, 6, 39, "Subsubsection"],
+Cell[24066, 549, 3972, 91, 572, "Input"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[27632, 616, 592, 8, 49, "Subsection"],
-Cell[28227, 626, 1837, 37, 212, "Input"]
+Cell[28087, 646, 592, 8, 49, "Subsection"],
+Cell[28682, 656, 1837, 37, 212, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[30101, 668, 452, 6, 49, "Subsection"],
-Cell[30556, 676, 3645, 83, 512, "Input"]
+Cell[30556, 698, 452, 6, 49, "Subsection"],
+Cell[31011, 706, 4724, 104, 692, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[34238, 764, 495, 8, 49, "Subsection"],
-Cell[34736, 774, 534, 14, 72, "Input"]
+Cell[35772, 815, 495, 8, 49, "Subsection"],
+Cell[36270, 825, 534, 14, 72, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[35307, 793, 544, 9, 49, "Subsection"],
-Cell[35854, 804, 1354, 29, 132, "Input",
+Cell[36841, 844, 544, 9, 49, "Subsection"],
+Cell[37388, 855, 1354, 29, 132, "Input",
  InitializationCell->True]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[37257, 839, 30, 0, 86, "Section"],
-Cell[37290, 841, 275, 6, 52, "Input",
+Cell[38791, 890, 30, 0, 86, "Section"],
+Cell[38824, 892, 275, 6, 52, "Input",
  InitializationCell->True]
 }, Open  ]]
 }

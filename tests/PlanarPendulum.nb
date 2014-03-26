@@ -10,14 +10,21 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     44787,        805]
-NotebookOptionsPosition[     44389,        788]
-NotebookOutlinePosition[     44757,        804]
-CellTagsIndexPosition[     44714,        801]
+NotebookDataLength[     45352,        817]
+NotebookOptionsPosition[     44917,        799]
+NotebookOutlinePosition[     45286,        815]
+CellTagsIndexPosition[     45243,        812]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetSystemOptions", "[", 
+   RowBox[{"\"\<CompileOptions\>\"", "\[Rule]", 
+    RowBox[{"\"\<CompileReportExternal\>\"", "\[Rule]", "True"}]}], "]"}], 
+  ";"}]], "Input"],
+
 Cell[BoxData[{
  RowBox[{
   RowBox[{"SetDirectory", "[", 
@@ -103,10 +110,9 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{
     RowBox[{"inertia", " ", "//", " ", "N"}], "//", " ", "MatrixForm"}], 
-   ";"}], "\[IndentingNewLine]", "\n", 
+   ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
   RowBox[{"(*", " ", 
-   RowBox[{"robot", " ", "description"}], " ", 
-   "*)"}]}], "\[IndentingNewLine]", 
+   RowBox[{"robot", " ", "description"}], " ", "*)"}]}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{"parent", " ", "=", " ", 
@@ -339,7 +345,12 @@ Cell[BoxData[{
    3.603815206939335*^9, 3.6038152074705715`*^9}, {3.6038559137377186`*^9, 
    3.603856029922386*^9}, {3.6038561229717097`*^9, 3.6038561243857803`*^9}, {
    3.603856349053645*^9, 3.6038563795983953`*^9}, {3.6038564290882454`*^9, 
-   3.603856430605318*^9}, {3.6038566064903884`*^9, 3.6038566085075207`*^9}}],
+   3.603856430605318*^9}, {3.6038566064903884`*^9, 3.6038566085075207`*^9}, {
+   3.6048108382050962`*^9, 3.604810914842489*^9}, {3.6048109483974066`*^9, 
+   3.6048109642783346`*^9}, 3.604839437232242*^9, 3.60483997851455*^9, {
+   3.6048415330957174`*^9, 3.6048415758926754`*^9}, 3.60484163273654*^9, {
+   3.6048463882529593`*^9, 3.604846436397716*^9}, {3.604846469716627*^9, 
+   3.604846472451783*^9}}],
 
 Cell[BoxData[{
  RowBox[{
@@ -787,7 +798,7 @@ Cell[BoxData[{
    3.6034212320493994`*^9}, {3.603421892296206*^9, 3.603421898192547*^9}}]
 },
 WindowSize->{707, 730},
-WindowMargins->{{29, Automatic}, {-3, Automatic}},
+WindowMargins->{{248, Automatic}, {Automatic, 64}},
 DynamicUpdating->False,
 FrontEndVersion->"9.0 for Microsoft Windows (32-bit) (January 25, 2013)",
 StyleDefinitions->"Default.nb"
@@ -803,10 +814,11 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 7064, 159, 552, "Input"],
-Cell[7624, 181, 8240, 160, 752, "Input"],
-Cell[15867, 343, 14097, 215, 232, "Input"],
-Cell[29967, 560, 14418, 226, 152, "Input"]
+Cell[557, 20, 203, 5, 31, "Input"],
+Cell[763, 27, 7060, 158, 552, "Input"],
+Cell[7826, 187, 8566, 165, 752, "Input"],
+Cell[16395, 354, 14097, 215, 232, "Input"],
+Cell[30495, 571, 14418, 226, 152, "Input"]
 }
 ]
 *)
