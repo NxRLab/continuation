@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     38924,        760]
-NotebookOptionsPosition[     38088,        726]
-NotebookOutlinePosition[     38452,        742]
-CellTagsIndexPosition[     38409,        739]
+NotebookDataLength[     38961,        763]
+NotebookOptionsPosition[     38125,        729]
+NotebookOutlinePosition[     38489,        745]
+CellTagsIndexPosition[     38446,        742]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -61,14 +61,17 @@ Cell[BoxData[
    RowBox[{"robot", " ", "description"}], " ", "*)"}], "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
-    RowBox[{"m", " ", "=", " ", "1"}], ";", "  ", 
-    RowBox[{"(*", " ", "mass", " ", "*)"}], "\[IndentingNewLine]", 
-    RowBox[{"g", "=", "9.81"}], ";", 
-    RowBox[{"(*", " ", "gravity", " ", "*)"}], "\[IndentingNewLine]", 
-    RowBox[{"R", " ", "=", " ", "1"}], ";", 
-    RowBox[{"(*", " ", 
-     RowBox[{"radius", " ", "of", " ", "circle"}], " ", "*)"}], 
-    "\[IndentingNewLine]", "\n", 
+    RowBox[{"m", " ", "=", " ", "1"}], ";"}], "  ", 
+   RowBox[{"(*", " ", "mass", " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"g", "=", "9.81"}], ";"}], 
+   RowBox[{"(*", " ", "gravity", " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"R", " ", "=", " ", "1"}], ";"}], 
+   RowBox[{"(*", " ", 
+    RowBox[{"radius", " ", "of", " ", "circle"}], " ", "*)"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{
     RowBox[{"parent", " ", "=", " ", 
      RowBox[{"{", "0", "}"}]}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
@@ -747,20 +750,20 @@ Cell[964, 31, 596, 15, 92, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[1597, 51, 283, 4, 86, "Section"],
-Cell[1883, 57, 16571, 253, 352, "Input"]
+Cell[1883, 57, 16608, 256, 352, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[18491, 315, 330, 4, 86, "Section"],
-Cell[18824, 321, 9993, 193, 452, "Input"],
-Cell[28820, 516, 961, 23, 72, "Input"]
+Cell[18528, 318, 330, 4, 86, "Section"],
+Cell[18861, 324, 9993, 193, 452, "Input"],
+Cell[28857, 519, 961, 23, 72, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[29818, 544, 240, 3, 86, "Section"],
-Cell[30061, 549, 6047, 128, 389, "Input"]
+Cell[29855, 547, 240, 3, 86, "Section"],
+Cell[30098, 552, 6047, 128, 389, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[36145, 682, 191, 2, 86, "Section"],
-Cell[36339, 686, 1733, 37, 92, "Input"]
+Cell[36182, 685, 191, 2, 86, "Section"],
+Cell[36376, 689, 1733, 37, 92, "Input"]
 }, Open  ]]
 }
 ]

@@ -10,16 +10,74 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    165290,       3321]
-NotebookOptionsPosition[    163443,       3254]
-NotebookOutlinePosition[    163820,       3270]
-CellTagsIndexPosition[    163777,       3267]
+NotebookDataLength[    168184,       3381]
+NotebookOptionsPosition[    166265,       3312]
+NotebookOutlinePosition[    166642,       3328]
+CellTagsIndexPosition[    166599,       3325]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", "\n", 
+  RowBox[{
+   RowBox[{"RigidBodySystem", ".", 
+    RowBox[{"nb", ":", " ", 
+     RowBox[{"High", "-", 
+      RowBox[{
+      "level", " ", "functions", " ", "used", " ", "to", " ", "define", " ", 
+       "a", " ", "rigid", " ", 
+       RowBox[{"body", ".", "\n", "Copyright"}], " ", 
+       RowBox[{"(", "C", ")"}], " ", "2014", " ", "Nelson", " ", "Rosa", " ", 
+       RowBox[{"Jr", ".", "\n", "\n", "This"}], " ", "program", " ", "is", 
+       " ", "free", " ", "software"}]}], ":", " ", 
+     RowBox[{"you", " ", "can", " ", "redistribute", " ", "it", " ", 
+      RowBox[{"and", "/", "or"}], " ", "modify", "\n", "it", " ", "under", 
+      " ", "the", " ", "terms", " ", "of", " ", "the", " ", "GNU", " ", 
+      "General", " ", "Public", " ", "License", " ", "as", " ", "published", 
+      " ", "by", "\n", 
+      RowBox[{"the", " ", "Free", " ", "Software", " ", "Foundation"}]}]}]}], 
+   ",", " ", 
+   RowBox[{
+   "either", " ", "version", " ", "3", " ", "of", " ", "the", " ", 
+    "License"}], ",", " ", 
+   RowBox[{"or", "\n", 
+    RowBox[{"(", 
+     RowBox[{"at", " ", "your", " ", "option"}], ")"}], " ", "any", " ", 
+    "later", " ", 
+    RowBox[{"version", ".", " ", "This"}], " ", "program", " ", "is", " ", 
+    "distributed", " ", "in", " ", "the", " ", "\n", "hope", " ", "that", " ",
+     "it", " ", "will", " ", "be", " ", "useful"}], ",", " ", 
+   RowBox[{
+    RowBox[{"but", " ", "WITHOUT", " ", "ANY", " ", "WARRANTY"}], ";", " ", 
+    RowBox[{
+    "without", " ", "even", " ", "the", " ", "\n", "implied", " ", "warranty",
+      " ", "of", " ", "MERCHANTABILITY", " ", "or", " ", "FITNESS", " ", 
+     "FOR", " ", "A", " ", "PARTICULAR", " ", 
+     RowBox[{"PURPOSE", ".", "\n", "See"}], " ", "the", " ", "GNU", " ", 
+     "General", " ", "Public", " ", "License", " ", "for", " ", "more", " ", 
+     RowBox[{"details", ".", " ", "You"}], " ", "should", " ", "have", " ", 
+     "\n", "received", " ", "a", " ", "copy", " ", "of", " ", "the", " ", 
+     "GNU", " ", "General", " ", "Public", " ", "License", " ", "along", " ", 
+     "with", " ", "this", " ", 
+     RowBox[{"program", ".", "\n", "If"}], " ", "not"}]}], ",", " ", 
+   RowBox[{
+    RowBox[{"see", " ", "<", 
+     RowBox[{"http", ":"}]}], "//", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"www", ".", "gnu", ".", "org"}], "/", "licenses"}], "/"}], ">",
+      "."}]}]}], "\n", "*)"}]], "Code",
+ InitializationCell->True,
+ CellChangeTimes->{{3.6103707836964283`*^9, 3.610370783709448*^9}, {
+  3.610370828952024*^9, 3.610370962648698*^9}, {3.6103710877518406`*^9, 
+  3.610371111376195*^9}, {3.6103711469392376`*^9, 3.6103712325731497`*^9}, {
+  3.610371305900334*^9, 3.610371331708816*^9}, {3.610371368620943*^9, 
+  3.61037139802861*^9}, {3.6103714917959795`*^9, 3.6103715279410496`*^9}}],
 
 Cell[CellGroupData[{
+
 Cell["TODO", "Section",
  CellChangeTimes->{{3.5914870039053636`*^9, 3.591487004222381*^9}, {
   3.6033805874918413`*^9, 3.6033805878768606`*^9}}],
@@ -3269,58 +3327,60 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[CellGroupData[{
-Cell[579, 22, 144, 2, 86, "Section"],
-Cell[726, 26, 479, 9, 68, "Text"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[1242, 40, 100, 1, 86, "Section"],
-Cell[1345, 43, 1699, 24, 52, "Input",
- InitializationCell->True]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[3081, 72, 206, 3, 86, "Section"],
-Cell[3290, 77, 7755, 152, 332, "Input",
+Cell[557, 20, 2819, 56, 313, "Code",
  InitializationCell->True],
-Cell[11048, 231, 6835, 127, 212, "Input",
+Cell[CellGroupData[{
+Cell[3401, 80, 144, 2, 86, "Section"],
+Cell[3548, 84, 479, 9, 68, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4064, 98, 100, 1, 86, "Section"],
+Cell[4167, 101, 1699, 24, 52, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5903, 130, 206, 3, 86, "Section"],
+Cell[6112, 135, 7755, 152, 332, "Input",
  InitializationCell->True],
-Cell[17886, 360, 1263, 27, 52, "Input",
- InitializationCell->True]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[19186, 392, 301, 4, 86, "Section"],
-Cell[19490, 398, 11644, 231, 1132, "Input",
+Cell[13870, 289, 6835, 127, 212, "Input",
  InitializationCell->True],
-Cell[31137, 631, 3795, 97, 272, "Input",
+Cell[20708, 418, 1263, 27, 52, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[34969, 733, 324, 4, 86, "Section"],
-Cell[35296, 739, 2219, 64, 192, "Input",
+Cell[22008, 450, 301, 4, 86, "Section"],
+Cell[22312, 456, 11644, 231, 1132, "Input",
  InitializationCell->True],
-Cell[37518, 805, 8722, 158, 372, "Input",
+Cell[33959, 689, 3795, 97, 272, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[46277, 968, 196, 3, 86, "Section"],
-Cell[46476, 973, 31567, 554, 1412, "Input",
+Cell[37791, 791, 324, 4, 86, "Section"],
+Cell[38118, 797, 2219, 64, 192, "Input",
  InitializationCell->True],
-Cell[78046, 1529, 67199, 1269, 3912, "Input",
+Cell[40340, 863, 8722, 158, 372, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[145282, 2803, 105, 1, 86, "Section"],
-Cell[145390, 2806, 3373, 94, 332, "Input",
+Cell[49099, 1026, 196, 3, 86, "Section"],
+Cell[49298, 1031, 31567, 554, 1412, "Input",
+ InitializationCell->True],
+Cell[80868, 1587, 67199, 1269, 3912, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[148800, 2905, 248, 3, 86, "Section"],
-Cell[149051, 2910, 14099, 330, 1052, "Input",
+Cell[148104, 2861, 105, 1, 86, "Section"],
+Cell[148212, 2864, 3373, 94, 332, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[163187, 3245, 30, 0, 86, "Section"],
-Cell[163220, 3247, 207, 4, 52, "Input",
+Cell[151622, 2963, 248, 3, 86, "Section"],
+Cell[151873, 2968, 14099, 330, 1052, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[166009, 3303, 30, 0, 86, "Section"],
+Cell[166042, 3305, 207, 4, 52, "Input",
  InitializationCell->True]
 }, Open  ]]
 }

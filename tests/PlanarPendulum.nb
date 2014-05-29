@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     45352,        817]
-NotebookOptionsPosition[     44917,        799]
-NotebookOutlinePosition[     45286,        815]
-CellTagsIndexPosition[     45243,        812]
+NotebookDataLength[     45355,        818]
+NotebookOptionsPosition[     44921,        800]
+NotebookOutlinePosition[     45289,        816]
+CellTagsIndexPosition[     45246,        813]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -110,9 +110,10 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{
     RowBox[{"inertia", " ", "//", " ", "N"}], "//", " ", "MatrixForm"}], 
-   ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   ";"}], "\[IndentingNewLine]", "\n", 
   RowBox[{"(*", " ", 
-   RowBox[{"robot", " ", "description"}], " ", "*)"}]}], "\n", 
+   RowBox[{"robot", " ", "description"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"parent", " ", "=", " ", 
@@ -797,9 +798,9 @@ Cell[BoxData[{
    3.603202702391256*^9}, 3.603420628792856*^9, {3.603421231674391*^9, 
    3.6034212320493994`*^9}, {3.603421892296206*^9, 3.603421898192547*^9}}]
 },
-WindowSize->{707, 730},
-WindowMargins->{{248, Automatic}, {Automatic, 64}},
-DynamicUpdating->False,
+WindowSize->{707, 677},
+WindowMargins->{{Automatic, 118}, {-1, Automatic}},
+DynamicUpdating->True,
 FrontEndVersion->"9.0 for Microsoft Windows (32-bit) (January 25, 2013)",
 StyleDefinitions->"Default.nb"
 ]
@@ -815,10 +816,10 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[557, 20, 203, 5, 31, "Input"],
-Cell[763, 27, 7060, 158, 552, "Input"],
-Cell[7826, 187, 8566, 165, 752, "Input"],
-Cell[16395, 354, 14097, 215, 232, "Input"],
-Cell[30495, 571, 14418, 226, 152, "Input"]
+Cell[763, 27, 7064, 159, 552, "Input"],
+Cell[7830, 188, 8566, 165, 752, "Input"],
+Cell[16399, 355, 14097, 215, 232, "Input"],
+Cell[30499, 572, 14418, 226, 152, "Input"]
 }
 ]
 *)
