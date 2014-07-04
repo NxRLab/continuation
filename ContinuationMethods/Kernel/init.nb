@@ -10,16 +10,73 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      3700,         86]
-NotebookOptionsPosition[      3308,         67]
-NotebookOutlinePosition[      3704,         84]
-CellTagsIndexPosition[      3661,         81]
+NotebookDataLength[      6591,        145]
+NotebookOptionsPosition[      6132,        124]
+NotebookOutlinePosition[      6528,        141]
+CellTagsIndexPosition[      6485,        138]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", "\n", 
+  RowBox[{
+   RowBox[{"init", ".", 
+    RowBox[{"nb", ":", " ", 
+     RowBox[{"Initializes", " ", "ContinuationMethods", " ", 
+      RowBox[{"package", ".", "\n", "Copyright"}], " ", 
+      RowBox[{"(", "C", ")"}], " ", "2014", " ", "Nelson", " ", "Rosa", " ", 
+      RowBox[{"Jr", ".", "\n", "\n", "This"}], " ", "program", " ", "is", " ",
+       "free", " ", "software"}], ":", " ", 
+     RowBox[{"you", " ", "can", " ", "redistribute", " ", "it", " ", 
+      RowBox[{"and", "/", "or"}], " ", "modify", "\n", "it", " ", "under", 
+      " ", "the", " ", "terms", " ", "of", " ", "the", " ", "GNU", " ", 
+      "General", " ", "Public", " ", "License", " ", "as", " ", "published", 
+      " ", "by", "\n", 
+      RowBox[{"the", " ", "Free", " ", "Software", " ", "Foundation"}]}]}]}], 
+   ",", " ", 
+   RowBox[{
+   "either", " ", "version", " ", "3", " ", "of", " ", "the", " ", 
+    "License"}], ",", " ", 
+   RowBox[{"or", "\n", 
+    RowBox[{"(", 
+     RowBox[{"at", " ", "your", " ", "option"}], ")"}], " ", "any", " ", 
+    "later", " ", 
+    RowBox[{"version", ".", " ", "This"}], " ", "program", " ", "is", " ", 
+    "distributed", " ", "in", " ", "the", " ", "\n", "hope", " ", "that", " ",
+     "it", " ", "will", " ", "be", " ", "useful"}], ",", " ", 
+   RowBox[{
+    RowBox[{"but", " ", "WITHOUT", " ", "ANY", " ", "WARRANTY"}], ";", " ", 
+    RowBox[{
+    "without", " ", "even", " ", "the", " ", "\n", "implied", " ", "warranty",
+      " ", "of", " ", "MERCHANTABILITY", " ", "or", " ", "FITNESS", " ", 
+     "FOR", " ", "A", " ", "PARTICULAR", " ", 
+     RowBox[{"PURPOSE", ".", "\n", "See"}], " ", "the", " ", "GNU", " ", 
+     "General", " ", "Public", " ", "License", " ", "for", " ", "more", " ", 
+     RowBox[{"details", ".", " ", "You"}], " ", "should", " ", "have", " ", 
+     "\n", "received", " ", "a", " ", "copy", " ", "of", " ", "the", " ", 
+     "GNU", " ", "General", " ", "Public", " ", "License", " ", "along", " ", 
+     "with", " ", "this", " ", 
+     RowBox[{"program", ".", "\n", "If"}], " ", "not"}]}], ",", " ", 
+   RowBox[{
+    RowBox[{"see", " ", "<", 
+     RowBox[{"http", ":"}]}], "//", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"www", ".", "gnu", ".", "org"}], "/", "licenses"}], "/"}], ">",
+      "."}]}]}], "\n", "*)"}]], "Code",
+ InitializationCell->True,
+ CellChangeTimes->{{3.6103707836964283`*^9, 3.610370783709448*^9}, {
+  3.610370828952024*^9, 3.610370962648698*^9}, {3.6103710877518406`*^9, 
+  3.610371111376195*^9}, {3.6103711469392376`*^9, 3.6103712325731497`*^9}, {
+  3.610371305900334*^9, 3.610371331708816*^9}, {3.610371368620943*^9, 
+  3.61037139802861*^9}, {3.6103715538125486`*^9, 3.6103716079966354`*^9}, {
+  3.6103717337958384`*^9, 3.6103717435163946`*^9}, {3.6103759515345016`*^9, 
+  3.6103759842523575`*^9}}],
 
 Cell[CellGroupData[{
+
 Cell["Begin Package", "Section",
  CellChangeTimes->{{3.5914870039053636`*^9, 3.591487004222381*^9}, 
    3.5922895582469563`*^9}],
@@ -83,9 +140,11 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
+Cell[557, 20, 2821, 55, 313, "Code",
+ InitializationCell->True],
 Cell[CellGroupData[{
-Cell[579, 22, 128, 2, 86, "Section"],
-Cell[710, 26, 2582, 38, 31, "Input",
+Cell[3403, 79, 128, 2, 86, "Section"],
+Cell[3534, 83, 2582, 38, 31, "Input",
  InitializationCell->True]
 }, Open  ]]
 }
