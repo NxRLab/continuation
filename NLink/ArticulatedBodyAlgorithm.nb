@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    102224,       1868]
-NotebookOptionsPosition[    101162,       1827]
-NotebookOutlinePosition[    101538,       1843]
-CellTagsIndexPosition[    101495,       1840]
+NotebookDataLength[    101415,       1850]
+NotebookOptionsPosition[    100353,       1809]
+NotebookOutlinePosition[    100729,       1825]
+CellTagsIndexPosition[    100686,       1822]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1758,26 +1758,8 @@ Cell[BoxData[
         RowBox[{"initialize", " ", "variables"}], " ", "*)"}], 
        "\[IndentingNewLine]", 
        RowBox[{
-        RowBox[{"XL", " ", "=", " ", 
-         RowBox[{"Xip", "[", "x", "]"}]}], ";", " ", 
-        RowBox[{"(*", " ", 
-         RowBox[{"parent", " ", "to", " ", "child", " ", "transforms"}], " ", 
-         "*)"}], "\[IndentingNewLine]", 
-        RowBox[{"IC", " ", "=", " ", 
-         RowBox[{"\[DoubleStruckCapitalI]", "[", "x", "]"}]}], ";", " ", 
-        RowBox[{"(*", " ", 
-         RowBox[{"articulated", " ", "body", " ", "inertia"}], " ", "*)"}], 
-        "\[IndentingNewLine]", 
-        RowBox[{"sJ", " ", "=", " ", 
-         RowBox[{"s", "[", "x", "]"}]}], ";", " ", 
-        RowBox[{"(*", " ", 
-         RowBox[{"link", " ", "motion", " ", "freedoms"}], " ", "*)"}], 
-        "\[IndentingNewLine]", 
-        RowBox[{"sJdot", " ", "=", " ", 
-         RowBox[{"sdot", "[", "x", "]"}]}], ";", " ", 
-        RowBox[{"(*", " ", 
-         RowBox[{"time", " ", "derivative", " ", "of", " ", "sJ"}], " ", 
-         "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"EvaluateFunctions", "[", "x", "]"}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
         RowBox[{"Faba", "[", 
          RowBox[{"x", ",", " ", "u"}], "]"}], ";", "\[IndentingNewLine]", 
         RowBox[{"Join", "[", 
@@ -1811,7 +1793,7 @@ Cell[BoxData[
    3.603158325859023*^9}, {3.6031637467760954`*^9, 3.603163747948181*^9}, {
    3.6031666831362505`*^9, 3.6031666992811885`*^9}, {3.6031702850055175`*^9, 
    3.6031703139601774`*^9}, 3.615331982133737*^9, {3.615332019008805*^9, 
-   3.6153320232431917`*^9}}]
+   3.6153320232431917`*^9}, {3.6153392108017874`*^9, 3.6153392141767917`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1862,12 +1844,12 @@ Cell[67755, 1330, 29022, 400, 92, "Input",
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[96814, 1735, 302, 4, 70, "Section"],
-Cell[97119, 1741, 3750, 72, 272, "Input",
+Cell[97119, 1741, 2941, 54, 212, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[100906, 1818, 30, 0, 70, "Section"],
-Cell[100939, 1820, 207, 4, 52, "Input",
+Cell[100097, 1800, 30, 0, 70, "Section"],
+Cell[100130, 1802, 207, 4, 52, "Input",
  InitializationCell->True]
 }, Open  ]]
 }

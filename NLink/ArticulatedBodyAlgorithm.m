@@ -111,10 +111,7 @@ cargs:>{{x, _Real, 1}, {u, _Real, 1}},
 ccode:>
 (
 (* initialize variables *)
-XL = Xip[x]; (* parent to child transforms *)
-IC = \[DoubleStruckCapitalI][x]; (* articulated body inertia *)
-sJ = s[x]; (* link motion freedoms *)
-sJdot = sdot[x]; (* time derivative of sJ *)
+EvaluateFunctions[x];
 
 Faba[x, u];
 Join[x[[nq+1;;nx]], qdd]

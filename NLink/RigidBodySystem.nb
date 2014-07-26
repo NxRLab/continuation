@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    208145,       4013]
-NotebookOptionsPosition[    205934,       3934]
-NotebookOutlinePosition[    206308,       3950]
-CellTagsIndexPosition[    206265,       3947]
+NotebookDataLength[    208688,       4027]
+NotebookOptionsPosition[    206477,       3948]
+NotebookOutlinePosition[    206851,       3964]
+CellTagsIndexPosition[    206808,       3961]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -2954,8 +2954,10 @@ freedom.\>\""}], ";"}], "\[IndentingNewLine]",
      RowBox[{
       RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
       RowBox[{"(*", " ", 
-       RowBox[{"initialize", " ", "variables"}], " ", "*)"}], 
-      "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"RNEA", "/", "CRB"}], "/", "Josim"}], " ", 
+        "initializations"}], " ", "*)"}], "\[IndentingNewLine]", 
       RowBox[{
        RowBox[{"XL", " ", "=", " ", 
         RowBox[{"Xip", "[", "x", "]"}]}], ";", " ", 
@@ -2977,6 +2979,9 @@ freedom.\>\""}], ";"}], "\[IndentingNewLine]",
        RowBox[{"(*", " ", 
         RowBox[{"time", " ", "derivative", " ", "of", " ", "sJ"}], " ", 
         "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Josim", " ", "initializations"}], " ", "*)"}], 
+       "\[IndentingNewLine]", 
        RowBox[{"rJ", " ", "=", " ", 
         RowBox[{"r", "[", "x", "]"}]}], ";", "\[IndentingNewLine]", 
        "\[IndentingNewLine]", 
@@ -2992,6 +2997,11 @@ freedom.\>\""}], ";"}], "\[IndentingNewLine]",
    RowBox[{"Module", "[", 
     RowBox[{
      RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"RNEA", "/", "CRB"}], "/", "Josim"}], " ", 
+       "initializations"}], " ", "*)"}], "\[IndentingNewLine]", 
      RowBox[{
       RowBox[{"dXL", " ", "=", " ", 
        RowBox[{"dXip", "[", 
@@ -3005,6 +3015,9 @@ freedom.\>\""}], ";"}], "\[IndentingNewLine]",
       RowBox[{"dsJdot", " ", "=", " ", 
        RowBox[{"dsdot", "[", 
         RowBox[{"x", ",", " ", "dx"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{"Josim", " ", "initializations"}], " ", "*)"}], 
       "\[IndentingNewLine]", 
       RowBox[{"drJ", " ", "=", " ", 
        RowBox[{"dr", "[", 
@@ -3434,7 +3447,8 @@ freedom.\>\""}], ";"}], "\[IndentingNewLine]",
    3.6153262609260645`*^9, 3.6153262745979853`*^9}, {3.615335596985379*^9, 
    3.6153356017041345`*^9}, 3.6153357711419706`*^9, {3.6153358232514453`*^9, 
    3.615335860517146*^9}, {3.6153383043156395`*^9, 3.615338312925033*^9}, {
-   3.615338451347184*^9, 3.61533845439406*^9}}]
+   3.615338451347184*^9, 3.61533845439406*^9}, {3.6153387528477726`*^9, 
+   3.615338792988473*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -3997,22 +4011,22 @@ Cell[82390, 1629, 56438, 1001, 2572, "Input",
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[138865, 2635, 256, 3, 70, "Section"],
-Cell[139124, 2640, 46767, 796, 2112, "Input",
+Cell[139124, 2640, 47310, 810, 2172, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[185928, 3441, 105, 1, 70, "Section"],
-Cell[186036, 3444, 3373, 94, 352, "Input",
+Cell[186471, 3455, 105, 1, 70, "Section"],
+Cell[186579, 3458, 3373, 94, 352, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[189446, 3543, 248, 3, 70, "Section"],
-Cell[189697, 3548, 15944, 372, 1272, "Input",
+Cell[189989, 3557, 248, 3, 70, "Section"],
+Cell[190240, 3562, 15944, 372, 1272, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[205678, 3925, 30, 0, 70, "Section"],
-Cell[205711, 3927, 207, 4, 52, "Input",
+Cell[206221, 3939, 30, 0, 70, "Section"],
+Cell[206254, 3941, 207, 4, 52, "Input",
  InitializationCell->True]
 }, Open  ]]
 }

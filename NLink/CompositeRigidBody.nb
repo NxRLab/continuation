@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     95099,       1646]
-NotebookOptionsPosition[     94017,       1604]
-NotebookOutlinePosition[     94389,       1620]
-CellTagsIndexPosition[     94346,       1617]
+NotebookDataLength[     89627,       1524]
+NotebookOptionsPosition[     88547,       1482]
+NotebookOutlinePosition[     88919,       1498]
+CellTagsIndexPosition[     88876,       1495]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -141,26 +141,9 @@ Cell[BoxData[
       "\[IndentingNewLine]", 
       RowBox[{"(*", " ", 
        RowBox[{
-        RowBox[{"clear", "/", "set"}], " ", "spatial", " ", "variables"}], 
-       " ", "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"clear", "/", "set"}], " ", "CRB", " ", "variables"}], " ", 
+       "*)"}], "\[IndentingNewLine]", 
       RowBox[{
-       RowBox[{"IC", " ", "=", " ", 
-        RowBox[{"\[DoubleStruckCapitalI]", "[", "x", "]"}]}], ";", " ", 
-       RowBox[{"(*", " ", 
-        RowBox[{"articulated", " ", "body", " ", "inertia"}], " ", "*)"}], 
-       "\[IndentingNewLine]", 
-       RowBox[{"If", "[", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"Length", "[", "XL", "]"}], " ", "\[Equal]", " ", "0"}], 
-         ",", " ", 
-         RowBox[{"XL", " ", "=", " ", 
-          RowBox[{"Xip", "[", "x", "]"}]}]}], "]"}], ";", 
-       "\[IndentingNewLine]", "\[IndentingNewLine]", 
-       RowBox[{"(*", " ", 
-        RowBox[{
-         RowBox[{"clear", "/", "set"}], " ", "CRB", " ", "variables"}], " ", 
-        "*)"}], "\[IndentingNewLine]", 
        RowBox[{"M", " ", "=", " ", "ZM"}], ";", " ", 
        RowBox[{"(*", " ", 
         RowBox[{"joint", "-", 
@@ -638,7 +621,8 @@ Cell[BoxData[
    3.603147283803668*^9}, 3.603147822348508*^9, {3.603164389040876*^9, 
    3.6031643904889584`*^9}, {3.603199837640204*^9, 3.603199854650178*^9}, {
    3.6034221030176353`*^9, 3.603422103486384*^9}, {3.615321383104025*^9, 
-   3.6153213833227754`*^9}}],
+   3.6153213833227754`*^9}, {3.6153796100415745`*^9, 
+   3.6153796104947004`*^9}, {3.615379846822998*^9, 3.615379847651125*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -677,28 +661,9 @@ Cell[BoxData[
       ",", "\[IndentingNewLine]", 
       RowBox[{"(*", " ", 
        RowBox[{
-        RowBox[{"clear", "/", "set"}], " ", "spatial", " ", "variables"}], 
-       " ", "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"clear", "/", "set"}], " ", "CRB", " ", "variables"}], " ", 
+       "*)"}], "\[IndentingNewLine]", 
       RowBox[{
-       RowBox[{"dIC", " ", "=", " ", 
-        RowBox[{"d\[DoubleStruckCapitalI]", "[", 
-         RowBox[{"x", ",", "dx"}], "]"}]}], ";", " ", 
-       RowBox[{"(*", " ", 
-        RowBox[{"articulated", " ", "body", " ", "inertia"}], " ", "*)"}], 
-       "\[IndentingNewLine]", 
-       RowBox[{"If", "[", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"Length", "[", "dXL", "]"}], " ", "\[Equal]", " ", "0"}], 
-         ",", " ", 
-         RowBox[{"dXL", " ", "=", " ", 
-          RowBox[{"dXip", "[", 
-           RowBox[{"x", ",", " ", "dx"}], "]"}]}]}], "]"}], ";", 
-       "\[IndentingNewLine]", "\[IndentingNewLine]", 
-       RowBox[{"(*", " ", 
-        RowBox[{
-         RowBox[{"clear", "/", "set"}], " ", "CRB", " ", "variables"}], " ", 
-        "*)"}], "\[IndentingNewLine]", 
        RowBox[{"dM", " ", "=", " ", "ZdM"}], ";", " ", 
        RowBox[{"(*", " ", 
         RowBox[{"joint", "-", 
@@ -744,8 +709,8 @@ Cell[BoxData[
             RowBox[{"fh", ".", 
              RowBox[{
              "dsJ", "\[LeftDoubleBracket]", "i", 
-              "\[RightDoubleBracket]"}]}]}]}], ";", " ", 
-          "\[IndentingNewLine]", "\[IndentingNewLine]", 
+              "\[RightDoubleBracket]"}]}]}]}], ";", "\[IndentingNewLine]", 
+          "\[IndentingNewLine]", 
           RowBox[{"p", " ", "=", " ", 
            RowBox[{
            "parent", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]}],
@@ -847,7 +812,8 @@ Cell[BoxData[
   3.6034284059603753`*^9}, {3.6034287545613384`*^9, 3.603428757986534*^9}, {
   3.603428801011998*^9, 3.6034288123186426`*^9}, {3.6034288889240327`*^9, 
   3.6034289343746347`*^9}, {3.6034306600774603`*^9, 3.603430706266101*^9}, {
-  3.615321414104081*^9, 3.615321415025958*^9}}]
+  3.615321414104081*^9, 3.615321415025958*^9}, {3.6153798795574384`*^9, 
+  3.615379900385605*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1369,35 +1335,6 @@ Cell[BoxData[{
       ",", "\[IndentingNewLine]", 
       RowBox[{"ccode", "\[RuleDelayed]", "\[IndentingNewLine]", 
        RowBox[{"(", "\[IndentingNewLine]", 
-        RowBox[{"(*", 
-         RowBox[{"(*", " ", 
-          RowBox[{"RNEA", " ", "initializations"}], " ", "*)"}], 
-         "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"sJdot", " ", "=", " ", 
-           RowBox[{"sdot", "[", "x", "]"}]}], ";", " ", 
-          RowBox[{"(*", " ", 
-           RowBox[{"time", " ", "derivative", " ", "of", " ", "sJ"}], " ", 
-           "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-          RowBox[{"(*", " ", 
-           RowBox[{
-            RowBox[{"RNEA", "/", "CRB"}], " ", "initializations"}], " ", 
-           "*)"}], "\[IndentingNewLine]", 
-          RowBox[{"XL", " ", "=", " ", 
-           RowBox[{"Xip", "[", "x", "]"}]}], ";", " ", 
-          RowBox[{"(*", " ", 
-           RowBox[{"parent", " ", "to", " ", "child", " ", "transforms"}], 
-           " ", "*)"}], "\[IndentingNewLine]", 
-          RowBox[{"IC", " ", "=", " ", 
-           RowBox[{"\[DoubleStruckCapitalI]", "[", "x", "]"}]}], ";", " ", 
-          RowBox[{"(*", " ", 
-           RowBox[{"spatial", " ", "inertia"}], " ", "*)"}], 
-          "\[IndentingNewLine]", 
-          RowBox[{"sJ", " ", "=", " ", 
-           RowBox[{"s", "[", "x", "]"}]}], ";"}], " ", 
-         RowBox[{"(*", " ", 
-          RowBox[{"link", " ", "motion", " ", "freedoms"}], " ", "*)"}], 
-         "*)"}], "\[IndentingNewLine]", 
         RowBox[{
          RowBox[{"EvaluateFunctions", "[", "x", "]"}], ";", 
          "\[IndentingNewLine]", "\[IndentingNewLine]", 
@@ -1452,66 +1389,6 @@ Cell[BoxData[{
              RowBox[{"nq", "+", "1"}], ";;", 
              RowBox[{"-", "1"}]}], "\[RightDoubleBracket]"}], ",", " ", 
            "nd"}], "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-        RowBox[{"(*", 
-         RowBox[{"(*", " ", 
-          RowBox[{"RNEA", " ", "initializations"}], " ", "*)"}], 
-         "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"sJdot", " ", "=", " ", 
-           RowBox[{"sdot", "[", "xx", "]"}]}], ";", " ", 
-          RowBox[{"(*", " ", 
-           RowBox[{"time", " ", "derivative", " ", "of", " ", "sJ"}], " ", 
-           "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-          RowBox[{"(*", " ", 
-           RowBox[{"dRNEA", " ", "initializations"}], " ", "*)"}], 
-          "\[IndentingNewLine]", 
-          RowBox[{"dsJdot", " ", "=", " ", 
-           RowBox[{"dsdot", "[", 
-            RowBox[{"xx", ",", " ", "dxx"}], "]"}]}], ";", " ", 
-          RowBox[{"(*", " ", 
-           RowBox[{"time", " ", "derivative", " ", "of", " ", "sJ"}], " ", 
-           "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-          RowBox[{"(*", " ", 
-           RowBox[{
-            RowBox[{"RNEA", "/", "CRB"}], " ", "initializations"}], " ", 
-           "*)"}], "\[IndentingNewLine]", 
-          RowBox[{"XL", " ", "=", " ", 
-           RowBox[{"Xip", "[", "xx", "]"}]}], ";", " ", 
-          RowBox[{"(*", " ", 
-           RowBox[{"parent", " ", "to", " ", "child", " ", "transforms"}], 
-           " ", "*)"}], "\[IndentingNewLine]", 
-          RowBox[{"IC", " ", "=", " ", 
-           RowBox[{"\[DoubleStruckCapitalI]", "[", "xx", "]"}]}], ";", " ", 
-          RowBox[{"(*", " ", 
-           RowBox[{"spatial", " ", "inertia"}], " ", "*)"}], 
-          "\[IndentingNewLine]", 
-          RowBox[{"sJ", " ", "=", " ", 
-           RowBox[{"s", "[", "xx", "]"}]}], ";", " ", 
-          RowBox[{"(*", " ", 
-           RowBox[{"link", " ", "motion", " ", "freedoms"}], " ", "*)"}], 
-          "\[IndentingNewLine]", "\[IndentingNewLine]", 
-          RowBox[{"(*", " ", 
-           RowBox[{
-            RowBox[{"dRNEA", "/", "dCRB"}], " ", "initializations"}], " ", 
-           "*)"}], "\[IndentingNewLine]", 
-          RowBox[{"dXL", " ", "=", " ", 
-           RowBox[{"dXip", "[", 
-            RowBox[{"xx", ",", " ", "dxx"}], "]"}]}], ";", " ", 
-          RowBox[{"(*", " ", 
-           RowBox[{"parent", " ", "to", " ", "child", " ", "transforms"}], 
-           " ", "*)"}], "\[IndentingNewLine]", 
-          RowBox[{"dIC", " ", "=", " ", 
-           RowBox[{"d\[DoubleStruckCapitalI]", "[", 
-            RowBox[{"xx", ",", " ", "dxx"}], "]"}]}], ";", " ", 
-          RowBox[{"(*", " ", 
-           RowBox[{"spatial", " ", "inertia"}], " ", "*)"}], 
-          "\[IndentingNewLine]", 
-          RowBox[{"dsJ", " ", "=", " ", 
-           RowBox[{"ds", "[", 
-            RowBox[{"xx", ",", " ", "dxx"}], "]"}]}], ";"}], " ", 
-         RowBox[{"(*", " ", 
-          RowBox[{"link", " ", "motion", " ", "freedoms"}], " ", "*)"}], 
-         "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
         RowBox[{"EvaluateFunctions", "[", "xx", "]"}], ";", 
         "\[IndentingNewLine]", 
         RowBox[{"EvaluateDerivatives", "[", 
@@ -1588,7 +1465,8 @@ Cell[BoxData[{
    3.615335477453898*^9}, {3.61533725423862*^9, 3.6153372586917553`*^9}, {
    3.6153377014863377`*^9, 3.6153377018769636`*^9}, {3.615337900517971*^9, 
    3.615337910111745*^9}, 3.61533796354935*^9, {3.615338520269188*^9, 
-   3.6153385360035934`*^9}}]
+   3.6153385360035934`*^9}, {3.615338803394742*^9, 3.6153388108322563`*^9}, {
+   3.615379960573223*^9, 3.615379961088848*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1603,7 +1481,7 @@ Cell[BoxData[{
 }, Open  ]]
 },
 AutoGeneratedPackage->Automatic,
-WindowSize->{624, 925},
+WindowSize->{783, 817},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"10.0 for Microsoft Windows (32-bit) (July 1, 2014)",
 StyleDefinitions->"Default.nb"
@@ -1628,24 +1506,24 @@ Cell[3543, 83, 1339, 19, 52, "Input",
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[4919, 107, 200, 3, 70, "Section"],
-Cell[5122, 112, 34542, 528, 712, "Input",
+Cell[5122, 112, 33922, 512, 632, "Input",
  InitializationCell->True],
-Cell[39667, 642, 8837, 207, 812, "Input",
+Cell[39047, 626, 8089, 189, 692, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[48541, 854, 321, 4, 70, "Section"],
-Cell[48865, 860, 32554, 484, 452, "Input",
+Cell[47173, 820, 321, 4, 70, "Section"],
+Cell[47497, 826, 32554, 484, 432, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[81456, 1349, 302, 4, 70, "Section"],
-Cell[81761, 1355, 11963, 235, 1072, "Input",
+Cell[80088, 1315, 302, 4, 70, "Section"],
+Cell[80393, 1321, 7861, 147, 592, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[93761, 1595, 30, 0, 70, "Section"],
-Cell[93794, 1597, 207, 4, 52, "Input",
+Cell[88291, 1473, 30, 0, 70, "Section"],
+Cell[88324, 1475, 207, 4, 52, "Input",
  InitializationCell->True]
 }, Open  ]]
 }

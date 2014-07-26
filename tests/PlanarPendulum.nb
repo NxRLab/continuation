@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     45351,        818]
-NotebookOptionsPosition[     44920,        800]
-NotebookOutlinePosition[     45285,        816]
-CellTagsIndexPosition[     45242,        813]
+NotebookDataLength[     47042,        863]
+NotebookOptionsPosition[     46537,        842]
+NotebookOutlinePosition[     46903,        858]
+CellTagsIndexPosition[     46860,        855]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -110,7 +110,7 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{
     RowBox[{"inertia", " ", "//", " ", "N"}], "//", " ", "MatrixForm"}], 
-   ";"}], "\n", "\[IndentingNewLine]", 
+   ";"}], "\[IndentingNewLine]", "\n", 
   RowBox[{"(*", " ", 
    RowBox[{"robot", " ", "description"}], " ", 
    "*)"}]}], "\[IndentingNewLine]", 
@@ -218,6 +218,16 @@ Cell[BoxData[{
        RowBox[{"NLinkCompile", "[", "NLink`Private`PCRBCode", "]"}]}], ";", 
       "\[IndentingNewLine]", 
       RowBox[{"p", " ", "=", " ", 
+       RowBox[{"#2", "&"}]}]}], ",", "\[IndentingNewLine]", "\"\<PCRB3\>\"", 
+     ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"f", " ", "=", " ", 
+       RowBox[{"NLinkCompile", "[", 
+        RowBox[{"Join", "[", 
+         RowBox[{"NLink`Private`PCRBCode", ",", " ", 
+          RowBox[{"NLink`Private`CompileJosim", "[", "]"}]}], "]"}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"p", " ", "=", " ", 
        RowBox[{"#2", "&"}]}]}], ",", "\[IndentingNewLine]", "\"\<ABA\>\"", 
      ",", " ", "\[IndentingNewLine]", 
      RowBox[{
@@ -272,6 +282,26 @@ Cell[BoxData[{
       RowBox[{"f", " ", "=", " ", 
        RowBox[{"NLinkCompile", "[", "NLink`Private`dPdCRBCode", "]"}]}], ";", 
       "\[IndentingNewLine]", 
+      RowBox[{"p", " ", "=", " ", 
+       RowBox[{"#2", "&"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"nq", " ", "=", " ", 
+       RowBox[{"nq", 
+        RowBox[{"(", 
+         RowBox[{"1", "+", "NLink`Private`nd"}], ")"}]}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"nx", " ", "=", " ", 
+       RowBox[{"nx", 
+        RowBox[{"(", 
+         RowBox[{"1", "+", "NLink`Private`nd"}], ")"}]}]}]}], ",", 
+     "\[IndentingNewLine]", "\"\<dPdCRB3\>\"", ",", " ", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"f", " ", "=", " ", 
+       RowBox[{"NLinkCompile", "[", 
+        RowBox[{"Join", "[", 
+         RowBox[{"NLink`Private`dPdCRBCode", ",", " ", 
+          RowBox[{"NLink`Private`CompileJosim", "[", "]"}]}], "]"}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
       RowBox[{"p", " ", "=", " ", 
        RowBox[{"#2", "&"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"nq", " ", "=", " ", 
@@ -351,7 +381,11 @@ Cell[BoxData[{
    3.6048109642783346`*^9}, 3.604839437232242*^9, 3.60483997851455*^9, {
    3.6048415330957174`*^9, 3.6048415758926754`*^9}, 3.60484163273654*^9, {
    3.6048463882529593`*^9, 3.604846436397716*^9}, {3.604846469716627*^9, 
-   3.604846472451783*^9}, {3.61521037869494*^9, 3.6152103787418127`*^9}}],
+   3.604846472451783*^9}, {3.61521037869494*^9, 3.6152103787418127`*^9}, {
+   3.6153754273415575`*^9, 3.615375455138486*^9}, {3.615375493216685*^9, 
+   3.615375524763622*^9}, {3.6153755981700153`*^9, 3.6153755989825172`*^9}}],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{
@@ -569,6 +603,14 @@ Cell[BoxData[{
    3.6037769260148573`*^9, 3.6037769525930324`*^9}, {3.6037772866093125`*^9, 
    3.603777286921813*^9}, {3.6037787563153114`*^9, 3.6037787671747074`*^9}, 
    3.6037788025966525`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"4.45313300000000023`6.669265579509774", ",", "Null"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.6153800601671696`*^9, 3.615380142604829*^9, 
+  3.615380174136139*^9}]
+}, Open  ]],
 
 Cell[BoxData[{
  RowBox[{
@@ -799,7 +841,7 @@ Cell[BoxData[{
    3.6034212320493994`*^9}, {3.603421892296206*^9, 3.603421898192547*^9}}]
 },
 WindowSize->{707, 677},
-WindowMargins->{{Automatic, 118}, {-1, Automatic}},
+WindowMargins->{{Automatic, 193}, {113, Automatic}},
 DynamicUpdating->True,
 FrontEndVersion->"10.0 for Microsoft Windows (32-bit) (July 1, 2014)",
 StyleDefinitions->"Default.nb"
@@ -817,9 +859,12 @@ CellTagsIndex->{}
 Notebook[{
 Cell[557, 20, 203, 5, 31, "Input"],
 Cell[763, 27, 7064, 159, 552, "Input"],
-Cell[7830, 188, 8565, 165, 752, "Input"],
-Cell[16398, 355, 14097, 215, 232, "Input"],
-Cell[30498, 572, 14418, 226, 152, "Input"]
+Cell[7830, 188, 9939, 197, 952, "Input"],
+Cell[CellGroupData[{
+Cell[17794, 389, 14097, 215, 232, "Input"],
+Cell[31894, 606, 206, 5, 31, "Output"]
+}, Open  ]],
+Cell[32115, 614, 14418, 226, 152, "Input"]
 }
 ]
 *)
