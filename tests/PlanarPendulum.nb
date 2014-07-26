@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     45355,        818]
-NotebookOptionsPosition[     44921,        800]
-NotebookOutlinePosition[     45289,        816]
-CellTagsIndexPosition[     45246,        813]
+NotebookDataLength[     45351,        818]
+NotebookOptionsPosition[     44920,        800]
+NotebookOutlinePosition[     45285,        816]
+CellTagsIndexPosition[     45242,        813]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -110,7 +110,7 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{
     RowBox[{"inertia", " ", "//", " ", "N"}], "//", " ", "MatrixForm"}], 
-   ";"}], "\[IndentingNewLine]", "\n", 
+   ";"}], "\n", "\[IndentingNewLine]", 
   RowBox[{"(*", " ", 
    RowBox[{"robot", " ", "description"}], " ", 
    "*)"}]}], "\[IndentingNewLine]", 
@@ -243,12 +243,12 @@ Cell[BoxData[{
       RowBox[{"nq", " ", "=", " ", 
        RowBox[{"nq", 
         RowBox[{"(", 
-         RowBox[{"1", "+", "NLink`Private`n\[Lambda]"}], ")"}]}]}], ";", 
+         RowBox[{"1", "+", "NLink`Private`nd"}], ")"}]}]}], ";", 
       "\[IndentingNewLine]", 
       RowBox[{"nx", " ", "=", " ", 
        RowBox[{"nx", 
         RowBox[{"(", 
-         RowBox[{"1", "+", "NLink`Private`n\[Lambda]"}], ")"}]}]}]}], ",", 
+         RowBox[{"1", "+", "NLink`Private`nd"}], ")"}]}]}]}], ",", 
      "\[IndentingNewLine]", "\"\<dPdCRB\>\"", ",", " ", "\[IndentingNewLine]", 
      RowBox[{
       RowBox[{"f", " ", "=", " ", 
@@ -260,12 +260,12 @@ Cell[BoxData[{
       RowBox[{"nq", " ", "=", " ", 
        RowBox[{"nq", 
         RowBox[{"(", 
-         RowBox[{"1", "+", "NLink`Private`n\[Lambda]"}], ")"}]}]}], ";", 
+         RowBox[{"1", "+", "NLink`Private`nd"}], ")"}]}]}], ";", 
       "\[IndentingNewLine]", 
       RowBox[{"nx", " ", "=", " ", 
        RowBox[{"nx", 
         RowBox[{"(", 
-         RowBox[{"1", "+", "NLink`Private`n\[Lambda]"}], ")"}]}]}]}], ",", 
+         RowBox[{"1", "+", "NLink`Private`nd"}], ")"}]}]}]}], ",", 
      "\[IndentingNewLine]", "\"\<dPdCRB2\>\"", ",", " ", 
      "\[IndentingNewLine]", 
      RowBox[{
@@ -277,12 +277,12 @@ Cell[BoxData[{
       RowBox[{"nq", " ", "=", " ", 
        RowBox[{"nq", 
         RowBox[{"(", 
-         RowBox[{"1", "+", "NLink`Private`n\[Lambda]"}], ")"}]}]}], ";", 
+         RowBox[{"1", "+", "NLink`Private`nd"}], ")"}]}]}], ";", 
       "\[IndentingNewLine]", 
       RowBox[{"nx", " ", "=", " ", 
        RowBox[{"nx", 
         RowBox[{"(", 
-         RowBox[{"1", "+", "NLink`Private`n\[Lambda]"}], ")"}]}]}]}]}], 
+         RowBox[{"1", "+", "NLink`Private`nd"}], ")"}]}]}]}]}], 
     "\[IndentingNewLine]", "]"}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
@@ -351,7 +351,7 @@ Cell[BoxData[{
    3.6048109642783346`*^9}, 3.604839437232242*^9, 3.60483997851455*^9, {
    3.6048415330957174`*^9, 3.6048415758926754`*^9}, 3.60484163273654*^9, {
    3.6048463882529593`*^9, 3.604846436397716*^9}, {3.604846469716627*^9, 
-   3.604846472451783*^9}}],
+   3.604846472451783*^9}, {3.61521037869494*^9, 3.6152103787418127`*^9}}],
 
 Cell[BoxData[{
  RowBox[{
@@ -801,7 +801,7 @@ Cell[BoxData[{
 WindowSize->{707, 677},
 WindowMargins->{{Automatic, 118}, {-1, Automatic}},
 DynamicUpdating->True,
-FrontEndVersion->"9.0 for Microsoft Windows (32-bit) (January 25, 2013)",
+FrontEndVersion->"10.0 for Microsoft Windows (32-bit) (July 1, 2014)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -817,9 +817,9 @@ CellTagsIndex->{}
 Notebook[{
 Cell[557, 20, 203, 5, 31, "Input"],
 Cell[763, 27, 7064, 159, 552, "Input"],
-Cell[7830, 188, 8566, 165, 752, "Input"],
-Cell[16399, 355, 14097, 215, 232, "Input"],
-Cell[30499, 572, 14418, 226, 152, "Input"]
+Cell[7830, 188, 8565, 165, 752, "Input"],
+Cell[16398, 355, 14097, 215, 232, "Input"],
+Cell[30498, 572, 14418, 226, 152, "Input"]
 }
 ]
 *)

@@ -52,7 +52,6 @@ ABA[x_, u_] := Module[{vJ, p, Ic, fc},
 v = Zspat; (* spatial velocity *)
 a = Zspat; (* spatial acceleration *)
 f = Zspat; (* spatial force *)
-IC = \[DoubleStruckCapitalI]; (* articulated body inertia *)
 
 (* clear/set ABA variables *)
 c = Zspat; (* spatial velocity products *)
@@ -70,8 +69,7 @@ v[[i]] = vJ;
 v[[i]] = XL[[i]].v[[p]] + vJ;
 c[[i]] =  mx[v[[i]]].vJ  + sJdot[[i]] x[[nq+i]];
 ];
-(*IC\[LeftDoubleBracket]i\[RightDoubleBracket] = \[DoubleStruckCapitalI]\[LeftDoubleBracket]i\[RightDoubleBracket];
-f\[LeftDoubleBracket]i\[RightDoubleBracket] = mxstar[v\[LeftDoubleBracket]i\[RightDoubleBracket]].(\[DoubleStruckCapitalI]\[LeftDoubleBracket]i\[RightDoubleBracket] .v\[LeftDoubleBracket]i\[RightDoubleBracket]);*)
+
 f[[i]] = mxstar[v[[i]]].(IC[[i]] .v[[i]]); (* bias force *)
 ,{i, nq}];
 
@@ -103,11 +101,6 @@ a[[i]] = a[[i]] + sJ[[i]]qdd[[i]];
 
 
 Faba[x_, u_] := Module[{},
-(* initialize variables *)
-XL = Xip[x]; (* parent to child transforms *)
-sJ = s[x]; (* link motion freedoms *)
-sJdot = sdot[x]; (* time derivative of sJ *)
-
 ABA[x,u]; (* computes qdd *)
 qdd
 ];
@@ -117,10 +110,11 @@ ABACode = {
 cargs:>{{x, _Real, 1}, {u, _Real, 1}},
 ccode:>
 (
-znq = znqarr;
-Zspat = Zspatarr;
-parent = pararr;
-\[DoubleStruckCapitalI] = \[DoubleStruckCapitalI]arr;
+(* initialize variables *)
+XL = Xip[x]; (* parent to child transforms *)
+IC = \[DoubleStruckCapitalI][x]; (* articulated body inertia *)
+sJ = s[x]; (* link motion freedoms *)
+sJdot = sdot[x]; (* time derivative of sJ *)
 
 Faba[x, u];
 Join[x[[nq+1;;nx]], qdd]

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     75196,       1680]
-NotebookOptionsPosition[     74161,       1639]
-NotebookOutlinePosition[     74538,       1655]
-CellTagsIndexPosition[     74495,       1652]
+NotebookDataLength[     75173,       1678]
+NotebookOptionsPosition[     74141,       1637]
+NotebookOutlinePosition[     74515,       1653]
+CellTagsIndexPosition[     74472,       1650]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1173,9 +1173,7 @@ be equal.\>\""}], "\[IndentingNewLine]"}], "\[IndentingNewLine]",
 
 Cell[CellGroupData[{
 
-Cell["\<\
-Test Euler-Lagrange with NLinks\
-\>", "Section",
+Cell["Test Euler-Lagrange with NLinks", "Section",
  CellChangeTimes->{{3.6028005564911757`*^9, 3.6028005569755673`*^9}, 
    3.602800616022543*^9, {3.602800660178879*^9, 3.602800710850868*^9}, {
    3.603756704568203*^9, 3.6037567089900894`*^9}}],
@@ -1235,9 +1233,9 @@ to run `2`.\>\""}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]",
   RowBox[{
    RowBox[{
     RowBox[{"ELTestModel", "::", "der"}], " ", "=", " ", 
-    "\"\<Tests that require derivatives will not work properly unless n\
-\[Lambda] equals 3 nq.  Calling SetModel with the optional derivative \
-argument set to All resolves the issue.\>\""}], ";"}], 
+    "\"\<Tests that require derivatives will not work properly unless nd \
+equals 3 nq.  Calling SetModel with the optional derivative argument set to \
+All resolves the issue.\>\""}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -1263,14 +1261,14 @@ argument set to All resolves the issue.\>\""}], ";"}],
          "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"If", "[", 
         RowBox[{
-         RowBox[{"NLink`Private`n\[Lambda]", " ", "\[NotEqual]", " ", 
+         RowBox[{"NLink`Private`nd", " ", "\[NotEqual]", " ", 
           RowBox[{"3", "NLink`Private`nq"}]}], ",", " ", 
          "\[IndentingNewLine]", 
          RowBox[{
           RowBox[{"Message", "[", 
            RowBox[{
             RowBox[{"ELTestModel", "::", "der"}], ",", " ", 
-            "NLink`Private`n\[Lambda]", ",", " ", 
+            "NLink`Private`nd", ",", " ", 
             RowBox[{"3", " ", "NLink`Private`nq"}]}], "]"}], ";"}]}], " ", 
         "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
        "\[IndentingNewLine]", 
@@ -1419,15 +1417,15 @@ argument set to All resolves the issue.\>\""}], ";"}],
        RowBox[{"dx", " ", "=", " ", 
         RowBox[{"IdentityMatrix", "[", 
          RowBox[{"{", 
-          RowBox[{"NLink`Private`nx", ",", " ", "NLink`Private`n\[Lambda]"}], 
-          "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"NLink`Private`nx", ",", " ", "NLink`Private`nd"}], "}"}], 
+         "]"}]}], ";", "\[IndentingNewLine]", 
        RowBox[{"du", " ", "=", " ", 
         RowBox[{"PadLeft", "[", 
          RowBox[{
           RowBox[{"IdentityMatrix", "[", "NLink`Private`nq", "]"}], ",", " ", 
           RowBox[{"{", 
-           RowBox[{"NLink`Private`nq", ",", " ", "NLink`Private`n\[Lambda]"}],
-            "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"NLink`Private`nq", ",", " ", "NLink`Private`nd"}], 
+           "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
        "\[IndentingNewLine]", 
        RowBox[{"NF", " ", "=", " ", 
         RowBox[{"NLink`Private`Fcrb", "[", 
@@ -1524,15 +1522,15 @@ argument set to All resolves the issue.\>\""}], ";"}],
       RowBox[{"dx", " ", "=", " ", 
        RowBox[{"IdentityMatrix", "[", 
         RowBox[{"{", 
-         RowBox[{"NLink`Private`nx", ",", " ", "NLink`Private`n\[Lambda]"}], 
-         "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"NLink`Private`nx", ",", " ", "NLink`Private`nd"}], "}"}], 
+        "]"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"du", " ", "=", " ", 
        RowBox[{"PadLeft", "[", 
         RowBox[{
          RowBox[{"IdentityMatrix", "[", "NLink`Private`nq", "]"}], ",", " ", 
          RowBox[{"{", 
-          RowBox[{"NLink`Private`nq", ",", " ", "NLink`Private`n\[Lambda]"}], 
-          "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"NLink`Private`nq", ",", " ", "NLink`Private`nd"}], "}"}]}],
+         "]"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"NFaba", " ", "=", " ", 
        RowBox[{"NLink`Private`Faba", "[", 
         RowBox[{"x", ",", " ", "u"}], "]"}]}], ";", "\[IndentingNewLine]", 
@@ -1623,7 +1621,7 @@ argument set to All resolves the issue.\>\""}], ";"}],
    3.6048452947243395`*^9, 3.6048454314711695`*^9}, {3.6048454942857676`*^9, 
    3.604845581004737*^9}, {3.604845776814945*^9, 3.6048458210444803`*^9}, {
    3.604847094393404*^9, 3.6048471028008814`*^9}, {3.6048481865799503`*^9, 
-   3.6048481898261356`*^9}}]
+   3.6048481898261356`*^9}, {3.6152104069137435`*^9, 3.615210406960617*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1640,7 +1638,7 @@ Cell[BoxData[{
 AutoGeneratedPackage->Automatic,
 WindowSize->{884, 832},
 WindowMargins->{{22, Automatic}, {Automatic, 20}},
-FrontEndVersion->"9.0 for Microsoft Windows (32-bit) (January 25, 2013)",
+FrontEndVersion->"10.0 for Microsoft Windows (32-bit) (July 1, 2014)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -1655,12 +1653,12 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[579, 22, 100, 1, 86, "Section"],
-Cell[682, 25, 10110, 250, 732, "Input",
+Cell[579, 22, 100, 1, 70, "Section"],
+Cell[682, 25, 10110, 250, 752, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10829, 280, 175, 2, 86, "Section"],
+Cell[10829, 280, 175, 2, 70, "Section"],
 Cell[CellGroupData[{
 Cell[11029, 286, 106, 1, 49, "Subsection"],
 Cell[11138, 289, 5966, 143, 352, "Input",
@@ -1673,13 +1671,13 @@ Cell[17248, 440, 35655, 729, 1695, "Input",
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[52952, 1175, 252, 5, 86, "Section"],
-Cell[53207, 1182, 20661, 443, 2012, "Input",
+Cell[52952, 1175, 244, 3, 70, "Section"],
+Cell[53199, 1180, 20649, 443, 2012, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[73905, 1630, 30, 0, 86, "Section"],
-Cell[73938, 1632, 207, 4, 52, "Input",
+Cell[73885, 1628, 30, 0, 70, "Section"],
+Cell[73918, 1630, 207, 4, 52, "Input",
  InitializationCell->True]
 }, Open  ]]
 }
