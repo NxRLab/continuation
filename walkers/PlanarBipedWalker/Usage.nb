@@ -1,0 +1,628 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     25237,        619]
+NotebookOptionsPosition[     24464,        588]
+NotebookOutlinePosition[     24806,        603]
+CellTagsIndexPosition[     24763,        600]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", "\n", 
+  RowBox[{
+   RowBox[{"Usage", ".", 
+    RowBox[{"nb", ":", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+        "A", " ", "list", " ", "of", " ", "routines", " ", "that", " ", 
+         "will", " ", "find", " ", "gaits", " ", "for", " ", "a", " ", 
+         "physically"}], "-", 
+        RowBox[{"symmetric", " ", "biped", " ", "walker"}]}], ".."}], "\n", 
+      "Copyright", " ", 
+      RowBox[{"(", "C", ")"}], " ", "2014", " ", "Nelson", " ", "Rosa", " ", 
+      RowBox[{"Jr", ".", "\n", "\n", "This"}], " ", "program", " ", "is", " ",
+       "free", " ", "software"}], ":", " ", 
+     RowBox[{"you", " ", "can", " ", "redistribute", " ", "it", " ", 
+      RowBox[{"and", "/", "or"}], " ", "modify", "\n", "it", " ", "under", 
+      " ", "the", " ", "terms", " ", "of", " ", "the", " ", "GNU", " ", 
+      "General", " ", "Public", " ", "License", " ", "as", " ", "published", 
+      " ", "by", "\n", 
+      RowBox[{"the", " ", "Free", " ", "Software", " ", "Foundation"}]}]}]}], 
+   ",", " ", 
+   RowBox[{
+   "either", " ", "version", " ", "3", " ", "of", " ", "the", " ", 
+    "License"}], ",", " ", 
+   RowBox[{"or", "\n", 
+    RowBox[{"(", 
+     RowBox[{"at", " ", "your", " ", "option"}], ")"}], " ", "any", " ", 
+    "later", " ", 
+    RowBox[{"version", ".", " ", "This"}], " ", "program", " ", "is", " ", 
+    "distributed", " ", "in", " ", "the", " ", "\n", "hope", " ", "that", " ",
+     "it", " ", "will", " ", "be", " ", "useful"}], ",", " ", 
+   RowBox[{
+    RowBox[{"but", " ", "WITHOUT", " ", "ANY", " ", "WARRANTY"}], ";", " ", 
+    RowBox[{
+    "without", " ", "even", " ", "the", " ", "\n", "implied", " ", "warranty",
+      " ", "of", " ", "MERCHANTABILITY", " ", "or", " ", "FITNESS", " ", 
+     "FOR", " ", "A", " ", "PARTICULAR", " ", 
+     RowBox[{"PURPOSE", ".", "\n", "See"}], " ", "the", " ", "GNU", " ", 
+     "General", " ", "Public", " ", "License", " ", "for", " ", "more", " ", 
+     RowBox[{"details", ".", " ", "You"}], " ", "should", " ", "have", " ", 
+     "\n", "received", " ", "a", " ", "copy", " ", "of", " ", "the", " ", 
+     "GNU", " ", "General", " ", "Public", " ", "License", " ", "along", " ", 
+     "with", " ", "this", " ", 
+     RowBox[{"program", ".", "\n", "If"}], " ", "not"}]}], ",", " ", 
+   RowBox[{
+    RowBox[{"see", " ", "<", 
+     RowBox[{"http", ":"}]}], "//", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"www", ".", "gnu", ".", "org"}], "/", "licenses"}], "/"}], ">",
+      "."}]}]}], "\n", "*)"}]], "Code",
+ InitializationCell->True,
+ CellChangeTimes->{{3.6103707836964283`*^9, 3.610370783709448*^9}, {
+  3.610370828952024*^9, 3.610370962648698*^9}, {3.6103710877518406`*^9, 
+  3.610371111376195*^9}, {3.6103711469392376`*^9, 3.6103712325731497`*^9}, {
+  3.610371305900334*^9, 3.610371331708816*^9}, {3.610371368620943*^9, 
+  3.61037139802861*^9}, {3.6103715538125486`*^9, 3.6103716079966354`*^9}, {
+  3.610371704956188*^9, 3.610371726308409*^9}, {3.6184100462976465`*^9, 
+  3.6184101083121977`*^9}, {3.6185351312823167`*^9, 3.618535132047942*^9}, {
+  3.619650638792844*^9, 3.6196506394798827`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Begin Package", "Section",
+ CellChangeTimes->{{3.5914870039053636`*^9, 3.591487004222381*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"BeginPackage", "[", "\"\<PlanarBipedWalker`\>\"", "]"}], "\n", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "UI", " ", "functions", " ", "for", " ", "adding", " ", "bipeds", " ", 
+    "parts"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", " ", 
+   RowBox[{
+    RowBox[{"Not", "@", 
+     RowBox[{"ValueQ", "[", 
+      RowBox[{"SetBipedHip", "::", "usage"}], "]"}]}], ",", "\n", 
+    RowBox[{
+     RowBox[{"SetBipedHip", "::", "usage"}], " ", "=", " ", "\"\<\>\""}]}], 
+   "]"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", " ", 
+   RowBox[{
+    RowBox[{"Not", "@", 
+     RowBox[{"ValueQ", "[", 
+      RowBox[{"AddBipedLeg", "::", "usage"}], "]"}]}], ",", "\n", 
+    RowBox[{
+     RowBox[{"AddBipedLeg", "::", "usage"}], " ", "=", " ", "\"\<\>\""}]}], 
+   "]"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", " ", 
+   RowBox[{
+    RowBox[{"Not", "@", 
+     RowBox[{"ValueQ", "[", 
+      RowBox[{"AddBipedTorso", "::", "usage"}], "]"}]}], ",", "\n", 
+    RowBox[{
+     RowBox[{"AddBipedTorso", "::", "usage"}], " ", "=", " ", "\"\<\>\""}]}], 
+   "]"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", " ", 
+   RowBox[{
+    RowBox[{"Not", "@", 
+     RowBox[{"ValueQ", "[", 
+      RowBox[{"AddBipedArm", "::", "usage"}], "]"}]}], ",", "\n", 
+    RowBox[{
+     RowBox[{"AddBipedArm", "::", "usage"}], " ", "=", " ", "\"\<\>\""}]}], 
+   "]"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", " ", 
+   RowBox[{
+    RowBox[{"Not", "@", 
+     RowBox[{"ValueQ", "[", 
+      RowBox[{"AddBipedHead", "::", "usage"}], "]"}]}], ",", "\n", 
+    RowBox[{
+     RowBox[{"AddBipedHead", "::", "usage"}], " ", "=", " ", "\"\<\>\""}]}], 
+   "]"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", " ", 
+   RowBox[{
+    RowBox[{"Not", "@", 
+     RowBox[{"ValueQ", "[", 
+      RowBox[{"SetGravity", "::", "usage"}], "]"}]}], ",", "\n", 
+    RowBox[{
+     RowBox[{"SetGravity", "::", "usage"}], " ", "=", " ", "\"\<\>\""}]}], 
+   "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "UI", " ", "functions", " ", "for", " ", "creating", " ", "biped"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", " ", 
+   RowBox[{
+    RowBox[{"Not", "@", 
+     RowBox[{"ValueQ", "[", 
+      RowBox[{"NewBiped", "::", "usage"}], "]"}]}], ",", "\n", 
+    RowBox[{
+     RowBox[{"NewBiped", "::", "usage"}], " ", "=", " ", "\"\<\>\""}]}], 
+   "]"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", " ", 
+   RowBox[{
+    RowBox[{"Not", "@", 
+     RowBox[{"ValueQ", "[", 
+      RowBox[{"CompileBiped", "::", "usage"}], "]"}]}], ",", "\n", 
+    RowBox[{
+     RowBox[{"CompileBiped", "::", "usage"}], " ", "=", " ", "\"\<\>\""}]}], 
+   "]"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", " ", 
+   RowBox[{
+    RowBox[{"Not", "@", 
+     RowBox[{"ValueQ", "[", 
+      RowBox[{"DrawBiped", "::", "usage"}], "]"}]}], ",", "\n", 
+    RowBox[{
+     RowBox[{"DrawBiped", "::", "usage"}], " ", "=", " ", "\"\<\>\""}]}], 
+   "]"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", " ", 
+   RowBox[{
+    RowBox[{"Not", "@", 
+     RowBox[{"ValueQ", "[", 
+      RowBox[{"GetBipedData", "::", "usage"}], "]"}]}], ",", "\n", 
+    RowBox[{
+     RowBox[{"GetBipedData", "::", "usage"}], " ", "=", " ", "\"\<\>\""}]}], 
+   "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"UI", " ", "functions", " ", "for", " ", "gaits"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", " ", 
+   RowBox[{
+    RowBox[{"Not", "@", 
+     RowBox[{"ValueQ", "[", 
+      RowBox[{"PlotBipedDet", "::", "usage"}], "]"}]}], ",", "\n", 
+    RowBox[{
+     RowBox[{"PlotBipedDet", "::", "usage"}], " ", "=", " ", "\"\<\>\""}]}], 
+   "]"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", " ", 
+   RowBox[{
+    RowBox[{"Not", "@", 
+     RowBox[{"ValueQ", "[", 
+      RowBox[{"FindGaits", "::", "usage"}], "]"}]}], ",", "\n", 
+    RowBox[{
+     RowBox[{"FindGaits", "::", "usage"}], " ", "=", " ", "\"\<\>\""}]}], 
+   "]"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", " ", 
+   RowBox[{
+    RowBox[{"Not", "@", 
+     RowBox[{"ValueQ", "[", 
+      RowBox[{"GaitInfo", "::", "usage"}], "]"}]}], ",", "\n", 
+    RowBox[{
+     RowBox[{"GaitInfo", "::", "usage"}], " ", "=", " ", "\"\<\>\""}]}], 
+   "]"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", " ", 
+   RowBox[{
+    RowBox[{"Not", "@", 
+     RowBox[{"ValueQ", "[", 
+      RowBox[{"AnimateGait", "::", "usage"}], "]"}]}], ",", "\n", 
+    RowBox[{
+     RowBox[{"AnimateGait", "::", "usage"}], " ", "=", " ", "\"\<\>\""}]}], 
+   "]"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", " ", 
+   RowBox[{
+    RowBox[{"Not", "@", 
+     RowBox[{"ValueQ", "[", 
+      RowBox[{"SimulateGait", "::", "usage"}], "]"}]}], ",", "\n", 
+    RowBox[{
+     RowBox[{"SimulateGait", "::", "usage"}], " ", "=", " ", "\"\<\>\""}]}], 
+   "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", "messages", " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"PlanarBipedWalker", "::", "max"}], " ", "=", " ", 
+    "\"\<`1` is the maximum number of `2` links allowed by this example \
+package.\>\""}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"PlanarBipedWalker", "::", "model"}], " ", "=", " ", 
+    "\"\<A minimual model requires a hip and a leg; there are `1` hip(s) and \
+`2` leg(s) defined.\>\""}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"PlanarBipedWalker", "::", "time"}], " ", "=", " ", 
+    "\"\<Couldn't find approximiate switching times.  Does a root exist \
+within the switching time interval from `1` to `2`?  Try PlotBipedDet on the \
+time interval searched.\>\""}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"PlanarBipedWalker", "::", "input"}], " ", "=", " ", 
+    "\"\<An input vector is the wrong length; must be `1` `2`, but `3` was \
+given.  Did you change the model, but forgot to update your state vector (or \
+similar parameter)?\>\""}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"PlanarBipedWalker", "::", "index"}], " ", "=", " ", 
+   "\"\<An invalid index was entered.  The first argument must be less than \
+or equal to the number of switching times and the second number must be less \
+than or equal to the number of gaits found for that switching time.\>\""}], 
+  ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.5844197483839703`*^9, {3.5844250604318256`*^9, 3.5844250721475377`*^9}, {
+   3.5844251233785*^9, 3.5844251234877005`*^9}, {3.5844253988774505`*^9, 
+   3.5844254390946617`*^9}, {3.5844254919948354`*^9, 3.5844254990149255`*^9}, 
+   3.584425543397398*^9, {3.584425574800518*^9, 3.584425581945394*^9}, {
+   3.5844256737523947`*^9, 3.5844257230957055`*^9}, {3.5844279668250203`*^9, 
+   3.5844279860756264`*^9}, {3.584428374816189*^9, 3.584428378919037*^9}, {
+   3.5914865865694637`*^9, 3.591486626255737*^9}, {3.5914867823906765`*^9, 
+   3.5914867827646985`*^9}, {3.591486817520689*^9, 3.5914868205858636`*^9}, {
+   3.591486965884186*^9, 3.5914869664642324`*^9}, {3.5915022447717495`*^9, 
+   3.5915022459698176`*^9}, {3.591542902441803*^9, 3.591542929051241*^9}, {
+   3.59154329988008*^9, 3.591543327692632*^9}, 3.5915439898189273`*^9, {
+   3.5915443331789765`*^9, 3.5915443348977413`*^9}, {3.591544409656703*^9, 
+   3.591544412687962*^9}, {3.591721260928192*^9, 3.591721326772053*^9}, {
+   3.5922422663532963`*^9, 3.592242267056429*^9}, {3.5922818277082567`*^9, 
+   3.59228183637475*^9}, {3.593367653922082*^9, 3.5933676540470953`*^9}, {
+   3.60224862205973*^9, 3.602248628162079*^9}, {3.618410239888734*^9, 
+   3.618410243607942*^9}, {3.618411402838331*^9, 3.6184114053624744`*^9}, 
+   3.618648264733282*^9, {3.618648379655821*^9, 3.6186484159840155`*^9}, {
+   3.6186600689430113`*^9, 3.618660147690508*^9}, 3.61866274541527*^9, {
+   3.6186633481607847`*^9, 3.6186633510349493`*^9}, 3.618663382293741*^9, {
+   3.618664471157302*^9, 3.6186644734544353`*^9}, 3.618676224046091*^9, {
+   3.6186981040546894`*^9, 3.6186981152563276`*^9}, {3.6196234592833757`*^9, 
+   3.6196234777521663`*^9}, {3.619623515299116*^9, 3.6196235156741133`*^9}, 
+   3.6196328601116304`*^9, 3.6196401674237742`*^9, {3.6196488597011433`*^9, 
+   3.619648863131336*^9}, {3.6196492958539968`*^9, 3.6196493018480144`*^9}, {
+   3.619650251272032*^9, 3.6196504742620487`*^9}, 3.619650665427994*^9, {
+   3.6196507656223774`*^9, 3.619650833773438*^9}, {3.6196523917501316`*^9, 
+   3.6196524111052427`*^9}, {3.6196528648799553`*^9, 3.619652901014676*^9}, {
+   3.6196578897032647`*^9, 3.619657991034055*^9}, {3.619658030577319*^9, 
+   3.6196580384157686`*^9}, {3.619658163576936*^9, 3.6196581661690845`*^9}, {
+   3.619658254715153*^9, 3.619658255251199*^9}, {3.619658620842122*^9, 
+   3.619658664420618*^9}, {3.6197419655520043`*^9, 3.6197419751613955`*^9}, {
+   3.6197529087892003`*^9, 3.619752914554837*^9}, {3.6197529853674746`*^9, 
+   3.6197531276802497`*^9}, {3.619831201246524*^9, 3.6198312626372876`*^9}, {
+   3.6198321902485676`*^9, 3.6198322071392403`*^9}, {3.6198693533094535`*^9, 
+   3.6198693660438504`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MAX", " ", "=", " ", "20"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"hip", " ", "=", " ", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"legs", " ", "=", " ", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"arms", " ", "=", " ", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"head", " ", "=", " ", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"torso", " ", "=", " ", 
+    RowBox[{"{", "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"parent", " ", "=", " ", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"frame", " ", "=", " ", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"inertia", " ", "=", " ", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"poi", " ", "=", " ", 
+    RowBox[{"{", "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"joint", " ", "=", " ", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"parent", " ", "=", " ", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gr", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", " ", "9.81", ",", " ", "0"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"frame", " ", "=", " ", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"inertia", " ", "=", " ", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"poi", " ", "=", " ", 
+    RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"cons", " ", "=", " ", 
+     RowBox[{"{", "}"}]}], ";"}], "*)"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"f", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"df", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"v", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"dv", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"h", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"dh", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"A", ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gaits", ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"fanim", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"hanim", ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"vanim", ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"xeq", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ueq", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"dx0", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"x0dx0", ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"u0du0", ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"mapopts", " ", "=", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"AccuracyGoal", "\[Rule]", " ", "13"}], ",", " ", 
+      RowBox[{"PrecisionGoal", "\[Rule]", " ", "13"}], ",", " ", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Compiled", "\[Rule]", " ", "False"}], ",", " ", 
+      RowBox[{"MaxSteps", "\[Rule]", " ", "Infinity"}]}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"End", "[", "]"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.5844197483839703`*^9, {3.5844250604318256`*^9, 3.5844250721475377`*^9}, {
+   3.5844251233785*^9, 3.5844251234877005`*^9}, {3.5844253988774505`*^9, 
+   3.5844254390946617`*^9}, {3.5844254919948354`*^9, 3.5844254990149255`*^9}, 
+   3.584425543397398*^9, {3.584425574800518*^9, 3.584425581945394*^9}, {
+   3.5844256737523947`*^9, 3.5844257230957055`*^9}, {3.5844279668250203`*^9, 
+   3.5844279860756264`*^9}, {3.584428374816189*^9, 3.584428378919037*^9}, {
+   3.5914865865694637`*^9, 3.591486626255737*^9}, {3.5914867823906765`*^9, 
+   3.5914867827646985`*^9}, {3.591486817520689*^9, 3.5914868205858636`*^9}, {
+   3.591486965884186*^9, 3.5914869664642324`*^9}, {3.5915022447717495`*^9, 
+   3.5915022459698176`*^9}, {3.591542902441803*^9, 3.591542929051241*^9}, {
+   3.59154329988008*^9, 3.591543327692632*^9}, 3.5915439898189273`*^9, {
+   3.5915443331789765`*^9, 3.5915443348977413`*^9}, {3.591544409656703*^9, 
+   3.591544412687962*^9}, {3.591721260928192*^9, 3.591721326772053*^9}, {
+   3.5922422663532963`*^9, 3.592242267056429*^9}, {3.5922818277082567`*^9, 
+   3.59228183637475*^9}, {3.593367653922082*^9, 3.5933676540470953`*^9}, {
+   3.60224862205973*^9, 3.602248628162079*^9}, {3.618410239888734*^9, 
+   3.618410243607942*^9}, {3.618411402838331*^9, 3.6184114053624744`*^9}, 
+   3.618648264733282*^9, {3.618648379655821*^9, 3.6186484159840155`*^9}, {
+   3.6186600689430113`*^9, 3.618660147690508*^9}, 3.61866274541527*^9, {
+   3.6186633481607847`*^9, 3.6186633510349493`*^9}, 3.618663382293741*^9, {
+   3.618664471157302*^9, 3.6186644734544353`*^9}, 3.618676224046091*^9, {
+   3.6186981040546894`*^9, 3.6186981152563276`*^9}, {3.6196234592833757`*^9, 
+   3.6196234777521663`*^9}, {3.619623515299116*^9, 3.6196235156741133`*^9}, 
+   3.6196328601116304`*^9, 3.6196401674237742`*^9, {3.6196488597011433`*^9, 
+   3.619648863131336*^9}, {3.6196492958539968`*^9, 3.6196493018480144`*^9}, {
+   3.619650251272032*^9, 3.6196504742620487`*^9}, 3.619650665427994*^9, {
+   3.6196507656223774`*^9, 3.619650903888873*^9}, {3.619652250598732*^9, 
+   3.6196523114856405`*^9}, {3.61965341774207*^9, 3.6196534222463226`*^9}, {
+   3.619654112430698*^9, 3.6196541139517922`*^9}, {3.6196594996314435`*^9, 
+   3.619659502129591*^9}, 3.6197383887629747`*^9, {3.6197386204196925`*^9, 
+   3.619738635232207*^9}, {3.6197387187167463`*^9, 3.619738729248019*^9}, {
+   3.619739221097122*^9, 3.6197392221127524`*^9}, {3.619739580925954*^9, 
+   3.619739582332205*^9}, {3.6197423803028126`*^9, 3.6197423810840683`*^9}, {
+   3.619742458365468*^9, 3.619742458740466*^9}, {3.6197427540379195`*^9, 
+   3.619742754209794*^9}, {3.6199175622155495`*^9, 3.619917564439678*^9}, {
+   3.6199176680646143`*^9, 3.6199176692986813`*^9}, {3.619917720375611*^9, 
+   3.61991773643253*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["End Package", "Section"],
+
+Cell[BoxData[
+ RowBox[{"EndPackage", "[", "]"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.591486801989799*^9, 3.5914868026208353`*^9}, {
+  3.619650257589082*^9, 3.6196502580311074`*^9}, {3.6196507829573703`*^9, 
+  3.6196507837844143`*^9}, {3.619650838543707*^9, 3.619650838781722*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example Usage", "Section",
+ CellChangeTimes->{{3.619864748483305*^9, 3.619864750545809*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SetDirectory", "[", "\"\<../../\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"<<", "\"\<NLink`\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"<<", " ", "\"\<ContinuationMethods`\>\""}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SetDirectory", "[", "\"\<../\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"<<", "\"\<PlanarBipedWalker`\>\""}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"parameters", " ", "for", " ", "compass"}], "-", 
+    RowBox[{"gait", " ", "walker"}]}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Mu]", " ", "=", " ", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Beta]", " ", "=", " ", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"L", " ", "=", " ", 
+    RowBox[{"1", "+", "\[Beta]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a", " ", "=", " ", 
+   RowBox[{"1", "/", "2"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", " ", "=", " ", 
+    RowBox[{"9.81", "/", "a"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"NewBiped", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SetGravity", "[", "g", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SetBipedHip", "[", 
+   RowBox[{"\[Mu]", ",", "0", ",", " ", "0"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AddBipedLeg", "[", 
+   RowBox[{"1", ",", "\[Beta]", ",", "0", ",", "L"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"CompileBiped", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"PlotBipedDet", "[", 
+   RowBox[{"0.5", ",", " ", "0.8"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"FindGaits", "[", 
+   RowBox[{"0.5", ",", " ", "0.8", ",", " ", "25"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"GaitInfo", "[", "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"DrawBiped", "[", 
+  RowBox[{"2", ",", 
+   RowBox[{"-", "1"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"AnimateGait", "[", 
+  RowBox[{"2", ",", 
+   RowBox[{"-", "1"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.618593586624215*^9, 3.6185936242180567`*^9}, {
+  3.6186484317809176`*^9, 3.618648432077797*^9}, {3.6186601657505455`*^9, 
+  3.6186601672506266`*^9}, {3.6186621003793316`*^9, 3.618662142026721*^9}, {
+  3.618676145727625*^9, 3.6186761855498877`*^9}, {3.6196661181684694`*^9, 
+  3.61966611838048*^9}, {3.6198647629052086`*^9, 3.6198648596710205`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"NewBiped", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SetGravity", "[", "9.81", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SetBipedHip", "[", 
+   RowBox[{"750", ",", "1", ",", " ", "2"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AddBipedTorso", "[", 
+   RowBox[{"1", ",", "2.5", ",", "2", ",", "7.5"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AddBipedTorso", "[", 
+   RowBox[{"90", ",", "2.5", ",", "2", ",", "1.73"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AddBipedArm", "[", 
+   RowBox[{"15", ",", "2.5", ",", "2", ",", "4"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AddBipedArm", "[", 
+   RowBox[{"1.5", ",", "2.5", ",", "2", ",", "4"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AddBipedLeg", "[", 
+   RowBox[{"1", ",", "2.5", ",", "2", ",", "1"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AddBipedLeg", "[", 
+   RowBox[{"1", ",", "2.5", ",", "2", ",", "15"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AddBipedHead", "[", 
+   RowBox[{"1", ",", "2.5", ",", "2", ",", "13"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AddBipedHead", "[", 
+   RowBox[{"1", ",", "2.5", ",", "2", ",", "13"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"CompileBiped", "[", "]"}]}], "Input"]
+}, Open  ]]
+},
+WindowSize->{496, 669},
+WindowMargins->{{62, Automatic}, {Automatic, 101}},
+FrontEndVersion->"10.0 for Microsoft Windows (32-bit) (July 1, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 3138, 63, 313, "Code",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[3721, 87, 100, 1, 70, "Section"],
+Cell[3824, 90, 9671, 224, 1652, "Input",
+ InitializationCell->True],
+Cell[13498, 316, 6127, 130, 912, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19662, 451, 30, 0, 70, "Section"],
+Cell[19695, 453, 303, 5, 31, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20035, 463, 98, 1, 70, "Section"],
+Cell[20136, 466, 2904, 77, 572, "Input"],
+Cell[23043, 545, 1405, 40, 252, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
