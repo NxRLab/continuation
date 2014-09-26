@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      9334,        227]
-NotebookOptionsPosition[      8475,        192]
-NotebookOutlinePosition[      8850,        208]
-CellTagsIndexPosition[      8807,        205]
+NotebookDataLength[      9908,        240]
+NotebookOptionsPosition[      9049,        205]
+NotebookOutlinePosition[      9424,        221]
+CellTagsIndexPosition[      9381,        218]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -141,6 +141,19 @@ transforms.  The form \[DoubleStruckQ]\[LeftDoubleBracket]i, j\
 contains a #1 it is expanded to the current (i, j) when callled.\>\""}]}], 
     "]"}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
+  RowBox[{
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"!", 
+      RowBox[{"ValueQ", "[", 
+       RowBox[{"\[DoubleStruckP]", "::", "usage"}], "]"}]}], ",", " ", 
+     RowBox[{
+      RowBox[{"\[DoubleStruckP]", "::", "usage"}], " ", "=", " ", 
+      "\"\<Variable used to compute derivatives of spatial vectors and \
+transforms.  The form \[DoubleStruckP]\[LeftDoubleBracket]k\
+\[RightDoubleBracket] the kth parameter in the system.\>\""}]}], "]"}], ";"}],
+   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{"If", "[", 
    RowBox[{
     RowBox[{"!", 
@@ -174,7 +187,7 @@ nonzero, then dx must be nonempty.\>\""}]}], "]"}], ";"}]}], "Input",
    3.593004058398771*^9, 3.5930043945088043`*^9}, {3.5930069755294766`*^9, 
    3.5930069766544914`*^9}, {3.5930078720156054`*^9, 3.593008035547177*^9}, {
    3.603345892357727*^9, 3.6033459578265924`*^9}, {3.603346003764182*^9, 
-   3.6033461055925093`*^9}}]
+   3.6033461055925093`*^9}, {3.6207376897709045`*^9, 3.6207377494383273`*^9}}]
 }, Open  ]]
 }, Open  ]],
 
@@ -220,13 +233,13 @@ Cell[3813, 93, 1341, 25, 152, "Input",
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[5191, 123, 133, 2, 49, "Subsection"],
-Cell[5327, 127, 2746, 49, 592, "Input",
+Cell[5327, 127, 3320, 62, 772, "Input",
  InitializationCell->True]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8122, 182, 30, 0, 86, "Section"],
-Cell[8155, 184, 304, 5, 31, "Input",
+Cell[8696, 195, 30, 0, 70, "Section"],
+Cell[8729, 197, 304, 5, 31, "Input",
  InitializationCell->True]
 }, Open  ]]
 }
