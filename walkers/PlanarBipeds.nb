@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    525709,       8966]
-NotebookOptionsPosition[    523631,       8896]
-NotebookOutlinePosition[    523970,       8911]
-CellTagsIndexPosition[    523927,       8908]
+NotebookDataLength[    521952,       8859]
+NotebookOptionsPosition[    520198,       8797]
+NotebookOutlinePosition[    520543,       8812]
+CellTagsIndexPosition[    520500,       8809]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -26,7 +26,8 @@ Cell["README", "Section",
   3.6198671601474595`*^9}}],
 
 Cell[TextData[{
- StyleBox["Evaluate the Initialize Packages cell first!!!!!!!!!!!!!!!!!!!!!",
+ StyleBox["Evaluate the \[OpenCurlyDoubleQuote]Initialize Packages\
+\[CloseCurlyDoubleQuote] cell first!!!!!!!!!!!!!!!!!!!!!",
   FontSize->24],
  "\n\nAll gaits are passive.  Certain models are equipped with actuators in \
 other notebooks.  These gaits also have floating bases, so constraints are \
@@ -38,7 +39,8 @@ my 32-bit Windows laptop scored a 0.34 in MMA 10' s BenchmarkReport[]."
  CellChangeTimes->{{3.6198671533349266`*^9, 3.6198672301163316`*^9}, {
   3.619870078779622*^9, 3.619870110935929*^9}, {3.619871662232006*^9, 
   3.6198717678250556`*^9}, {3.619872044712956*^9, 3.6198720452169847`*^9}, {
-  3.6198720948088255`*^9, 3.619872127648703*^9}}]
+  3.6198720948088255`*^9, 3.619872127648703*^9}, {3.6236852130432596`*^9, 
+  3.6236852147776227`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -721,21 +723,7 @@ Cell[BoxData[
   3.6198660750015244`*^9, 3.6198661891423745`*^9}, {3.619866251298745*^9, 
   3.619866275017542*^9}, {3.619866769534136*^9, 3.619866777752903*^9}, {
   3.619868613025284*^9, 3.6198686401034613`*^9}, {3.6198694621377907`*^9, 
-  3.619869500044115*^9}, {3.619869577356764*^9, 3.6198696178724685`*^9}}],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", 
-   RowBox[{
-    RowBox[{"DumpSave", "[", 
-     RowBox[{
-     "\"\<Compass Gait.mx\>\"", ",", " ", "PlanarBipedWalker`Private`gaits"}],
-      "]"}], ";"}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"(*", 
-   RowBox[{
-    RowBox[{"<<", "\"\<Compass Gait.mx\>\""}], ";"}], "*)"}]}]], "Input",
- CellChangeTimes->{{3.6199460341554055`*^9, 3.6199460412278147`*^9}, {
-   3.6199572551545973`*^9, 3.619957262994608*^9}, 3.6203312282323384`*^9}]
+  3.619869500044115*^9}, {3.619869577356764*^9, 3.6198696178724685`*^9}}]
 }, Open  ]]
 }, Open  ]],
 
@@ -1339,24 +1327,7 @@ Cell[BoxData[
    3.6198763716398144`*^9, 3.6198763810103474`*^9}, {3.6198764771618567`*^9, 
    3.6198764780409117`*^9}, 3.6198765873861694`*^9, {3.619877104257025*^9, 
    3.619877106157136*^9}, {3.619877152033763*^9, 3.6198771857386937`*^9}, {
-   3.6199123059188657`*^9, 3.6199123289321833`*^9}}],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", 
-   RowBox[{
-    RowBox[{"DumpSave", "[", 
-     RowBox[{
-     "\"\<Simplest Walking Model.mx\>\"", ",", " ", 
-      "PlanarBipedWalker`Private`gaits"}], "]"}], ";"}], "*)"}], 
-  "\[IndentingNewLine]", 
-  RowBox[{"(*", 
-   RowBox[{
-    RowBox[{"<<", " ", "\"\<Simplest Walking Model.mx\>\""}], ";"}], 
-   "*)"}]}]], "Input",
- CellChangeTimes->{{3.619945393814739*^9, 3.6199454080035524`*^9}, 
-   3.6199460146522875`*^9, {3.61995730187358*^9, 3.6199573122135935`*^9}, 
-   3.620331234821718*^9}]
+   3.6199123059188657`*^9, 3.6199123289321833`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -3693,24 +3664,7 @@ Cell[BoxData[
    3.6198714000185003`*^9}, {3.6198715673545756`*^9, 3.6198715676045904`*^9}, 
    3.619871644948019*^9, 3.61987180711535*^9, {3.6198718815036097`*^9, 
    3.619871881781626*^9}, {3.619873541346097*^9, 3.619873541830472*^9}, {
-   3.619875495546668*^9, 3.6198755209217186`*^9}, 3.619914856732362*^9}],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", 
-   RowBox[{
-    RowBox[{"DumpSave", "[", 
-     RowBox[{
-     "\"\<Compass Gait with Torso.mx\>\"", ",", " ", 
-      "PlanarBipedWalker`Private`gaits"}], "]"}], ";"}], "*)"}], 
-  "\[IndentingNewLine]", 
-  RowBox[{"(*", 
-   RowBox[{
-    RowBox[{"<<", " ", "\"\<Compass Gait with Torso.mx\>\""}], ";"}], 
-   "*)"}]}]], "Input",
- CellChangeTimes->{{3.6199448156866283`*^9, 3.619944827197291*^9}, 
-   3.6199453747336473`*^9, {3.6199573206936073`*^9, 3.6199573293886194`*^9}, 
-   3.6203312396519966`*^9}]
+   3.619875495546668*^9, 3.6198755209217186`*^9}, 3.619914856732362*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -5085,21 +5039,7 @@ Cell[BoxData[
    3.619920197005435*^9, 3.61992019706744*^9}, {3.619920857472261*^9, 
    3.619920861604499*^9}, 3.6199214187814026`*^9, {3.6199214668001556`*^9, 
    3.6199214673841887`*^9}, {3.6199277698564324`*^9, 
-   3.6199277836377096`*^9}, {3.619942692983077*^9, 3.6199426930600777`*^9}}],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", 
-   RowBox[{
-    RowBox[{"DumpSave", "[", 
-     RowBox[{
-     "\"\<Rabbit.mx\>\"", ",", " ", "PlanarBipedWalker`Private`gaits"}], 
-     "]"}], ";"}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"(*", 
-   RowBox[{
-    RowBox[{"<<", " ", "\"\<Rabbit.mx\>\""}], ";"}], "*)"}]}]], "Input",
- CellChangeTimes->{{3.619944769410982*^9, 3.6199447920932846`*^9}, {
-   3.619957350803649*^9, 3.6199573528136516`*^9}, 3.620331245466341*^9}]
+   3.6199277836377096`*^9}, {3.619942692983077*^9, 3.6199426930600777`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -8800,28 +8740,6 @@ Cell[BoxData[
    3.6199281509040513`*^9}, {3.61992819037288*^9, 3.6199281910447564`*^9}}],
 
 Cell[BoxData[
- RowBox[{"PlotBipedDet", "[", 
-  RowBox[{"0.227", ",", " ", "0.228"}], "]"}]], "Input",
- CellChangeTimes->{{3.619915178842366*^9, 3.6199151821548758`*^9}, {
-  3.619915241811243*^9, 3.6199152574519186`*^9}, {3.619915296936364*^9, 
-  3.6199153222957726`*^9}, {3.619915611624463*^9, 3.619915612905718*^9}, {
-  3.619916197921425*^9, 3.619916235419573*^9}, {3.61991720718822*^9, 
-  3.61991721667377*^9}}],
-
-Cell[BoxData[
- RowBox[{"PlanarBipedWalker`Private`approxRoots", "[", 
-  RowBox[{"0", ",", " ", 
-   RowBox[{"1", "/", "2"}], ",", " ", 
-   RowBox[{"StartingStepSize", "\[Rule]", " ", 
-    RowBox[{"1", "/", "1500"}]}], ",", " ", 
-   RowBox[{"Method", "\[Rule]", " ", "\"\<ExplicitEuler\>\""}]}], 
-  "]"}]], "Input",
- CellChangeTimes->{{3.619915266514415*^9, 3.6199152920144653`*^9}, {
-  3.6199153448426914`*^9, 3.6199153584364853`*^9}, {3.6199155000930114`*^9, 
-  3.61991550560863*^9}, {3.619915560171238*^9, 3.6199156023588195`*^9}, {
-  3.6199190127166233`*^9, 3.6199190135426664`*^9}}],
-
-Cell[BoxData[
  RowBox[{
   RowBox[{"(*", " ", 
    RowBox[{
@@ -8837,30 +8755,27 @@ Cell[BoxData[
     RowBox[{"curve", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
   "\[IndentingNewLine]", 
   RowBox[{
-   RowBox[{"FindGaits", "[", 
-    RowBox[{"0.228", ",", " ", "0.3", ",", " ", "700", ",", " ", 
-     RowBox[{"1", "/", "50"}], ",", " ", 
-     RowBox[{"\"\<approxRoot\>\"", "\[Rule]", " ", 
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"StartingStepSize", "\[Rule]", " ", 
-         RowBox[{"1", "/", "1500"}]}], ",", " ", 
-        RowBox[{"Method", "\[Rule]", " ", "\"\<ExplicitEuler\>\""}]}], 
-       "}"}]}], ",", " ", 
-     RowBox[{"\"\<map\>\"", "\[Rule]", " ", 
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"AccuracyGoal", "\[Rule]", " ", "8"}], ",", " ", 
-        RowBox[{"PrecisionGoal", "\[Rule]", " ", "8"}], ",", " ", 
-        "\[IndentingNewLine]", 
-        RowBox[{"Compiled", "\[Rule]", " ", "False"}], ",", " ", 
-        RowBox[{"MaxSteps", "\[Rule]", " ", "Infinity"}]}], "}"}]}], ",", " ", 
-     RowBox[{"\"\<nlc0\>\"", "\[Rule]", " ", 
-      RowBox[{"{", 
-       RowBox[{"Tolerance", "\[Rule]", " ", 
-        RowBox[{"10", "^", 
-         RowBox[{"-", "9"}]}]}], "}"}]}], ",", " ", 
-     RowBox[{"Constant", "\[Rule]", " ", "True"}]}], "]"}], ";"}]}]], "Input",
+   RowBox[{
+    RowBox[{"FindGaits", "[", 
+     RowBox[{"0.228", ",", " ", "0.3", ",", " ", "700", ",", " ", 
+      RowBox[{"1", "/", "50"}], ",", " ", 
+      RowBox[{"\"\<map\>\"", "\[Rule]", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AccuracyGoal", "\[Rule]", " ", "8"}], ",", " ", 
+         RowBox[{"PrecisionGoal", "\[Rule]", " ", "8"}], ",", " ", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Compiled", "\[Rule]", " ", "False"}], ",", " ", 
+         RowBox[{"MaxSteps", "\[Rule]", " ", "Infinity"}]}], "}"}]}], ",", 
+      " ", 
+      RowBox[{"\"\<nlc0\>\"", "\[Rule]", " ", 
+       RowBox[{"{", 
+        RowBox[{"Tolerance", "\[Rule]", " ", 
+         RowBox[{"10", "^", 
+          RowBox[{"-", "9"}]}]}], "}"}]}], ",", " ", 
+      RowBox[{"Constant", "\[Rule]", " ", "True"}]}], "]"}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"GaitInfo", "[", "]"}]}]}]], "Input",
  CellChangeTimes->{{3.6199156617964535`*^9, 3.6199156631870623`*^9}, {
    3.6199157544059916`*^9, 3.61991575831225*^9}, 3.6199172362138815`*^9, {
    3.619917894942607*^9, 3.619917926965441*^9}, {3.61991813892058*^9, 
@@ -8869,34 +8784,20 @@ Cell[BoxData[
    3.6199190964884167`*^9, 3.6199191205177927`*^9}, {3.619919411315445*^9, 
    3.6199194341757545`*^9}, {3.619919618546308*^9, 3.6199196615227733`*^9}, {
    3.6199215726132145`*^9, 3.6199215730572405`*^9}, {3.6199426293734293`*^9, 
-   3.619942647777484*^9}}],
+   3.619942647777484*^9}, {3.6236855735286694`*^9, 3.6236855764192996`*^9}, {
+   3.6236912404677734`*^9, 3.6236912412490263`*^9}, {3.623691359764882*^9, 
+   3.6236913675773983`*^9}}],
 
 Cell[BoxData[
  RowBox[{"AnimateGait", "[", 
   RowBox[{"1", ",", " ", 
    RowBox[{"-", "1"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.6199188440249567`*^9, 3.6199188490022435`*^9}}],
-
-Cell[BoxData[
- RowBox[{"(*", 
-  RowBox[{
-   RowBox[{"DumpSave", "[", 
-    RowBox[{
-    "\"\<Anthropomorphic Biped.mx\>\"", ",", " ", 
-     "PlanarBipedWalker`Private`gaits"}], "]"}], ";"}], "*)"}]], "Input",
- CellChangeTimes->{{3.6199423624241495`*^9, 3.619942450631191*^9}}],
-
-Cell[BoxData[
- RowBox[{"(*", 
-  RowBox[{
-   RowBox[{"<<", "\"\<Anthropomorphic Biped.mx\>\""}], ";"}], "*)"}]], "Input",
- CellChangeTimes->{{3.619942583353795*^9, 3.6199425856369314`*^9}, 
-   3.6203312508676376`*^9}]
+ CellChangeTimes->{{3.6199188440249567`*^9, 3.6199188490022435`*^9}}]
 }, Open  ]]
 },
 WindowSize->{624, 669},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
-FrontEndVersion->"10.0 for Microsoft Windows (32-bit) (July 1, 2014)",
+WindowMargins->{{3, Automatic}, {Automatic, 16}},
+FrontEndVersion->"10.0 for Microsoft Windows (32-bit) (September 9, 2014)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -8912,61 +8813,53 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 191, 3, 70, "Section"],
-Cell[774, 27, 855, 13, 242, "Text"]
+Cell[774, 27, 957, 15, 242, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1666, 45, 204, 3, 70, "Section"],
-Cell[1873, 50, 1213, 28, 172, "Input"]
+Cell[1768, 47, 204, 3, 70, "Section"],
+Cell[1975, 52, 1213, 28, 172, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3123, 83, 152, 2, 70, "Section"],
-Cell[3278, 87, 29554, 489, 501, "Text"],
+Cell[3225, 85, 152, 2, 70, "Section"],
+Cell[3380, 89, 29554, 489, 501, "Text"],
 Cell[CellGroupData[{
-Cell[32857, 580, 116, 1, 49, "Subsection"],
-Cell[32976, 583, 1388, 35, 272, "Input"]
+Cell[32959, 582, 116, 1, 49, "Subsection"],
+Cell[33078, 585, 1388, 35, 272, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[34401, 623, 184, 2, 49, "Subsection"],
-Cell[34588, 627, 960, 19, 92, "Input"]
+Cell[34503, 625, 184, 2, 49, "Subsection"],
+Cell[34690, 629, 960, 19, 92, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[35585, 651, 160, 2, 49, "Subsection"],
-Cell[35748, 655, 822, 19, 112, "Input"]
+Cell[35687, 653, 160, 2, 49, "Subsection"],
+Cell[35850, 657, 822, 19, 112, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[36607, 679, 204, 3, 49, "Subsection"],
-Cell[36814, 684, 1937, 39, 232, "Input"],
-Cell[38754, 725, 476, 12, 72, "Input"]
+Cell[36709, 681, 204, 3, 49, "Subsection"],
+Cell[36916, 686, 1937, 39, 232, "Input"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[39279, 743, 263, 3, 70, "Section"],
-Cell[39545, 748, 32678, 541, 402, "Text"],
-Cell[72226, 1291, 2256, 50, 392, "Input"],
-Cell[74485, 1343, 532, 15, 72, "Input"]
+Cell[38902, 731, 263, 3, 70, "Section"],
+Cell[39168, 736, 32678, 541, 402, "Text"],
+Cell[71849, 1279, 2256, 50, 392, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[75054, 1363, 266, 3, 70, "Section"],
-Cell[75323, 1368, 138091, 2268, 520, "Text"],
-Cell[213417, 3638, 2482, 57, 412, "Input"],
-Cell[215902, 3697, 539, 15, 72, "Input"]
+Cell[74142, 1334, 266, 3, 70, "Section"],
+Cell[74411, 1339, 138091, 2268, 520, "Text"],
+Cell[212505, 3609, 2482, 57, 412, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[216478, 3717, 499, 7, 70, "Section"],
-Cell[216980, 3726, 77997, 1282, 506, "Text"],
-Cell[294980, 5010, 3243, 77, 632, "Input"],
-Cell[298226, 5089, 465, 12, 52, "Input"]
+Cell[215024, 3671, 499, 7, 70, "Section"],
+Cell[215526, 3680, 77997, 1282, 506, "Text"],
+Cell[293526, 4964, 3243, 77, 632, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[298728, 5106, 463, 6, 70, "Section"],
-Cell[299194, 5114, 213142, 3497, 514, "Text"],
-Cell[512339, 8613, 7267, 186, 892, "Input"],
-Cell[519609, 8801, 413, 7, 31, "Input"],
-Cell[520025, 8810, 585, 11, 52, "Input"],
-Cell[520613, 8823, 2321, 48, 252, "Input"],
-Cell[522937, 8873, 181, 4, 31, "Input"],
-Cell[523121, 8879, 275, 7, 52, "Input"],
-Cell[523399, 8888, 216, 5, 31, "Input"]
+Cell[296806, 5046, 463, 6, 70, "Section"],
+Cell[297272, 5054, 213142, 3497, 514, "Text"],
+Cell[510417, 8553, 7267, 186, 892, "Input"],
+Cell[517687, 8741, 2311, 47, 252, "Input"],
+Cell[520001, 8790, 181, 4, 31, "Input"]
 }, Open  ]]
 }
 ]

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     46321,        925]
-NotebookOptionsPosition[     45707,        899]
-NotebookOutlinePosition[     46049,        914]
-CellTagsIndexPosition[     46006,        911]
+NotebookDataLength[     48908,        982]
+NotebookOptionsPosition[     48289,        956]
+NotebookOutlinePosition[     48636,        971]
+CellTagsIndexPosition[     48593,        968]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -130,26 +130,73 @@ Cell[BoxData[{
     RowBox[{"Module", "[", 
      RowBox[{
       RowBox[{"{", 
-       RowBox[{"nl0", ",", " ", "nl", ",", " ", "p"}], "}"}], ",", 
-      "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"nl0", " ", "=", " ", 
-        RowBox[{
-         RowBox[{"Length", "[", "hip", "]"}], " ", "+", " ", 
-         RowBox[{"Length", "[", "torso", "]"}], " ", "+", " ", "2"}]}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"nl", " ", "=", " ", 
-        RowBox[{"nl0", " ", "+", " ", 
-         RowBox[{"2", 
-          RowBox[{"Length", "[", "legs", "]"}]}], " ", "-", " ", "1"}]}], ";",
-        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"nl0", ",", " ", "nl", ",", " ", "p", ",", " ", "feet"}], 
+       "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
        RowBox[{
+        RowBox[{"nl0", " ", "=", " ", 
+         RowBox[{
+          RowBox[{"Length", "[", "hip", "]"}], " ", "+", " ", 
+          RowBox[{"Length", "[", "torso", "]"}], " ", "+", " ", "2"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"nl", " ", "=", " ", 
+         RowBox[{"nl0", " ", "+", " ", 
+          RowBox[{"2", 
+           RowBox[{"Length", "[", "legs", "]"}]}], " ", "-", " ", "1"}]}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"a1", " ", "=", " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Total", "[", 
+            RowBox[{"q", "\[LeftDoubleBracket]", 
+             RowBox[{"nl0", ";;", "nl"}], "\[RightDoubleBracket]"}], "]"}], 
+           "/", "2"}], "/", "Degree"}]}], ";"}], "*)"}], 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"p", " ", "=", " ", 
+        RowBox[{"1", "+", 
+         RowBox[{"Sign", "[", 
+          RowBox[{"Length", "[", "torso", "]"}], "]"}]}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"feet", " ", "=", " ", 
+        RowBox[{"poi", "\[LeftDoubleBracket]", 
+         RowBox[{"p", ";;", 
+          RowBox[{"p", "+", "1"}]}], "\[RightDoubleBracket]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"feet", " ", "=", " ", 
         RowBox[{
-         RowBox[{"Total", "[", 
-          RowBox[{"q", "\[LeftDoubleBracket]", 
-           RowBox[{"nl0", ";;", "nl"}], "\[RightDoubleBracket]"}], "]"}], "/",
-          "2"}], "/", "Degree"}]}]}], "\[IndentingNewLine]", "]"}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+         RowBox[{"NLink`Private`GetPointsAndLines", "[", 
+          RowBox[{"q", ",", " ", "feet"}], "]"}], "\[LeftDoubleBracket]", 
+         RowBox[{"1", ",", " ", 
+          RowBox[{
+           RowBox[{"-", "2"}], ";;", 
+           RowBox[{"-", "1"}]}], ",", " ", 
+          RowBox[{"1", ";;", "2"}]}], "\[RightDoubleBracket]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"feet", " ", "=", " ", 
+        RowBox[{
+         RowBox[{
+         "feet", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], " ", 
+         "-", " ", 
+         RowBox[{
+         "feet", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}]}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"p", " ", "=", " ", 
+        RowBox[{"Norm", "[", "feet", "]"}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"p", " ", ">", "0"}], ",", " ", 
+         RowBox[{
+          RowBox[{"N", "@", 
+           RowBox[{"ArcCos", "[", 
+            RowBox[{
+             RowBox[{"feet", ".", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", "1"}], ",", "0"}], "}"}]}], "/", "p"}], "]"}]}], 
+          "/", "Degree"}], ",", " ", "0"}], "]"}]}]}], "\[IndentingNewLine]", 
+     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
@@ -587,7 +634,7 @@ Cell[BoxData[{
         RowBox[{"lnks", ",", " ", "jnts", ",", " ", 
          RowBox[{"PlotRange", "\[Rule]", " ", "pr"}], ",", " ", 
          RowBox[{"Prolog", "\[Rule]", " ", "pl"}]}], "]"}]}]}], 
-     "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
+     "\[IndentingNewLine]", "]"}]}], ";"}], "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
@@ -883,7 +930,17 @@ Cell[BoxData[{
    3.619924101758052*^9, 3.619924109054486*^9}, {3.6199241694189224`*^9, 
    3.6199242805232925`*^9}, {3.6199247856462097`*^9, 
    3.6199248705550766`*^9}, {3.6199249656915383`*^9, 
-   3.6199249662165546`*^9}, {3.619942525206463*^9, 3.6199425353190436`*^9}}]
+   3.6199249662165546`*^9}, {3.619942525206463*^9, 3.6199425353190436`*^9}, {
+   3.6236875076418085`*^9, 3.623687524219971*^9}, {3.6236876470170803`*^9, 
+   3.62368765939211*^9}, {3.6236881497211933`*^9, 3.6236882692995477`*^9}, {
+   3.6236883055652447`*^9, 3.6236883094090023`*^9}, {3.6236883623309793`*^9, 
+   3.6236884928624983`*^9}, {3.6236886425502834`*^9, 3.6236886674722023`*^9}, 
+   3.6236888148631163`*^9, {3.6236892117545147`*^9, 3.623689212942024*^9}, {
+   3.623689367504826*^9, 3.6236894175205626`*^9}, {3.623689839740118*^9, 
+   3.623689902740247*^9}, {3.6236899417871933`*^9, 3.623690023443603*^9}, {
+   3.6236902455534134`*^9, 3.6236903213035603`*^9}, 3.6236906103632317`*^9, {
+   3.623690748097875*^9, 3.623690784722947*^9}, {3.6236913967649555`*^9, 
+   3.623691410608732*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -899,7 +956,7 @@ Cell[BoxData[{
 },
 WindowSize->{624, 709},
 WindowMargins->{{Automatic, 155}, {Automatic, 30}},
-FrontEndVersion->"10.0 for Microsoft Windows (32-bit) (July 1, 2014)",
+FrontEndVersion->"10.0 for Microsoft Windows (32-bit) (September 9, 2014)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -919,12 +976,12 @@ Cell[CellGroupData[{
 Cell[3777, 88, 100, 1, 70, "Section"],
 Cell[3880, 91, 2162, 31, 52, "Input",
  InitializationCell->True],
-Cell[6045, 124, 39369, 761, 2512, "Input",
+Cell[6045, 124, 41951, 818, 2672, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[45451, 890, 30, 0, 70, "Section"],
-Cell[45484, 892, 207, 4, 52, "Input",
+Cell[48033, 947, 30, 0, 70, "Section"],
+Cell[48066, 949, 207, 4, 52, "Input",
  InitializationCell->True]
 }, Open  ]]
 }

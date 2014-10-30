@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     70483,       1458]
-NotebookOptionsPosition[     69650,       1424]
-NotebookOutlinePosition[     69991,       1439]
-CellTagsIndexPosition[     69948,       1436]
+NotebookDataLength[     71281,       1474]
+NotebookOptionsPosition[     70443,       1440]
+NotebookOutlinePosition[     70789,       1455]
+CellTagsIndexPosition[     70746,       1452]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -646,7 +646,12 @@ Cell[BoxData[{
             RowBox[{"1", "/", "15"}], ",", " ", 
             RowBox[{"1", "/", "25"}]}], "}"}]}]}], "}"}]}], ",", " ", 
       RowBox[{"\"\<approxRoot\>\"", "\[Rule]", " ", 
-       RowBox[{"{", "}"}]}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"StartingStepSize", "\[Rule]", " ", 
+          RowBox[{"1", "/", "1500"}]}], ",", " ", 
+         RowBox[{"Method", "\[Rule]", " ", "\"\<ExplicitEuler\>\""}]}], 
+        "}"}]}], ",", " ", 
       RowBox[{"\"\<nlcurve\>\"", "\[Rule]", " ", 
        RowBox[{"{", "}"}]}], ",", " ", 
       RowBox[{"\"\<map\>\"", "\[Rule]", " ", 
@@ -658,7 +663,8 @@ Cell[BoxData[{
          RowBox[{"Compiled", "\[Rule]", " ", "False"}], ",", " ", 
          RowBox[{"MaxSteps", "\[Rule]", " ", "Infinity"}]}], "}"}]}], ",", 
       " ", 
-      RowBox[{"Constant", "\[Rule]", " ", "False"}]}], "}"}]}], ";"}], 
+      RowBox[{"Constant", "\[Rule]", " ", "False"}], ",", " ", 
+      RowBox[{"NullSpace", "\[Rule]", " ", "False"}]}], "}"}]}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -768,8 +774,6 @@ be saved.\>\""}], "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]",
                RowBox[{
                "t", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]}], 
               ";", "\[IndentingNewLine]", 
-              RowBox[{"Print", "[", "\"\<computing ns\>\"", "]"}], ";", 
-              "\[IndentingNewLine]", 
               RowBox[{"ns", " ", "=", " ", 
                RowBox[{"NullSpace", "[", 
                 RowBox[{
@@ -779,9 +783,18 @@ be saved.\>\""}], "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]",
                   " ", 
                  RowBox[{"Tolerance", "\[Rule]", "tol"}]}], "]"}]}], ";", 
               "\[IndentingNewLine]", 
-              RowBox[{"Print", "[", 
-               RowBox[{"MatrixForm", "@", "ns"}], "]"}], ";", 
-              "\[IndentingNewLine]", "\[IndentingNewLine]", 
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{"OptionValue", "[", "NullSpace", "]"}], ",", " ", 
+                "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{
+                 "Print", "[", "\"\<Null space at singular point:\>\"", "]"}],
+                  ";", "\[IndentingNewLine]", 
+                 RowBox[{"Print", "[", 
+                  RowBox[{"MatrixForm", "@", "ns"}], "]"}], ";"}]}], 
+               "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+              "\[IndentingNewLine]", 
               RowBox[{"(*", " ", 
                RowBox[{
                 RowBox[{"if", " ", "not"}], ",", " ", 
@@ -1408,7 +1421,10 @@ be saved.\>\""}], "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]",
    3.6199206071339245`*^9, 3.6199206179275436`*^9}, {3.6199207878302727`*^9, 
    3.6199207903324175`*^9}, 3.619920823045289*^9, {3.6199209389319263`*^9, 
    3.6199209631373124`*^9}, {3.6199209934340477`*^9, 
-   3.6199209936810613`*^9}, {3.619921055946627*^9, 3.6199210563046474`*^9}}]
+   3.6199209936810613`*^9}, {3.619921055946627*^9, 3.6199210563046474`*^9}, 
+   3.6236850878398876`*^9, {3.623685272277734*^9, 3.623685281012124*^9}, {
+   3.6236853510122633`*^9, 3.623685374465435*^9}, {3.6236869051093807`*^9, 
+   3.623686914000024*^9}, {3.6236869530938487`*^9, 3.6236870169221*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1424,7 +1440,7 @@ Cell[BoxData[{
 },
 WindowSize->{624, 925},
 WindowMargins->{{Automatic, 219}, {Automatic, 0}},
-FrontEndVersion->"10.0 for Microsoft Windows (32-bit) (July 1, 2014)",
+FrontEndVersion->"10.0 for Microsoft Windows (32-bit) (September 9, 2014)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -1452,12 +1468,12 @@ Cell[6228, 131, 12866, 307, 1252, "Input",
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[19131, 443, 96, 1, 70, "Section"],
-Cell[19230, 446, 50127, 964, 3452, "Input",
+Cell[19230, 446, 50920, 980, 3532, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[69394, 1415, 30, 0, 70, "Section"],
-Cell[69427, 1417, 207, 4, 52, "Input",
+Cell[70187, 1431, 30, 0, 70, "Section"],
+Cell[70220, 1433, 207, 4, 52, "Input",
  InitializationCell->True]
 }, Open  ]]
 }

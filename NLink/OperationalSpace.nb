@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    280814,       4714]
-NotebookOptionsPosition[    278917,       4647]
-NotebookOutlinePosition[    279291,       4663]
-CellTagsIndexPosition[    279248,       4660]
+NotebookDataLength[    281163,       4719]
+NotebookOptionsPosition[    279263,       4652]
+NotebookOutlinePosition[    279640,       4668]
+CellTagsIndexPosition[    279597,       4665]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -3876,14 +3876,14 @@ Cell[BoxData[{
        RowBox[{
         RowBox[{"xx", " ", "=", " ", 
          RowBox[{"xdx", "\[LeftDoubleBracket]", 
-          RowBox[{"1", ";;", "nx"}], "\[RightDoubleBracket]"}]}], ";", " ", 
+          RowBox[{"1", ";;", "nc"}], "\[RightDoubleBracket]"}]}], ";", " ", 
         RowBox[{"(*", " ", "x", " ", "*)"}], "\[IndentingNewLine]", 
         RowBox[{"dxx", " ", "=", " ", 
          RowBox[{"Partition", "[", 
           RowBox[{
            RowBox[{"xdx", "\[LeftDoubleBracket]", 
             RowBox[{
-             RowBox[{"nx", "+", "1"}], ";;", 
+             RowBox[{"nc", "+", "1"}], ";;", 
              RowBox[{"-", "1"}]}], "\[RightDoubleBracket]"}], ",", " ", 
            "nd"}], "]"}]}], ";", " ", 
         RowBox[{"(*", " ", "dx", " ", "*)"}], "\[IndentingNewLine]", 
@@ -3945,7 +3945,8 @@ Cell[BoxData[{
    3.613351798758592*^9}, {3.6133519506792927`*^9, 3.6133519559185963`*^9}, {
    3.613351988158439*^9, 3.613352025540595*^9}, {3.615209364510253*^9, 
    3.615209364510253*^9}, {3.615339108645336*^9, 3.6153391673954525`*^9}, {
-   3.615372622841211*^9, 3.61537270665388*^9}}],
+   3.615372622841211*^9, 3.61537270665388*^9}, 3.622332641347584*^9, {
+   3.622335353782519*^9, 3.6223353538919086`*^9}}],
 
 Cell[BoxData[{
  RowBox[{
@@ -4017,14 +4018,14 @@ Cell[BoxData[{
        RowBox[{
         RowBox[{"xx", " ", "=", " ", 
          RowBox[{"xdx", "\[LeftDoubleBracket]", 
-          RowBox[{"1", ";;", "nx"}], "\[RightDoubleBracket]"}]}], ";", " ", 
+          RowBox[{"1", ";;", "nc"}], "\[RightDoubleBracket]"}]}], ";", " ", 
         RowBox[{"(*", " ", "x", " ", "*)"}], "\[IndentingNewLine]", 
         RowBox[{"dxx", " ", "=", " ", 
          RowBox[{"Partition", "[", 
           RowBox[{
            RowBox[{"xdx", "\[LeftDoubleBracket]", 
             RowBox[{
-             RowBox[{"nx", "+", "1"}], ";;", 
+             RowBox[{"nc", "+", "1"}], ";;", 
              RowBox[{"-", "1"}]}], "\[RightDoubleBracket]"}], ",", " ", 
            "nd"}], "]"}]}], ";", " ", 
         RowBox[{"(*", " ", "dx", " ", "*)"}], "\[IndentingNewLine]", 
@@ -4196,7 +4197,9 @@ Cell[BoxData[{
    3.61533365274638*^9}, {3.6153336985902195`*^9, 3.615333705480858*^9}, 
    3.615333928200045*^9, {3.61533906836401*^9, 3.615339086145295*^9}, {
    3.615371400978706*^9, 3.615371416478734*^9}, {3.6153715676040316`*^9, 
-   3.6153715777290497`*^9}}],
+   3.6153715777290497`*^9}, 3.6223326573007383`*^9, 3.622333586880681*^9, {
+   3.6223354065482473`*^9, 3.622335428626435*^9}, {3.622335527220361*^9, 
+   3.6223355612829266`*^9}}],
 
 Cell[BoxData[{
  RowBox[{
@@ -4249,14 +4252,14 @@ Cell[BoxData[{
        RowBox[{
         RowBox[{"xx", " ", "=", " ", 
          RowBox[{"xdx", "\[LeftDoubleBracket]", 
-          RowBox[{"1", ";;", "nx"}], "\[RightDoubleBracket]"}]}], ";", " ", 
+          RowBox[{"1", ";;", "nc"}], "\[RightDoubleBracket]"}]}], ";", " ", 
         RowBox[{"(*", " ", "x", " ", "*)"}], "\[IndentingNewLine]", 
         RowBox[{"dxx", " ", "=", " ", 
          RowBox[{"Partition", "[", 
           RowBox[{
            RowBox[{"xdx", "\[LeftDoubleBracket]", 
             RowBox[{
-             RowBox[{"nx", "+", "1"}], ";;", 
+             RowBox[{"nc", "+", "1"}], ";;", 
              RowBox[{"-", "1"}]}], "\[RightDoubleBracket]"}], ",", " ", 
            "nd"}], "]"}]}], ";", " ", 
         RowBox[{"(*", " ", "dx", " ", "*)"}], "\[IndentingNewLine]", 
@@ -4391,7 +4394,8 @@ Cell[BoxData[{
    3.615370523008236*^9, 3.61537055136767*^9}, {3.6153707716962233`*^9, 
    3.6153707928837643`*^9}, {3.6153708930089617`*^9, 3.6153709081652384`*^9}, 
    3.61537127893159*^9, {3.615371610260364*^9, 3.6153717034011707`*^9}, {
-   3.6153720528706036`*^9, 3.615372072136264*^9}}],
+   3.6153720528706036`*^9, 3.615372072136264*^9}, 3.622333602036978*^9, 
+   3.622335698611355*^9}],
 
 Cell[BoxData[{
  RowBox[{
@@ -4437,7 +4441,7 @@ Cell[BoxData[{
              RowBox[{"nq", "+", "1"}], ";;", "nx"}], 
             "\[RightDoubleBracket]"}], ",", " ", "Pqdd"}], "]"}]}], 
         "\[IndentingNewLine]", ")"}]}]}], "}"}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\n", 
+  "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"dPdCRBCode", " ", "=", " ", 
    RowBox[{"{", "\[IndentingNewLine]", 
@@ -4459,7 +4463,7 @@ Cell[BoxData[{
        RowBox[{
         RowBox[{"xx", " ", "=", " ", 
          RowBox[{"xdx", "\[LeftDoubleBracket]", 
-          RowBox[{"1", ";;", "nx"}], "\[RightDoubleBracket]"}]}], ";", 
+          RowBox[{"1", ";;", "nc"}], "\[RightDoubleBracket]"}]}], ";", 
         "\[IndentingNewLine]", 
         RowBox[{"uu", " ", "=", " ", 
          RowBox[{"udu", "\[LeftDoubleBracket]", 
@@ -4470,7 +4474,7 @@ Cell[BoxData[{
           RowBox[{
            RowBox[{"xdx", "\[LeftDoubleBracket]", 
             RowBox[{
-             RowBox[{"nx", "+", "1"}], ";;", 
+             RowBox[{"nc", "+", "1"}], ";;", 
              RowBox[{"-", "1"}]}], "\[RightDoubleBracket]"}], ",", " ", 
            "nd"}], "]"}]}], ";", "\[IndentingNewLine]", 
         RowBox[{"duu", " ", "=", " ", 
@@ -4631,7 +4635,8 @@ Cell[BoxData[{
    3.615334324903945*^9, 3.6153343315445824`*^9}, {3.6153343629352694`*^9, 
    3.61533438648219*^9}, {3.6153344280291457`*^9, 3.6153345746075573`*^9}, {
    3.6153388610979786`*^9, 3.6153388680354943`*^9}, {3.6153389502387795`*^9, 
-   3.6153389734106994`*^9}}]
+   3.6153389734106994`*^9}, 3.622333627068278*^9, {3.622335765689576*^9, 
+   3.6223357677989674`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -4646,9 +4651,9 @@ Cell[BoxData[{
 }, Open  ]]
 },
 AutoGeneratedPackage->Automatic,
-WindowSize->{601, 844},
-WindowMargins->{{60, Automatic}, {20, Automatic}},
-FrontEndVersion->"10.0 for Microsoft Windows (32-bit) (July 1, 2014)",
+WindowSize->{624, 925},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"10.0 for Microsoft Windows (32-bit) (September 9, 2014)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -4683,14 +4688,14 @@ Cell[CellGroupData[{
 Cell[46381, 911, 295, 4, 70, "Section"],
 Cell[46679, 917, 9446, 189, 692, "Input",
  InitializationCell->True],
-Cell[56128, 1108, 7875, 167, 692, "Input",
+Cell[56128, 1108, 7875, 167, 672, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[64040, 1280, 501, 6, 70, "Section"],
-Cell[64544, 1288, 34627, 517, 552, "Input",
+Cell[64544, 1288, 34627, 517, 532, "Input",
  InitializationCell->True],
-Cell[99174, 1807, 47417, 690, 452, "Input",
+Cell[99174, 1807, 47417, 690, 432, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
@@ -4702,18 +4707,18 @@ Cell[180049, 2984, 47273, 681, 432, "Input",
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[227359, 3670, 302, 4, 70, "Section"],
-Cell[227664, 3676, 12333, 271, 1372, "Input",
+Cell[227664, 3676, 12407, 272, 1372, "Input",
  InitializationCell->True],
-Cell[240000, 3949, 13893, 249, 952, "Input",
+Cell[240074, 3950, 14043, 251, 952, "Input",
  InitializationCell->True],
-Cell[253896, 4200, 11355, 193, 692, "Input",
+Cell[254120, 4203, 11403, 194, 692, "Input",
  InitializationCell->True],
-Cell[265254, 4395, 13370, 238, 832, "Input",
+Cell[265526, 4399, 13444, 239, 832, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[278661, 4638, 30, 0, 70, "Section"],
-Cell[278694, 4640, 207, 4, 52, "Input",
+Cell[279007, 4643, 30, 0, 70, "Section"],
+Cell[279040, 4645, 207, 4, 52, "Input",
  InitializationCell->True]
 }, Open  ]]
 }
