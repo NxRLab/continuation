@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    239306,       4689]
-NotebookOptionsPosition[    237022,       4608]
-NotebookOutlinePosition[    237399,       4624]
-CellTagsIndexPosition[    237356,       4621]
+NotebookDataLength[    239687,       4699]
+NotebookOptionsPosition[    237402,       4618]
+NotebookOutlinePosition[    237779,       4634]
+CellTagsIndexPosition[    237736,       4631]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -4486,7 +4486,9 @@ Cell[BoxData[{
       RowBox[{"Axes", "\[Rule]", " ", 
        RowBox[{"{", 
         RowBox[{"3", ",", "1", ",", "2"}], "}"}]}], ",", " ", 
-      RowBox[{"PointSize", "\[Rule]", " ", "0.025"}]}], "}"}]}], ";"}], 
+      RowBox[{"PointSize", "\[Rule]", " ", "0.025"}], ",", " ", 
+      RowBox[{"Delete", "\[Rule]", " ", 
+       RowBox[{"{", "}"}]}]}], "}"}]}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -4499,7 +4501,8 @@ Cell[BoxData[{
      RowBox[{"{", 
       RowBox[{
       "pts", ",", " ", "lines", ",", " ", "vc", ",", " ", "pr", ",", " ", 
-       "ax", ",", " ", "ps"}], "}"}], ",", "\[IndentingNewLine]", 
+       "ax", ",", " ", "ps", ",", " ", "del"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
      RowBox[{
       RowBox[{
        RowBox[{"{", 
@@ -4529,6 +4532,9 @@ Cell[BoxData[{
       "\[IndentingNewLine]", 
       RowBox[{"ps", " ", "=", " ", 
        RowBox[{"OptionValue", "[", "PointSize", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"del", " ", "=", " ", 
+       RowBox[{"OptionValue", "[", "Delete", "]"}]}], ";", 
       "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"Graphics3D", "[", 
        RowBox[{
@@ -4550,9 +4556,12 @@ Cell[BoxData[{
                 RowBox[{"pts", "\[LeftDoubleBracket]", 
                  RowBox[{"#", ",", " ", "ax"}], "\[RightDoubleBracket]"}], 
                 ",", " ", "ps"}], "]"}]}], "}"}], "&"}], " ", "/@", " ", 
-           RowBox[{"Range", "[", 
-            RowBox[{"Length", "@", "pts"}], "]"}]}]}], "}"}], ",", " ", 
-        "pr"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
+           RowBox[{"Delete", "[", 
+            RowBox[{
+             RowBox[{"Range", "[", 
+              RowBox[{"Length", "@", "pts"}], "]"}], ",", " ", "del"}], 
+            "]"}]}]}], "}"}], ",", " ", "pr"}], "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.5962916807404227`*^9, 3.5962916818654265`*^9}, {
    3.5962917375842896`*^9, 3.5962918128813086`*^9}, {3.596295724423031*^9, 
@@ -4592,7 +4601,8 @@ Cell[BoxData[{
    3.614839961630927*^9, 3.614840168771937*^9}, {3.616359461184723*^9, 
    3.616359461669097*^9}, {3.620995202790877*^9, 3.6209952108065176`*^9}, {
    3.620995270431636*^9, 3.6209952945410557`*^9}, {3.6219562041954956`*^9, 
-   3.6219562146017666`*^9}, {3.621956354023915*^9, 3.621956371852075*^9}}]
+   3.6219562146017666`*^9}, {3.621956354023915*^9, 3.621956371852075*^9}, {
+   3.6271426996196556`*^9, 3.6271427446637144`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -4683,12 +4693,12 @@ Cell[219672, 4180, 3373, 94, 332, "Input",
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[223082, 4279, 248, 3, 70, "Section"],
-Cell[223333, 4284, 13396, 310, 972, "Input",
+Cell[223333, 4284, 13776, 320, 1012, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[236766, 4599, 30, 0, 70, "Section"],
-Cell[236799, 4601, 207, 4, 52, "Input",
+Cell[237146, 4609, 30, 0, 70, "Section"],
+Cell[237179, 4611, 207, 4, 52, "Input",
  InitializationCell->True]
 }, Open  ]]
 }
